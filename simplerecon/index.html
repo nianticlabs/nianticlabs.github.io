@@ -1,7 +1,306 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SimpleRecon</title>
+  <meta name="description" content="SimpleRecon: 3D Reconstruction without 3D Convolutions">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
 
-This is a temporary webpage for the ECCV paper SimpleRecon: 3D Reconstruction without 3D Convolutions. <br>
+  <!--Facebook preview-->
+  <meta property="og:image" content="resources/thumbnail.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400">
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="..."/>
+  <meta property="og:title" content="SimpleRecon"/>
+  <meta property="og:description" content="SimpleRecon: 3D Reconstruction without 3D Convolutions"/>
 
-ECCV Chairs, here is the temporary code release for the paper: <a href="code.zip" download>(Click to download)</a>  <br>
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SimpleRecon" />
+  <meta name="twitter:description" content="SimpleRecon: 3D Reconstruction without 3D Convolutions"/>
+  <meta name="twitter:image" content="resources/thumbnail_twitter.png">
 
-A pretty version of this webpage and proper GitHub release are pending. ETA is the <del>19th of August</del> <b>UPDATE:</b> 26th of August; COVID got in the way.
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="resources/favi_1.png">
+
+</head>
+
+<body>
+
+<div class="container" style="text-align:center; padding:2rem 15px">
+  <div class="row" style="text-align:center">
+    <h1 style="margin-bottom:0.1rem;">SimpleRecon</h1>
+    <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">3D Reconstruction without 3D Convolutions</h3>
+    <h4>ECCV 2022</h4>
+  </div>
+  <div class="row" style="text-align:center">
+    <div class="col-xs-0 col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+      <h4>
+        <a href="https://masayed.com/"><nobr>Mohamed Sayed<sup>2*</sup></nobr></a> &emsp;
+        <a href="https://www.linkedin.com/in/john-e-gibson-ii/"><nobr>John Gibson<sup>1</sup></nobr></a> &emsp;
+        <a href="https://www.linkedin.com/in/jamie-watson-544825127/"><nobr>Jamie Watson<sup>1</sup></nobr></a> &emsp;
+        <a href="https://www.robots.ox.ac.uk/~victor/"><nobr>Victor Adrian Prisacariu<sup>1,3</sup></nobr></a> &emsp;
+        <a href="http://www.michaelfirman.co.uk/"><nobr>Michael Firman<sup>1</sup></nobr></a> &emsp;
+        <a href="http://www0.cs.ucl.ac.uk/staff/C.Godard/"><nobr>Clément Godard<sup>4*</sup></nobr></a>
+
+      </h4>
+
+      <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup>University College London&nbsp;&nbsp;&nbsp;<sup>3</sup><nobr>University of Oxford&nbsp;&nbsp;&nbsp;</nobr> <sup>4</sup><nobr>Google</nobr> <br>
+      
+    </div>
+
+    <div class="col-xs-0 col-md-2"></div>
+
+  </div>
+  <div style="text-align:center;font-size:0.9em"><sup>*</sup>Work done while at Niantic, during Mohamed’s internship.</div>
+
+</div>
+
+
+<div class="container" style="text-align:center; padding:1rem">
+  <div class="row" style="text-align:center">
+    <div class="col-xs-0 col-md-5"></div>
+
+    <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px; margin-right:0px">
+      <a href="resources/SimpleRecon.pdf" style="color:#ff730">
+        <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px;">
+      <a href="https://github.com/nianticlabs/simplerecon" style="color:#ff730">
+        <i class="fa fa-github fa-4x"></i></a>
+    </div>
+
+    <div class="col-xs-0 col-md-5"></div>
+
+  </div>
+
+  <br>
+
+  <img src="resources/teaser.jpg" alt="teaser.jpg" class="text-center" style="width: 100%; max-width: 1100px">
+</div>
+
+<div class="container">
+  <h3>Abstract</h3>
+  <hr/>
+  <p>
+    Traditionally, 3D indoor scene reconstruction from posed images happens in two phases: per image depth estimation, 
+    followed by depth merging and surface reconstruction. Recently, a family of methods have emerged that perform reconstruction 
+    directly in final 3D volumetric feature space. While these methods have shown impressive reconstruction results, 
+    they rely on expensive 3D convolutional layers, limiting their application in resource-constrained environments. 
+    In this work, we instead go back to the traditional route, and show how focusing on <b>high quality multi-view depth prediction</b> 
+    leads to highly accurate 3D reconstructions using simple off-the-shelf depth fusion. We propose a simple state-of-the-art 
+    multi-view depth estimator with two main contributions: <b>1) a carefully-designed 2D CNN which utilizes strong image priors 
+    </b> alongside a plane-sweep feature volume and geometric losses, combined with <b>2) the integration of keyframe and geometric metadata 
+    into the cost volume</b> which allows informed depth plane scoring. Our method achieves a significant lead over the current state-of-the-art 
+    for depth estimation and close or better for 3D reconstruction on ScanNet and 7-Scenes, yet still allows for online real-time low-memory 
+    reconstruction. 
+  </p>
+
+  <p>SimpleRecon is <i>fast.</i> Our batch size one performance is 70ms per frame. &#128640 This makes fast accurate reconstruction via depth fusion possible!</p>
+  <br>
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <!-- <h4><u>Real Scenes</u></h4> -->
+    <div class="col-xs-12" >
+      <video loop controls width="95%">
+        <source src="resources/birdseye_recon.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+  <h3>Approach</h3>
+  <hr/>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <h4><u>Overview</u></h4>
+    </div>
+  </div>
+
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <img src="resources/mmdp_figures_main.jpg" alt="deep_tsf.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px"><br/><br/><br/>
+    </div>
+  </div>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <div >
+        <p>
+          Our key contribution is the injection of cheaply-available <b>metadata</b>
+          into the feature volume. Each volumetric cell is then reduced in parallel with an MLP into a feature map before 
+          input into a 2D encoder-decoder.
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <h4><u>Metadata Infused Cost Volume</u></h4>
+    </div>
+  </div>
+
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <img src="resources/metadata_fig.jpg" alt="deep_tsf.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px"> <br/><br/><br/>
+    </div>
+  </div> 
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <div >
+        <p><b>Metadata insertion</b> Typical MVS systems predict depth from warped <em>features</em> or 
+          differences between features \eg dot products. We additionally include cheaply-available <em>metadata</em>
+          for improved performance. Indices <img src="https://latex.codecogs.com/svg.image?{(k,i,j)}" alt="(k,i,j)" border="0"/> are omitted for clarity.</p>
+        </div>
+    </div>
+  </div>
+
+
+  <h3>Results</h3>
+  <hr/>
+
+
+
+
+
+  <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><b>ScanNetv2 Depths</b></h4>
+      <div class="col-xs-12" >
+        <img src="resources/headers.png" alt="resources/headers.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+    10px">
+      </div>
+        <div class="col-xs-12" >
+          <img src="resources/depth/scene0707_00_000580.jpg" alt="scene0707_00_000580.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+        </div>
+        <div class="col-xs-12" >
+          <img src="resources/depth/scene0762_00_001060.jpg" alt="scene0762_00_001060.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+        </div>
+        <div class="col-xs-12" >
+          <img src="resources/depth/scene0739_00_000160.jpg" alt="scene0739_00_000160.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+        </div>
+        <div class="col-xs-12" >
+          <img src="resources/depth/scene0708_00_000240.jpg" alt="scene0708_00_000240.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+        </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><b>ScanNetv2 Reconstructions</b></h4>
+    <div class="col-xs-12">
+      <div class="sketchfab-embed-wrapper"> 
+        <iframe width="80%" height="500em" src="https://sketchfab.com/playlists/embed?collection=26e53ac8355643f78f45e9916e14be8e&autostart=0"
+        title="ScanNet SimpleRecon"
+        frameborder="0"
+        allowfullscreen
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        xr-spatial-tracking
+        execution-while-out-of-viewport
+        execution-while-not-rendered
+        web-share></iframe>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><b>ScanNetv2 Depth Video Visualization</b></h4>
+    <!-- <h4><u>Real Scenes</u></h4> -->
+    <div class="col-xs-12" >
+      <video loop controls width="95%">
+        <source src="resources/depth_vid_viz_lowres.mp4#t=1,1:39" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+  <h3>Resources</h3>
+  <hr/>
+  <div class="row" style="text-align: center">
+    <div class="col-xs-0 col-lg-0"></div>
+    <div class="col-xs-4 col-lg-4">
+      <h4>Paper</h4>
+      <a href="resources/SimpleRecon.pdf" style="color:inherit">
+        <img src="resources/paper_thumb.png" alt="Paper" class="text-center" style="max-width:70%; border:0.15em solid;
+        border-radius:0.5em;"></a>
+    </div>
+    <div class="col-xs-4 col-lg-4">
+      <h4>Supplemental</h4>
+      <a href="resources/SimpleRecon_supp.pdf" style="color:inherit;">
+        <img src="resources/supp_thumb.png" alt="Supplemental" class="text-center"
+             style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
+    </div>
+    <div class="col-xs-4 col-lg-4">
+      <h4>Code</h4>
+      <a href="https://github.com/monniert/dti-clustering" style="color:inherit;">
+        <img src="resources/github_repo.png" alt="github_repo.png" class="text-center"
+             style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
+    </div>
+
+    <div class="col-xs-0 col-lg-0"></div>
+  </div>
+    <h4 style="padding-top:0.5em">BibTeX</h4>
+    If you find this work useful for your research, please cite:
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+    @inproceedings{sayed2022simplerecon,
+      title={SimpleRecon: 3D Reconstruction Without 3D Convolutions},
+      author={Sayed, Mohamed and Gibson, John and Watson, Jamie and Prisacariu, Victor and Firman, Michael and Godard, Cl{\'e}ment},
+      booktitle={Proceedings of the European conference on computer vision (ECCV)},
+      year={2022},
+    }
+        </pre>
+      </div>
+    </div>
+
+
+
+  <h3>Acknowledgements</h3>
+  <hr/>
+  <p>We thank Aljaž Božič of <a href="https://aljazbozic.github.io/transformerfusion/">TransformerFusion</a>, Jiaming Sun of <a href="https://zju3dv.github.io/neuralrecon/">Neural Recon</a>, 
+    and Arda Düzçeker of <a href="https://github.com/ardaduz/deep-video-mvs">DeepVideoMVS</a> for quickly providing useful information to help with baselines and for making their codebases readily available, especially on short notice.</p>
+    
+  <p>The tuple generation scripts make heavy use of a modified version of DeepVideoMVS's Keyframe buffer (thanks again Arda and co!).</p>
+
+  <p>The PyTorch point cloud fusion module is borrowed from <a href="https://github.com/alexrich021/3dvnet">3DVNet's</a> repo Thanks Alexander Rich!</p>
+
+  <p>We'd also like to thank Niantic's infrastructure team for quick actions when we needed them. Thanks folks!</p>
+
+  <p>Mohamed is funded by a Microsoft Research PhD Scholarship (MRL 2018-085).</p>
+</div>
+
+<div class="container" style="padding-top:3rem; padding-bottom:3rem">
+  <p style="text-align:center">
+  &#169; This webpage was in part inspired from this
+  <a href="https://github.com/monniert/project-webpage">template</a>.
+  </p>
+</div>
+
+</body>
+</html> 
