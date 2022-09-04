@@ -21,7 +21,8 @@ hr {
 
 p {
   text-align: justify;
-  font-size: 13px;
+  /* font-size: 13px; */
+  font-size:1.2em;
 }
 
 td {
