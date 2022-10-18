@@ -56,3 +56,17 @@ table {
 .label-info[href]:hover {
   background-color: #cb5920;
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: calc(56.25% * 0.75); /* 16:9 */
+  width: 95%;
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0%;
+  left: 2.6%;
+  width: 100%;
+  height: 100%;
+}
