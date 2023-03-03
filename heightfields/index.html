@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Heightfields for Efficient Scene Reconstruction for AR </title>
+  <meta name="description" content="Heightfields for Efficient Scene Reconstruction for AR">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:0.1rem;">Heightfields for Efficient Scene Reconstruction for AR</h1>
+    </div>
+    <div class="row" style="text-align:center">
+      <div class="col-xs-0 col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <h4>
+          <a style="font-size:1.1em;"
+            href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=5pC7fw8AAAAJ">
+            <nobr>Jamie Watson<sup>1,2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://scholar.google.co.uk/citations?user=7wWsNNcAAAAJ&hl=en">
+            <nobr>Sara Vicente<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://www.oisin.info">
+            <nobr>Oisin Mac Aodha<sup>3</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://scholar.google.co.uk/citations?user=Uz9h6LEAAAAJ&hl=en">
+            <nobr>Clément Godard<sup>4</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www0.cs.ucl.ac.uk/staff/g.brostow/">
+            <nobr>Gabriel Brostow<sup>1,2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www.michaelfirman.co.uk/">
+            <nobr>Michael Firman<sup>1</sup></nobr>
+          </a>
+        </h4>
+        <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup>University College
+        London&nbsp;&nbsp;&nbsp;<sup>3</sup>University of
+        Edinburgh&nbsp;&nbsp;&nbsp;<sup>4</sup>Google&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col-xs-0 col-md-2"></div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-2">
+        <a
+          href="https://openaccess.thecvf.com/content/WACV2023/papers/Watson_Heightfields_for_Efficient_Scene_Reconstruction_for_AR_WACV_2023_paper.pdf">
+          <i class="fa-solid fa-file-pdf fa-4x"></i></a><br>
+      </div>
+      <div class="col-xs-2">
+        <a href="https://github.com/nianticlabs/heightfields">
+          <i class="fa fa-github fa-4x"></i></a><br>
+      </div>
+      <div class="col-xs-4"></div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h3>Abstract</h3>
+    <hr />
+    <p>
+      3D scene reconstruction from a sequence of posed RGB images is a cornerstone task for computer vision and
+      augmented
+      reality (AR).
+      While depth-based fusion is the foundation of most real-time approaches for 3D reconstruction,
+      recent learning based methods that operate directly on RGB images can achieve higher quality reconstructions, but
+      at the
+      cost of increased runtime and memory requirements, making them unsuitable for AR applications.
+
+      We propose an efficient learning-based method that refines the 3D reconstruction obtained by a traditional fusion
+      approach.
+      By leveraging a top-down heightfield representation, our method remains real-time while approaching the quality of
+      other
+      learning-based methods.
+      Despite being a simplification, our heightfield is perfectly appropriate for robotic path planning or augmented
+      reality
+      character placement.
+      We outline several innovations that push the performance beyond existing top-down prediction baselines, and we
+      present
+      an evaluation framework on the challenging ScanNetV2 dataset, targeting AR tasks.
+    </p>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <video loop controls height="480px">
+          <source src="resources/overview.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <h3>Results</h3>
+    <hr />
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <img src="resources/reconstruction.gif" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+        10px"><br /><br /><br />
+      </div>
+    </div>
+
+    <h3>Resources</h3>
+    <hr />
+
+    <h4 style="padding-top:0.5em">BibTeX</h4>
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+@inproceedings{watson-2023-heightfields,
+  title = {Heightfields for Efficient Scene Reconstruction for {AR}},
+  author = {Jamie Watson and
+            Sara Vicente and
+            Oisin Mac Aodha and
+            Clément Godard and
+            Gabriel J. Brostow and
+            Michael Firman},
+  booktitle = {Winter Conference on Applications of Computer Vision ({WACV})},
+  year = {2023}
+}
+</pre>
+      </div>
+    </div>
+
+    <!-- <h3>Acknowledgements</h3>
+    <hr />
+    <p> TODO if any </p> -->
+
+    <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+      <p style="text-align:center">
+        &#169; This webpage was in part inspired by this
+        <a href="https://github.com/monniert/project-webpage">template</a>.
+      </p>
+    </div>
+
+</body>
+
+</html>
