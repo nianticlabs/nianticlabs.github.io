@@ -15,6 +15,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
 
+  <script> 
+    $(function(){
+      $("#qualContent").load("comparisons.html"); 
+    });
+  </script>
+
 </head>
 
 <body>
@@ -135,6 +141,15 @@
             stable
             predictions.
         </div>
+      </div>
+    </div>
+
+    <h3>Qualitative Comparisons</h3>
+    <hr />
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div id="qualContent"></div>
       </div>
     </div>
 
