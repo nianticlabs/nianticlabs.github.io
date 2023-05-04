@@ -5,6 +5,20 @@
 <link rel="stylesheet" type="text/css" href="include/comparisons.css">
 <script type="text/javascript" src="include/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="include/scripts.js"></script>
+<script type="text/javascript">
+  document.addEventListener('load', function() {
+    document.getElementById("videoresult11").currentTime = 0;
+    document.getElementById("videoresult12").currentTime = 0;
+    document.getElementById("videoresult21").currentTime = 0;
+    document.getElementById("videoresult22").currentTime = 0;
+
+    document.getElementById("videoresult11").play();
+    document.getElementById("videoresult12").play();
+    document.getElementById("videoresult21").play();
+    document.getElementById("videoresult22").play();
+  }, false);
+</script>
+
 </head>
 <body>
 
@@ -16,26 +30,70 @@
       <a href="index.html">Back to main page.</a>
     </span> -->
 
-    <span class="localmenu" style="float:left;">
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/24_10_2022-15_04_09_9BF18519-D4D3-45CD-BF16-9E6AA09E2BEE_map_lidar_o0_air_balloon')"
-      >Guitar</a>&nbsp;
+    
+    <span id="selection_span" class="localmenu" style="float:left;">
+      Select scene:
+      <a class="sceneSelection" style="border: solid;"onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/24_10_2022-15_04_09_9BF18519-D4D3-45CD-BF16-9E6AA09E2BEE_map_lidar_o0_air_balloon'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Guitar',
+          );"
+      >Guitar</a>&nbsp;|
      
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/24_10_2022-15_01_45_CBD0B02E-D514-4642-A3F4-313AA1AFD0EC_map_lidar_o0_air_balloon')"
-      >Chair</a>&nbsp;
+      <a class="sceneSelection" onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/24_10_2022-15_01_45_CBD0B02E-D514-4642-A3F4-313AA1AFD0EC_map_lidar_o0_air_balloon'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Chair',
+          );"
+      >Chair</a>&nbsp;|
 
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/11_11_2022-13_19_39_CE673EF7-6BF3-4051-9CEA-D446BA82106C_map_lidar_o0_sphere')"
-      >Fountain</a>&nbsp;
+      <a class="sceneSelection" onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/11_11_2022-13_19_39_CE673EF7-6BF3-4051-9CEA-D446BA82106C_map_lidar_o0_sphere'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Fountain',
+          );"
+      >Fountain</a>&nbsp;|
       
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/08_11_2022-09_19_35_30488245-8AAC-4104-8707-3FB133E12F54_map_lidar_o0_icon_map')"
-      >Bush</a>&nbsp;
+      <a class="sceneSelection" onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/08_11_2022-09_19_35_30488245-8AAC-4104-8707-3FB133E12F54_map_lidar_o0_icon_map'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Bush',
+          );"
+      >Bush</a>&nbsp;|
 
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/08_11_2022-09_08_19_CBFB8BB5-F00C-4B93-8930-7E0E222F9B1A_map_lidar_o0_icon_map')"
-      >Icon</a>&nbsp;
+      <a class="sceneSelection" onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/08_11_2022-09_08_19_CBFB8BB5-F00C-4B93-8930-7E0E222F9B1A_map_lidar_o0_icon_map'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Icon',
+          );"
+      >Icon</a>&nbsp;|
       
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/11_11_2022-13_22_10_93A4DB10-421A-4416-8837-362AD237BB89_map_lidar_o0_plane_2.0')"
-      >Fence</a>&nbsp;
+      <a class="sceneSelection" onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/11_11_2022-13_22_10_93A4DB10-421A-4416-8837-362AD237BB89_map_lidar_o0_plane_2.0'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Fence',
+          );"
+      >Fence</a>&nbsp;|
       
-      <a onclick="changQualVideoGroup('resources/qual_comp_videos/08_11_2022-09_09_55_CC55315D-22B5-47A3-9C5D-F4EAFCFB6F98_map_lidar_o0_sea')"
+      <a class="sceneSelection" onclick="changQualVideoGroup(
+            'resources/qual_comp_videos/08_11_2022-09_09_55_CC55315D-22B5-47A3-9C5D-F4EAFCFB6F98_map_lidar_o0_sea'
+          );
+          changeBorderSelection(
+            'selection_span',
+            'Bollards',
+          );"
       >Bollards</a>&nbsp;
       
     </span>
@@ -52,7 +110,7 @@
     <div id="implicitDepthDiv" style="width: 49%; height: auto; float: left; margin-bottom:30px">
       <div class="comparisontitle" style="font-weight: bold;">Implicit Depth (Ours)</div>
       <span style="display:block; height: 0.4em;"></span>
-      <video id="videoresult1" autoplay loop controls  style="width: 100%">
+      <video id="videoresult11" muted autoplay loop controls  style="width: 100%">
         <source src="resources/qual_comp_videos/24_10_2022-15_04_09_9BF18519-D4D3-45CD-BF16-9E6AA09E2BEE_map_lidar_o0_air_balloon_bd_hypersim.mp4" type="video/mp4">
           You need support for the HTML5 video tag to view our video results in a browser.
       </video>
@@ -61,7 +119,7 @@
     <div id="simpleReconDiv" style="width: 49%; height: auto; float: right; margin-bottom:30px;">
       <div class="comparisontitle">SimpleRecon, Sayed et al. 2022 </div>
       <span style="display:block; height: 0.4em;"></span>
-      <video id="videoresult2" autoplay loop controls  style="width: 100%">
+      <video id="videoresult12" muted autoplay loop controls  style="width: 100%">
         <source src="resources/qual_comp_videos/24_10_2022-15_04_09_9BF18519-D4D3-45CD-BF16-9E6AA09E2BEE_map_lidar_o0_air_balloon_sr_hypersim.mp4" type="video/mp4">
         You need support for the HTML5 video tag to view our video results in a browser.
       </video>
@@ -75,7 +133,7 @@
     <div id="fastDepthDensificationDiv" style="width: 49%; height: auto; float: left;">
       <div class="comparisontitle">Fast Densification, Holynski and Kopf 2018</div>
       <span style="display:block; height: 0.4em;"></span>
-      <video id="videoresult1" autoplay loop controls  style="width: 100%">
+      <video id="videoresult21" muted autoplay loop controls  style="width: 100%">
         <source src="resources/qual_comp_videos/24_10_2022-15_04_09_9BF18519-D4D3-45CD-BF16-9E6AA09E2BEE_map_lidar_o0_air_balloon_npy_lidar_depths_equally_sampled_2000.mp4" type="video/mp4">
         You need support for the HTML5 video tag to view our video results in a browser.
       </video>
@@ -84,7 +142,7 @@
     <div id="lidarDepthDiv" style="width: 49%; height: auto; float: right;">
       <div class="comparisontitle">iPhone LiDAR Sensor</div>
       <span style="display:block; height: 0.4em;"></span>
-      <video id="videoresult2" autoplay loop controls  style="width: 100%">
+      <video id="videoresult22" muted autoplay loop controls  style="width: 100%">
         <source src="resources/qual_comp_videos/24_10_2022-15_04_09_9BF18519-D4D3-45CD-BF16-9E6AA09E2BEE_map_lidar_o0_air_balloon_lidar.mp4" type="video/mp4">
           You need support for the HTML5 video tag to view our video results in a browser.
       </video>

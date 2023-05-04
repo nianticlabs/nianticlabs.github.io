@@ -22,13 +22,29 @@ function changeVideoDivID(videoDivID, videoPath, videoTitle) {
 	$("#imagetitle").html(videoTitle);
 }
 
+function changeBorderSelection(spanID, selectionID) {
+	var span = document.getElementById(spanID);
+	var children = span.children;
+	for(var i=0; i<children.length; i++){
+		var child = children[i];
+		if(child.innerHTML == selectionID) {
+			child.style.border = "solid";
+		}
+		else { 
+			child.style.border = "";
+		}
+		
+	}
+}
+
 function changQualVideoGroup(videoName) {
-	
+
+
 	changeVideoDivID(
 		'fastDepthDensificationDiv', 
 		videoName + '_npy_lidar_depths_equally_sampled_2000.mp4', 
 		'fastDepthDensificationDiv'
-	); 
+	);
 
 	changeVideoDivID(
 		'lidarDepthDiv', 
@@ -46,6 +62,17 @@ function changQualVideoGroup(videoName) {
 		videoName + '_bd_hypersim.mp4', 
 		'implicitDepthDiv'
 	); 
+	
+	// play in sync
+	document.getElementById("fastDepthDensificationDiv").getElementsByTagName("video")[0].currentTime = 0;
+	document.getElementById("lidarDepthDiv").getElementsByTagName("video")[0].currentTime = 0;
+	document.getElementById("simpleReconDiv").getElementsByTagName("video")[0].currentTime = 0;
+	document.getElementById("implicitDepthDiv").getElementsByTagName("video")[0].currentTime = 0;
+
+	document.getElementById("fastDepthDensificationDiv").getElementsByTagName("video")[0].play();
+	document.getElementById("lidarDepthDiv").getElementsByTagName("video")[0].play();
+	document.getElementById("simpleReconDiv").getElementsByTagName("video")[0].play();
+	document.getElementById("implicitDepthDiv").getElementsByTagName("video")[0].play();
 }
 
 function hideElement(element) {
