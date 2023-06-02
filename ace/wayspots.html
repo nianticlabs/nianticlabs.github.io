@@ -27,7 +27,7 @@
     </head>
     <body>
 
-        <header class="mt-4">
+        <header class="mt-4 d-none d-md-block">
             <video playsinline="playsinline" autoplay="autoplay" muted="muted">
                 <source src="assets/header_ace_cards.mp4" type="video/mp4">
             </video>
@@ -138,6 +138,24 @@
                         <a href="index.html" class="btn btn-secondary btn-sm">Back to ACE Homepage</a>
                     </form>
 
+                    <p>
+                        The Wayspots dataset has been curated from the larger <a href="https://research.nianticlabs.com/mapfree-reloc-benchmark/dataset" target="_blank">Niantic Map-Free dataset</a>.
+                        Please cite both of the following papers when using the Wayspots dataset.
+                    </p>
+                    <pre class="w-100 user-select-all font-monospace border border-secondary bg-dark mb-3 p-2">
+@inproceedings{brachmann2023ace,
+    title={Accelerated Coordinate Encoding: Learning to Relocalize in Minutes using RGB and Poses},
+    author={Brachmann, Eric and Cavallari, Tommaso and Prisacariu, Victor Adrian},
+    booktitle={CVPR},
+    year={2023},
+}</pre>
+                    <pre class="w-100 user-select-all font-monospace border border-secondary bg-dark mb-5 p-2">
+@inproceedings{arnold2022mapfree,
+	title={Map-free Visual Relocalization: Metric Pose Relative to a Single Image},
+	author={Arnold, Eduardo and Wynn, Jamie and Vicente, Sara and Garcia-Hernando, Guillermo and Monszpart, {\'{A}}ron and Prisacariu, Victor Adrian and Turmukhambetov, Daniyar and Brachmann, Eric},
+	booktitle={ECCV},
+	year={2022},
+}</pre>
 
                 </div>
                 <div class="col-sm-0 col-md-2"></div>
