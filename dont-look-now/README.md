@@ -1,3 +1,1 @@
-Webpage for SimpleRecon.
-
-Code release at https://github.com/nianticlabs/simplerecon
+Webpage for Don't Look Now!
