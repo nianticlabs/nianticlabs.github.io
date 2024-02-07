@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Don't Look Now!</title>
+  <meta name="description" content="Don't Look Now! Audio/Haptic Guidance for 3D Scanning of Landmarks">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!--Facebook preview-->
+  <meta property="og:image" content="https://nianticlabs.github.io/simplerecon/resources/social_card.png">
+<!--   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400"> -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="..."/>
+  <meta property="og:title" content="Don't Look Now! Audio/Haptic Guidance for 3D Scanning of Landmarks"/>
+  <meta property="og:description" content="Don't Look Now! Audio/Haptic Guidance for 3D Scanning of Landmarks, SIGCHI 2024"/>
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Don't Look Now! Audio/Haptic Guidance for 3D Scanning of Landmarks" />
+  <meta name="twitter:description" content="Don't Look Now! Audio/Haptic Guidance for 3D Scanning of Landmarks, SIGCHI 2024"/>
+  <meta name="twitter:image" content="https://nianticlabs.github.io/simplerecon/resources/social_card.png">
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="resources/favi.png">
+
+</head>
+
+<body>
+
+<div class="container" style="text-align:center; padding:2rem 15px">
+  <div class="row" style="text-align:center">
+    <h1 style="margin-bottom:0.1rem;">Don't Look Now!</h1>
+    <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Audio/Haptic Guidance for 3D Scanning of Landmarks</h3>
+    <h4 style="font-size:1.4em;">SIGCHI 2024</h4>
+  </div>
+  <div class="row" style="text-align:center">
+    <div class="col-xs-0 col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+      <h4>
+        <a style="font-size:1.1em;" href="https://masayed.com/"><nobr>Jessica Van Brummelen<sup>1</sup></nobr></a> &emsp;
+        <a style="font-size:1.1em;" href="https://www.linkedin.com/in/john-e-gibson-ii/"><nobr>Liv Piper Urwin<sup>2*</sup></nobr></a> &emsp;
+        <a style="font-size:1.1em;" href="https://www.linkedin.com/in/jamie-watson-544825127/"><nobr>Oliver James Johnston<sup>1</sup></nobr></a> &emsp;
+        <a style="font-size:1.1em;" href="https://www.robots.ox.ac.uk/~victor/"><nobr>Mohamed Sayed<sup>1</sup></nobr></a> &emsp;
+        <a style="font-size:1.1em;" href="http://www.michaelfirman.co.uk/"><nobr>Gabriel Brostow<sup>1,2</sup></nobr></a> &emsp;
+
+      </h4>
+
+      <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup>University College London&nbsp;&nbsp;&nbsp;<sup> <br>
+      
+    </div>
+
+    <div class="col-xs-0 col-md-2"></div>
+
+  </div>
+  <div style="text-align:center;font-size:0.9em"><sup>*</sup>Work done while at Niantic, during Liv’s internship.</div>
+
+</div>
+
+
+<div class="container" style="max-width: 1100px">
+  <div class="row" style="text-align: center; padding:1rem">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-2">
+      <a href="DontLookNow_NoScreenScanning_Preprint_CHI24" style="color:inherit">
+        <a href="https://arxiv.org/pdf/2208.14743.pdf">
+          <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+    </div>
+    <!-- <div class="col-xs-2">
+      <a href="https://github.com/nianticlabs/simplerecon" style="color:inherit;">
+        <a href="https://github.com/nianticlabs/simplerecon">
+          <i class="fa fa-github fa-4x"></i></a>
+    </div> -->
+
+    <div class="col-xs-2">
+      <a href="https://youtu.be/NpEaa2P7qZI" style="color:inherit;">
+        <a href="https://youtu.be/NpEaa2P7qZI">
+          <i class="fa-brands fa-youtube fa-4x"></i></a>
+    </div>
+
+    <div class="col-xs-4"></div>
+
+  </div>
+</div>
+
+<div class="container" style="text-align:center; padding:1rem">
+  <br>
+  <img src="resources/scan-explanation.png" alt="teaser.jpg" class="text-center" style="width: 100%; max-width: 1100px">
+</div>
+
+<div class="container">
+  <h3>Abstract</h3>
+  <hr/>
+  <p>
+    People are increasingly using their smartphones to 3D scan objects and landmarks. On one hand, users have intrinsic motivations to scan well, 
+    <i>i.e.</i> keeping the object in-frame while walking around it to achieve coverage. On the other, users can lose interest when filming inanimate objects, 
+    and feel rushed and uncertain of their progress when watching their step in public, seeking to avoid attention.
+  </p>
+  <p style="text-indent: 30px;">
+    We set out to guide users while reducing their stress and increasing engagement, by moving away from the on-screen feedback ubiquitous 
+    in existing products and apps meant for 3D scanning. Specifically, our novel interface gives users audio/haptic guidance while they 
+    scan statue-type landmarks in public. The interface results from a conceptual design process and a pilot study. Ultimately, we tested 
+    50 users in an ultra-high-traffic area of central London. Compared to regular on-screen feedback, users were more engaged, had unchanged 
+    stress levels, and produced better scans.
+  </p>
+
+  <br>
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <!-- <h4><u>Real Scenes</u></h4> -->
+    <div class="col-xs-12" >
+      <div class="video-container">
+        <!-- Note the embed tag! Copy over the video ID and swap out the placeholder one. -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NpEaa2P7qZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+
+  <h3>Approach</h3>
+  <hr/>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <h4 style="font-size:1.6em;"><u>Overview</u></h4>
+    </div>
+  </div>
+
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <img src="resources/overview.jpg" alt="overview.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px"><br/><br/><br/>
+    </div>
+  </div>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <div >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nunc dui, vulputate non pulvinar et, accumsan a 
+          eros. Aliquam faucibus eros sit amet molestie tempus. Vestibulum vel sem in neque rutrum scelerisque. Morbi 
+          porttitor neque nec risus condimentum, sodales molestie magna consectetur. Aliquam sagittis felis massa, in 
+          gravida turpis interdum at. Sed auctor nulla tortor, in mattis felis tincidunt ut. Pellentesque sapien dolor, 
+          dapibus nec cursus id, aliquet ac sapien. Aliquam tortor ex, cursus sit amet ex in, faucibus venenatis augue. 
+          Maecenas eget consectetur eros. Nullam vitae gravida sapien. Fusce id lorem justo. Fusce ut ultrices tortor.
+
+      </div>
+    </div>
+  </div>
+
+  <h3>Results</h3>
+  <hr/>
+
+
+  <br>
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4 style="font-size:1.6em;"><u>Qualitative Mesh Comparison</u></h4>
+    <!-- <h4><u>Real Scenes</u></h4> -->
+    <div class="col-xs-12" >
+      <video loop controls width="95%">
+        <source src="resources/JoinedMeshes.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4 style="font-size:1.6em;"><u>User Feedback</u></h4>
+    <!-- <h4><u>Real Scenes</u></h4> -->
+    <div class="col-xs-12" >
+      Placeholder
+    </div>
+  </div>
+
+  <h3>Resources</h3>
+  <hr/>
+  <div class="row" style="text-align: center">
+    <div class="col-xs-0 col-lg-0"></div>
+    <div class="col-xs-6 col-lg-6">
+      <h4>Paper</h4>
+      <a href="resources/DontLookNow_NoScreenScanning_Preprint_CHI24" style="color:#ff730">
+        <img src="resources/paper_thumb.png" alt="Paper" class="text-center" style="max-width:50%; border:0.15em solid;
+        border-radius:0.5em;"></a>
+    </div>
+    <div class="col-xs-6 col-lg-6">
+      <h4>Supplemental</h4>
+      <a href="resources/SimpleRecon_supp.pdf" style="color:#ff730;">
+        <img src="resources/supp_thumb.png" alt="Supplemental" class="text-center"
+             style="max-width:50%; border:0.15em solid;border-radius:0.5em;"></a>
+    </div>
+    <!-- <div class="col-xs-4 col-lg-4">
+      <h4>Code</h4>
+      <a href="https://github.com/nianticlabs/simplerecon" style="color:inherit;">
+        <img src="resources/github_repo.png" alt="github_repo.png" class="text-center"
+             style="max-width:70%; border:0em solid;border-radius:0.5em;"></a>
+    </div> -->
+
+    <div class="col-xs-0 col-lg-0"></div>
+  </div>
+    <h4 style="padding-top:0.5em">BibTeX</h4>
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+    <!-- @inproceedings{sayed2022simplerecon,
+      title={Don't Look Now! Audio/Haptic Guidance for 3D Scanning of Landmarks},
+      author={Sayed, Mohamed and Gibson, John and Watson, Jamie and Prisacariu, Victor and Firman, Michael and Godard, Cl{\'e}ment},
+      booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+      year={2022},
+    } -->
+        </pre>
+      </div>  
+    </div>
+
+
+
+  <h3>Acknowledgements</h3>
+  <hr/>
+  Special thanks to Diego Mazala, Charlie Houseago, Max Heimbrock, Kelly Cho, George Ash, Amy Duxbury, Jessica Nunn, Alex Morris, 
+  Summer Gu, Sen Chang, Keith Ito, Keir Rice, Thomas Hall, KP Papangelis, and Matthew Prestopino for their help with debugging, 
+  giving feedback, brainstorming, and/or organizing this project. Thanks to Vanessa Van Brummelen for her excellent, informative scanning 
+  illustration. Last but not least, thanks to all of our study participants and the reviewers for their valuable time and feedback.
+</div>
+
+<div class="container" style="padding-top:3rem; padding-bottom:3rem">
+  <p style="text-align:center">
+  &#169; This webpage was inspired from this
+  <a href="https://nianticlabs.github.io/simplerecon/">template</a>.
+  </p>
+</div>
+
+</body>
+</html> 
