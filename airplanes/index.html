@@ -2,13 +2,190 @@
 <html lang="en">
 
 <head>
-  <title>Two-view Geometry Scoring Without Correspondences </title>
+  <title>AirPlanes</title>
+  <meta name="description" content="AirPlanes: Accurate Plane Estimation via 3D-Consistent Embeddings">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+
+  <!--Facebook preview-->
+  <meta property="og:image" content="https://nianticlabs.github.io/airplanes/resources/social_card.png">
+  <!--   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="712">
+  <meta property="og:image:height" content="585"> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title" content="AirPlanes: Accurate Plane Estimation via 3D-Consistent Embeddings" />
+  <meta property="og:description"
+    content="AirPlanes: Accurate Plane Estimation via 3D-Consistent Embeddings, CVPR 2023" />
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AirPlanes: Accurate Plane Estimation via 3D-Consistent Embeddings, CVPR 2023" />
+  <meta name="twitter:description"
+    content="AirPlanes: Accurate Plane Estimation via 3D-Consistent Embeddings, CVPR 2023" />
+  <meta name="twitter:image" content="https://nianticlabs.github.io/airplanes/resources/social_card.png">
+
+  <script>
+    $(function () {
+      $("#qualContent").load("comparisons.html");
+    });
+  </script>
+
+
 </head>
 
 <body>
-  <main>
-    <h1>Coming soon!</h1>
-  </main>
+
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:0.1rem;">AirPlanes</h1>
+      <h2 style="margin-bottom:0.1rem;">Accurate Plane Estimation via 3D-Consistent Embeddings</h2>
+      <h4 style="font-size:1.4em;">CVPR 2024</h4>
+    </div>
+    <div class="row" style="text-align:center">
+      <div class="col-xs-0 col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <h4>
+          <a style="font-size:1.1em;"
+            href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=5pC7fw8AAAAJ">
+            <nobr>Jamie Watson<sup>1,3</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://filippoaleotti.github.io/website/">
+            <nobr>Filippo Aleotti<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://masayed.com/">
+            <nobr>Mohamed Sayed<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://qureshizawar.github.io/">
+            <nobr>Zawar Qureshi<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://www.oisin.info">
+            <nobr>Oisin Mac Aodha<sup>2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www0.cs.ucl.ac.uk/staff/g.brostow/">
+            <nobr>Gabriel Brostow<sup>1,3</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www.michaelfirman.co.uk/">
+            <nobr>Michael Firman<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://scholar.google.co.uk/citations?user=7wWsNNcAAAAJ&hl=en">
+            <nobr>Sara Vicente<sup>1</sup></nobr>
+          </a> &emsp;
+        </h4>
+        <sup>1</sup>Niantic&emsp;&emsp;
+        <sup>2</sup>University of Edinburgh&emsp;&emsp;
+        <sup>3</sup>University College London&emsp;&emsp;
+      </div>
+      <div class="col-xs-0 col-md-2"></div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-2">
+        <a href="">
+          <i class="fa-solid fa-file-pdf fa-4x"></i></a><br>
+      </div>
+      <div class="col-xs-2">
+        <a href="https://github.com/nianticlabs/airplanes">
+          <i class="fa fa-github fa-4x"></i></a><br>
+      </div>
+      <div class="col-xs-2">
+        <a href="">
+          <i class="fa-brands fa-youtube fa-4x"></i></a><br>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Abstract</h3>
+    <hr />
+    <p>
+      Extracting planes from a 3D scene is useful for downstream tasks in robotics and augmented reality.
+      In this paper we tackle the problem of estimating the planar surfaces in a scene from posed images.
+      Our first finding is that a surprisingly competitive baseline results from combining popular clustering
+      algorithms with recent improvements in 3D geometry estimation. However, such purely geometric methods
+      are understandably oblivious to plane semantics, which are crucial to discerning distinct planes.
+      To overcome this limitation, we propose a method that predicts multi-view consistent plane embeddings
+      that complement geometry when clustering points into planes. We show through extensive evaluation on the
+      ScanNetV2 dataset that our new method outperforms existing approaches and our strong geometric baseline
+      for the task of plane estimation.
+    </p>
+
+    <h3>Video</h3>
+    <hr />
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <video id="mainVideo" loop controls width="70%">
+          <source src="resources/VideoOverview.mp4" type="video/mp4">
+        </video> <br />
+        You might need to hit play!
+      </div>
+    </div>
+
+    <h3>Overview</h3>
+    <hr />
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <img src="resources/method_overview.png" alt="method_overview.png" class="text-center" style="width: 90%; max-width: 1000px; margin-top:
+          10px"><br /><br />
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          <p>
+            <b>Our method for 3D plane estimation.</b>
+            For each RGB keyframe we estimate per-pixel depth, planar probability and planar embedding.
+            We fuse the depths and planar probabilities into a TSDF and extract a mesh.
+            We then train a per-scene MLP to distill the per-pixel embeddings into 3D-consistent embeddings.
+            These are finally grouped via clustering into 3D planes.
+        </div>
+      </div>
+    </div>
+
+    <h3>Citation</h3>
+    <hr />
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+@inproceedings{watson-planes-2024,
+  title = {AirPlanes: Accurate Plane Estimation via {3D}-Consistent Embeddings},
+  author = {Watson, Jamie and Aleotti, Filippo and Sayed, Mohamed and Qureshi, Zawar and Mac Aodha, Oisin and Brostow, Gabriel and Firman, Michael and Vicente, Sara},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year = {2024},
+}
+        </pre>
+      </div>
+    </div>
+
+    <h3>Acknowledgements</h3>
+    <hr />
+    <p>We are extremely grateful to Saki
+      Shinoda, Jakub Powierza, and Stanimir Vichev
+      for their invaluable infrastructure support.</p>
+
+    <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+      <p style="text-align:center">
+        &#169; This webpage was in part inspired by this
+        <a href="https://github.com/monniert/project-webpage">template</a>.
+      </p>
+    </div>
+
 </body>
 
 </html>

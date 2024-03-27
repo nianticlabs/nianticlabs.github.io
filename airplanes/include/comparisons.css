@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    border-top: 1px solid #000;
+    padding-top: 1em;
+    font-size: 1.5em;
+}
+
+#header a:hover {
+    color: #FFF;
+    background-color: red;
+    cursor:pointer;
+}
+
+.globalmenu {
+    float: left;
+    display: inline-block;
+    text-align: left;
+}
+
+.localmenu {
+    clear: right;
+    float: right;
+    display: inline-block;
+    text-align: right;
+}
+
+.comparisontitle {
+    font-size: 1.4em
+}
+
+.sceneSelection {
+    padding: 0.2em;
+}
