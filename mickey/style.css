@@ -1,0 +1,160 @@
+body {
+  padding-top: 1rem; /* Change this to your desired padding */
+}
+
+  a {
+    color: #df471c;
+  }
+
+
+  hr {
+    margin-top: -1.2rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 0.3rem solid #df471c;
+  }
+  
+p {
+  text-align: justify;
+  /* font-size: 13px; */
+  font-size: 1.2em;
+}
+
+h3 {
+  /* margin-top: 3rem; */
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+h1 {
+  padding-top: 3rem;
+}
+
+
+.method-pill {
+  background-color: white;
+  color: #df471c;
+  border-radius: 10px; 
+  padding: 4px 10px;
+  margin: 0 3px;
+}
+
+.method-pill.active {
+  background-color: #4289c6;
+  color: white;
+  border-radius: 10px; 
+  padding: 5px 10px;
+}
+
+.method-pill:hover {
+  cursor: pointer;
+  background-color: #d6d6d69c;
+}
+
+.method-pill.active:hover {
+  background-color: #4289c6;
+}
+
+.pill:hover {
+  cursor: pointer;
+}
+
+.card {
+  margin-bottom: 5rem; /* Change this to your desired margin */
+}
+
+.scene-pill {
+  margin-right: 1rem; /* Adjust this value to your liking */
+}
+
+
+
+.carousel-indicators {
+  top:10%;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+}
+
+.carousel-caption {
+  top:0.5%;
+  box-shadow: none;
+  text-shadow: none;
+  color: rgb(99, 96, 96); 
+}
+
+.carousel-caption h5 {
+  font-size: 16px; /* Adjust this value to match the text size of your webpage */
+}
+
+.carousel-control-prev-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+  position: absolute;
+  /* left: 500%; */
+  /* transform: translateX(900%); */
+  top: 95%;
+  background-size: 2em 20em;
+}
+
+.carousel-control-next-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+  position: absolute;
+  /* right: 0; */
+  /* transform: translateX(-900%); */
+  top: 95%;
+  background-size: 2em 20em;
+}
+
+
+#carouselExampleCaptionsDepths .carousel-indicators {
+  top: 90%; /* Adjust as needed */
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+  background-size: 3em 20em;
+}
+
+#carouselExampleCaptionsDepths .carousel-caption {
+  top:60%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: none;
+  text-shadow: none;
+  color: rgb(99, 96, 96); 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-video {
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+  display: block;
+}
+
+.centered-video-depth {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+
+.card-text {
+  margin: 10px 0 10px 20px;; /* Adjust these values as needed */
+}
+
+.scaled-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 
+.big-carousel-control:hover {
+  background-color: rgb(197, 213, 210);
+  width: 50px; 
+} */

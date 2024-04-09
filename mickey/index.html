@@ -1,14 +1,418 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <title>Two-view Geometry Scoring Without Correspondences </title>
+  <title>Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences</title>
+  <meta name="description" content="MicKey">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+  <link rel="icon" href="resources/NianticLogo.png">
+
+  <!--Facebook preview-->
+  <meta property="og:title" content="Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences">
+  <meta property="og:description" content="Compute metric relative camera poses from only RGB images with MicKey. A CVPR 2024 paper.">
+  <meta property="og:url" content="https://nianticlabs.github.io/mickey/">
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences" />
+  <meta name="twitter:description" content="Compute metric relative camera poses from only RGB images with MicKey. A CVPR 2024 paper."/>
+  
+  <!--Style-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+  crossorigin="anonymous">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="js/app.js"></script>
+
 </head>
 
 <body>
-  <main>
-    <h1>Coming soon!</h1>
-  </main>
-</body>
+
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:-2.6rem;">Matching 2D Images in 3D:</h1>
+      <h1 style="margin-bottom:1.5rem;">Metric Relative Pose from Metric Correspondences</h1>
+      <h4 style="font-size:1.7em;">CVPR 2024 (Oral)</h4>
+    </div>
+
+    <div class="row" style="text-align:center; margin-top:1rem;">
+      <div class="col-xs-0 col-md-4"></div>
+      <div class="col-xs-12 col-md-16">
+        <h4>
+          <a style="font-size:1.1em; text-decoration: none;" href="https://scholar.google.com/citations?user=m_SPRGUAAAAJ&hl=en">
+            <nobr>Axel Barroso-Laguna<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em; text-decoration: none;" href="https://scholar.google.com/citations?user=l-zRzDEAAAAJ&hl=en">
+            <nobr>Sowmya Munukutla<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em; text-decoration: none;" href="https://www.robots.ox.ac.uk/~victor/">
+            <nobr>Victor Adrian Prisacariu<sup>1,2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em; text-decoration: none;" href="https://ebrach.github.io/">
+            <nobr>Eric Brachmann<sup>1</sup></nobr>
+          </a> 
+        </h4>
+        <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup>University of Oxford&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col-xs-0 col-md-2"></div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-3"></div>
+            <div class="col-2">
+        <a href="https://arxiv.com">
+          <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+      <div class="col-2">
+        <a href="https://github.com/nianticlabs/mickey">
+          <i class="fa fa-github fa-4x"></i></a>
+      </div>
+      <div class="col-2">
+        <a href="#citation">
+          <i class="fa fa-book fa-4x"></i></a>
+      </div>
+
+      <div class="col-3"></div>
+            
+    </div>
+  </div>
+
+
+  <div class="container">
+    
+    <video id="overviewVideo" autoplay loop muted style="max-width: 100%; height: auto; box-sizing: border-box;">
+      <source src="resources/carousel/s00589.mp4" type="video/mp4">
+    </video>
+
+
+    <h3 id="abstract_h3" style="text-align: center; margin-top:-3rem;">Abstract</h3>
+    <hr />
+    <p>
+      Given two images, we can estimate the relative camera pose between them by establishing image-to-image correspondences. 
+      Usually, correspondences are 2D-to-2D and the pose we estimate is defined only up to scale. 
+      Some applications, aiming at instant augmented reality anywhere, require scale-metric pose estimates, and hence,
+       they rely on external depth estimators to recover the scale.
+      We present MicKey, a keypoint matching pipeline that is able to predict metric correspondences in 3D camera space. 
+      By learning to match 3D coordinates across images, we are able to infer the metric relative pose without depth measurements. 
+      Depth measurements are also not required for training, nor are scene reconstructions or image overlap information.
+      MicKey is supervised only by pairs of images and their relative poses. 
+      MicKey achieves state-of-the-art performance on the Map-Free Relocalisation benchmark while requiring less supervision than competing approaches.
+    </p>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <img src="resources/teaser_mickey.png" class="text-center" style="width: 99%; margin-top:
+      20px; margin-bottom: -30px;"><br /><br /><br />
+      </div>
+    </div>
+
+  
+    <h3 style="text-align: center;" class="mt-5">Metric Relative Pose</h3>
+    <hr class="hr"/>    
+    <p>
+      We show examples of MicKey computing a metric relative pose on various scenes of the <a style="text-decoration: none;" href="https://research.nianticlabs.com/mapfree-reloc-benchmark" target="_blank">Map-free relocalization benchmark</a>. 
+      MicKey localizes the query image (blue camera) relative to the reference image (orange camera). 
+      MicKey does not require a scene map, e.g., a 3D point cloud computed from multiple images, but only the single reference image.  
+      We visualize 3D-3D correspondences and color-code them according to their position in the reference camera space.
+    </p>
+    <p>
+      Use the controls to switch between scenes. 
+    </p>
+    
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video class="w-100" autoplay loop muted>
+              <source src="resources/carousel/s00545.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption">
+            <h5>Scene ID: s00545</h5>
+        </div>
+        </div>
+        
+        <div class="carousel-item">
+          <video class="w-100" autoplay loop muted>
+            <source src="resources/carousel/s00567.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Scene ID: s00567</h5>
+          </div>
+        </div>
+
+
+        <div class="carousel-item">
+          <video class="w-100" autoplay loop muted>
+            <source src="resources/carousel/s00574.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Scene ID: s00574</h5>
+          </div>
+        </div>
+
+
+        <div class="carousel-item">
+          <video class="w-100" autoplay loop muted>
+            <source src="resources/carousel/s00586.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Scene ID: s00586</h5>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev big-carousel-control" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next big-carousel-control" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    <h3 style="text-align: center;" class="mt-5">
+          Extreme Viewpoint Cases
+    </h3>  
+    <hr class="hr"/>        
+    <p>      
+      We show examples comparing MicKey and SOTA matchers under extreme viewpoint changes.
+      MicKey directly predicts metric 3D-3D correspondences from RGB images and intrinsics, where
+      no additional information is required to recover the scale of the scene. 
+      In contrast, SOTA matchers are paired with DPT-KITTI depth estimates to scale their pose estimations. 
+    </p>
+    <p> 
+      We visualize the reference image (orange camera), the ground-truth position of the query image (green camera), and the different pose estimates.
+      We use Map-free validation scenes to have access to the ground-truth query poses.
+      Besides, for completeness, we also visualize a test scene (Test Scene ID: s00651) at the end that displays two opposing views. 
+      Note that ground-truth is not available for that scene.
+    </p>
+    <p>
+      Use the buttons to switch between methods and examples.
+    </p>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div class="text-center " style="margin-bottom: 1rem;">
+          <ul class="nav nav-pills center-pills">
+              <li class="method-pill active" data-value="MicKey" id="default-method-im-comp"
+                  onclick="selectCompImageExtremeView(this, activeScenePill_im_comp)"><a>MicKey</a></li>
+              <li class="method-pill" data-value="SG"
+                  onclick="selectCompImageExtremeView(this, activeScenePill_im_comp)"><a>SP+SG</a></li>
+              <li class="method-pill" data-value="LoFTR"
+                  onclick="selectCompImageExtremeView(this, activeScenePill_im_comp)"><a>LoFTR</a></li>
+              <li class="method-pill" data-value="RoMA"
+                  onclick="selectCompImageExtremeView(this, activeScenePill_im_comp)"><a>RoMa</a></li>                
+          </ul>
+      </div>
+  
+      <div class="image-container" style="width: 85%; height: 80%; margin-bottom: 1rem;" >
+          <img class="scaled-image" id="compIm_comp0" src="resources/comparison/s00468_MicKey.png">
+          <img class="scaled-image" id="compIm_comp1" src="resources/comparison/s00468_MicKey.png" hidden>
+      </div>
+  
+      <div class="pill-row scene-pills" id="scene-pills">
+          <span id="default-scene-im-comp" class="pill scene-pill" data-value="s00468" onclick="selectCompImageExtremeView(activeMethodPill_im_comp, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00468.png" alt="Scene ID: s00468" width="90">
+          </span>
+          <span class="pill scene-pill" data-value="s00476" onclick="selectCompImageExtremeView(activeMethodPill_im_comp, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00476.png" alt="Scene ID: s00476" width="90rem">
+          </span>
+          <span class="pill scene-pill" data-value="s00464" onclick="selectCompImageExtremeView(activeMethodPill_im_comp, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00464.png" alt="Scene ID: s00464" width="90">
+          </span>
+          <span class="pill scene-pill" data-value="s00651" onclick="selectCompImageExtremeView(activeMethodPill_im_comp, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00651.png" alt="Scene ID: s00651" width="90">
+          </span>
+      </div>
+    </div>
+  
+
+    <h3 style="text-align: center;" class="mt-5">Visualizing the Pose Confidence</h3>
+    <hr class="hr"/>    
+    <p>
+      Alongside the relative pose estimates, MicKey also provides the confidence of its predictions. 
+      This is important to distinguish solvable and unsolvable cases.
+      The pose confidence is computed as a form of soft-inlier counting. 
+      To visualize MicKey's confidence, we color-coded the 3D-3D correspondences according to their pose confidence.
+    </p>
+
+    <div id="carouselExampleCaptionsConfidences" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptionsConfidences" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptionsConfidences" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptionsConfidences" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptionsConfidences" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <video class="w-100" autoplay loop muted>
+            <source src="resources/confidence/s00538.mp4" type="video/mp4" />              
+        </video>
+          <div class="carousel-caption">
+            <h5>Scene ID: s00538</h5>
+          </div>
+        </div>
+
+
+        <div class="carousel-item">
+            <video class="w-100" autoplay loop muted>
+              <source src="resources/confidence/s00569.mp4" type="video/mp4" />              
+          </video>
+          <div class="carousel-caption">
+            <h5>Scene ID: s00569</h5>
+        </div>
+        </div>
+        
+        <div class="carousel-item">
+          <video class="w-100" autoplay loop muted>
+            <source src="resources/confidence/s00606.mp4" type="video/mp4" />            
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Scene ID: s00606</h5>
+          </div>
+        </div>
+
+        
+        <div class="carousel-item">
+          <video class="w-100" autoplay loop muted>
+            <source src="resources/confidence/s00528.mp4" type="video/mp4" />            
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Scene ID: s00528</h5>
+          </div>
+        </div>
+        </div>
+
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptionsConfidences" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptionsConfidences" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    <h3 style="text-align: center;" class="mt-5">Depth Maps and Keypoint Confidences</h3>
+    <hr class="hr"/>    
+    <p style="margin-bottom: 2rem;">
+      From a single input image, MicKey generates its depth map, the 2D keypoint offsets and scores, and the keypoint descriptors. 
+      See some examples, where we show the input image (left), the generated depth maps (center), and MicKey's keypoint scores (right).
+      MicKey's keypoint score and depth estimates are trained jointly alongside feature matching to optimize relative pose accuracy.
+      Hence, MicKey learns to assign high scores (green areas) to positions where the depth is accurate.      
+      Note that the depth and score maps have a resolution 14 times smaller than the input images due to MicKey's feature encoder. 
+    </p>
+
+    <div class="video-grid">
+      <video class="centered-video-depth" autoplay loop muted>
+          <source src="resources/depth_scores/s00547.mp4" type="video/mp4">
+      </video>
+      <video class="centered-video-depth" autoplay loop muted>
+          <source src="resources/depth_scores/s00572.mp4" type="video/mp4">
+      </video>
+      <video class="centered-video-depth" autoplay loop muted>
+          <source src="resources/depth_scores/s00577.mp4" type="video/mp4">
+      </video>
+      <video class="centered-video-depth" autoplay loop muted>
+          <source src="resources/depth_scores/s00570.mp4" type="video/mp4">
+      </video>
+  </div>
+
+
+    <h3 style="text-align: center;" class="mt-5">2D-2D Matches</h3>
+    <hr class="hr"/>    
+    <p>
+      We finally also show the 2D-2D correspondences returned by MicKey and different state-of-the-art matchers. 
+      In the visualization, on the left (blue box), we show MicKey's 2D-2D correspondences, and on the rigth the selected matcher.
+      The correspondences displayed in these examples are those that agree with the final estimated relative pose (inliers correspondences).  
+      We focus our examples on image pairs where the viewpoint changes are extreme.
+    </p>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div class="text-center " style="margin-bottom: 1rem;">
+          <ul class="nav nav-pills center-pills">
+              <li class="method-pill active" data-value="SG" id="default-method-im"
+                  onclick="selectCompImage(this, activeScenePill_im)"><a>SP+SG</a></li>
+              <li class="method-pill" data-value="LoFTR"
+                  onclick="selectCompImage(this, activeScenePill_im)"><a>LoFTR</a></li>
+              <li class="method-pill" data-value="RoMa"
+                  onclick="selectCompImage(this, activeScenePill_im)"><a>RoMa</a></li>                
+          </ul>
+      </div>
+  
+      <div class="image-container" style="margin-bottom: 1rem;" >
+          <img class="w-100" id="compIm0" src="resources/im_matches/s00556_SG.png">
+          <img class="w-100" id="compIm1" src="resources/im_matches/s00556_SG.png" hidden>
+      </div>
+  
+      <div class="pill-row scene-pills" id="scene-pills">
+          <span id="default-scene-im" class="pill scene-pill" data-value="s00556" onclick="selectCompImage(activeMethodPill_im, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00556.png" alt="Scene ID: s00556" width="90">
+          </span>
+          <span class="pill scene-pill" data-value="s00598" onclick="selectCompImage(activeMethodPill_im, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00598.png" alt="Scene ID: s00598" width="90rem">
+          </span>
+          <span class="pill scene-pill" data-value="s00523" onclick="selectCompImage(activeMethodPill_im, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00523.png" alt="Scene ID: s00523" width="90">
+          </span>
+          <span class="pill scene-pill" data-value="s00653" onclick="selectCompImage(activeMethodPill_im, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00653.png" alt="Scene ID: s00653" width="90">
+          </span>
+          <span class="pill scene-pill" data-value="s00606" onclick="selectCompImage(activeMethodPill_im, this)">
+              <img class="thumbnail-img" src="resources/thumbnails/s00606.png" alt="Scene ID: s00606" width="90">
+          </span>
+          <span class="pill scene-pill" data-value="s00528" onclick="selectCompImage(activeMethodPill_im, this)">
+            <img class="thumbnail-img" src="resources/thumbnails/s00528.png" alt="Scene ID: s00528" width="90">
+        </span>
+        <span class="pill scene-pill" data-value="s00569" onclick="selectCompImage(activeMethodPill_im, this)">
+          <img class="thumbnail-img" src="resources/thumbnails/s00569.png" alt="Scene ID: s00569" width="90">
+      </span>
+      </div>
+  </div>
+
+    <h3 id="citation">BibTeX</h3>
+    <hr />
+    <p>If you find this work useful for your research, please consider citing our paper:</p>
+    <div class="card">
+        <pre class="card-text">
+@inproceedings{barroso2024mickey,
+    title={Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences},
+    author={Barroso-Laguna, Axel and Munukutla, Sowmya and Prisacariu, Victor and Brachmann, Eric},
+    booktitle={CVPR},
+    year={2024}
+}</pre>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script> -->
+
+
+<script>
+  document.getElementById('overviewVideo').playbackRate = 1.5;
+</script>
 
 </html>
