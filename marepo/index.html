@@ -1,14 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="marepo">
+  <meta name="author" content="Shuai Chen and Tommaso Cavallari and Victor Adrian Prisacariu and Eric Brachmann">
+  <meta name="generator" content="Jekyll v4.1.1">
+  
   <title>Map-Relative Pose Regression for Visual Re-Localization</title>
+
+  <!-- Bootstrap core CSS -->
+  <link
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+    crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+
+  <style>
+  img { 
+    width: 100%; 
+  }
+  .paper-title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  .authors-list .name {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  .authors-list .affiliation {
+    font-size: 0.8em;
+  }
+  </style>
+
+  <script defer src="video.js"></script>
 </head>
 
-<body>
-  <main>
-    <h1>Coming soon!</h1>
-  </main>
-</body>
+<body style="width: 100%; max-width: 1024px; margin-right: auto; margin-left: auto;">
+<main role="main" class="container">
+  <div class="paper-title">
+  <!-- title -->
+  <br>
+  <div class="row">
+    <div class="col">
+      <h2 class="name text-center">Map-Relative Pose Regression for Visual Re-Localization</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- <br> -->
+      <p class="name text-center" style="color:grey">
+          CVPR 2024 (Highlight)
+      </p>
+      
+    </div>
+  </div>
+  </div>
 
+  <br>
+
+  <!-- Authors -->
+  <div class="authors-list">
+    <div class="row">
+      <div class="col">
+        <p class="name text-center">
+        <a href="https://chenusc11.github.io/"
+           target="_blank" >Shuai Chen</a>
+        </p>
+      </div>
+      <div class="col">
+        <p class="name text-center">
+        <a href="https://scholar.google.com/citations?user=r7osSm0AAAAJ&hl=en"
+           target="_blank" >Tommaso Cavallari</a>
+        </p>
+      </div>
+      <div class="col">
+        <p class="name text-center">
+        <a href="http://www.robots.ox.ac.uk/~victor/"
+           target="_blank" >Victor Prisacariu</a>
+        </p>
+      </div>
+      <div class="col">
+        <p class="name text-center">
+        <a href="https://ebrach.github.io/"
+           target="_blank">Eric Brachmann</a>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="affiliation text-center">
+          <a href="https://www.robots.ox.ac.uk/ActiveVision/People/index.html"> University of Oxford</a>
+        </p>
+      </div>
+      <div class="col">
+        <p class="affiliation text-center">
+          <a href="https://research.nianticlabs.com/"> Niantic Labs</a>
+        </p>
+      </div>
+      <div class="col">
+        <p class="affiliation text-center">
+          <a href="https://research.nianticlabs.com/people/"> Niantic Labs</a> & <a href="https://www.robots.ox.ac.uk/ActiveVision/People/index.html"> University of Oxford</a>
+        </p>
+      </div>
+      <div class="col">
+        <p class="affiliation text-center">
+          <a href="https://research.nianticlabs.com/people/"> Niantic Labs</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="col text-center">
+     <a class="btn btn-outline-primary" href="https://arxiv.org/abs/2404.09884" role="button">Paper</a>
+     <a class="btn btn-outline-primary" href="https://github.com/nianticlabs/marepo" role="button">Code</a>
+  </div>
+  <br>
+
+  <br>
+
+  <div class="row">
+    <div class="col" >
+
+      <img src="Fig1_marepo.png" alt="marepo" style="display: block; width: 100%" >
+      <br>
+
+
+      <h4>Abstract</h4>
+      <hr class="hr"/>
+      <p class="text-justify">
+        Pose regression networks predict the camera pose of a query image relative to a known environment.
+        Within this family of methods, absolute pose regression (APR) has recently shown promising accuracy in the range of a few centimeters in position error.
+        APR networks encode the scene geometry implicitly in their weights. To achieve high accuracy, they require vast amounts of training data that,
+        realistically, can only be created using novel view synthesis in a days-long process. This process has to be repeated for each new scene again and again.
+        We present a new approach to pose regression, map-relative pose regression (marepo), that satisfies the data hunger of the pose regression network in a scene-agnostic fashion.
+        We condition the pose regressor on a scene-specific map representation such that its pose predictions are relative to the scene map.
+        This allows us to train the pose regressor across hundreds of scenes to learn the generic relation between a scene-specific map representation and the camera pose.
+        Our map-relative pose regressor can be applied to new map representations immediately or after mere minutes of fine-tuning for the highest accuracy.
+        Our approach outperforms previous pose regression methods by far on two public datasets, indoor and outdoor.
+      </p>
+      <br>
+      <img src="Fig0_teaser.png" alt="teaser" style="display: block; margin: auto; width: 70%;">
+      <br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <h4>Comparison to APRs</h4>
+    <hr class="hr"/>
+      <div class="embed-responsive embed-responsive-16by9">
+      <video id="video1" width="100%" controls autoplay loop muted>
+          <source src="vid1_APR_indoor.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <video id="video2" width="100%" controls autoplay loop muted style="display:none;">
+          <source src="vid2_APR_outdoor.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      </div>
+      <button onclick="switchVideo('video1')">Indoor Video</button>
+      <button onclick="switchVideo('video2')">Outdoor Video</button>
+
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col">
+    <h4>Comparison to Structure-based Method ACE</h4>
+    <hr class="hr"/>
+      <div class="embed-responsive embed-responsive-16by9">
+      <video id="video3" width="100%" controls autoplay loop muted>
+          <source src="vid5_ACE_outdoor1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <video id="video4" width="100%" controls autoplay loop muted style="display:none;">
+          <source src="vid6_ACE_outdoor2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+        <video id="video5" width="100%" controls autoplay loop muted style="display:none;">
+          <source src="vid3_ACE_indoor1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <video id="video6" width="100%" controls autoplay loop muted style="display:none;">
+          <source src="vid4_ACE_indoor2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      </div>
+      <button onclick="switchVideo('video3')">Outdoor 1</button>
+      <button onclick="switchVideo('video4')">Outdoor 2</button>
+      <button onclick="switchVideo('video5')">Indoor 1</button>
+      <button onclick="switchVideo('video6')">Indoor 2</button>
+
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col">
+      <h4>BibTeX</h4>
+      <hr class="hr"/>
+      <pre><code class="codebox" id="bibtex">
+      @inproceedings{chen2024marepo,
+        title={Map-Relative Pose Regression for Visual Re-Localization},
+        author={Chen, Shuai and Cavallari, Tommaso and Prisacariu, Victor Adrian and Brachmann, Eric},
+        booktitle={CVPR},
+        year={2024}
+      }
+      </code></pre>
+      <button class="btn btn-outline-secondary" onclick="copyToClipboard('#bibtex')">Copy bibtex</button>
+    </div>
+  </div>
+
+</main>
+</body>
 </html>
