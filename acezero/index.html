@@ -1,10 +1,317 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ACE Zero</title>
-</head>
-<body>
-Coming soon...
-</body>
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer">
+
+        <!--Facebook preview-->
+        <meta property="og:image" content="https://nianticlabs.github.io/acezero/assets/social_card.png">
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://nianticlabs.github.io/acezero/"/>
+        <meta property="og:title" content="Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer"/>
+        <meta property="og:description" content="Niantic's ACE0 is a learning-based structure-from-motion approach that estimates camera parameters of sets of images by learning a multi-view consistent, implicit scene representation."/>
+
+        <!--Twitter preview-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer" />
+        <meta name="twitter:description" content="Niantic's ACE0 is a learning-based structure-from-motion approach that estimates camera parameters of sets of images by learning a multi-view consistent, implicit scene representation."/>
+        <meta name="twitter:image" content="https://nianticlabs.github.io/acezero/assets/social_card.png">
+
+        <title>ACE Zero</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+              crossorigin="anonymous">
+
+        <link href="style.css" rel="stylesheet">
+        <link rel="icon" href="assets/fav_icon.png">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="mt-3">Scene Coordinate Reconstruction</h1>
+                <h3 class="mb-4">Posing of Image Collections via Incremental Learning of a Relocalizer</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+                    <h6>
+                        <a href="https://ebrach.github.io/" target="_blank"><nobr>Eric Brachmann<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://scholar.google.com/citations?user=ASP-uu4AAAAJ&hl=en" target="_blank"><nobr>Jamie Wynn<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://chenusc11.github.io/" target="_blank"><nobr>Shuai Chen<sup>2</sup></nobr></a> &emsp;
+                        <a href="https://scholar.google.it/citations?user=r7osSm0AAAAJ&hl=en" target="_blank"><nobr>Tommaso Cavallari<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://amonszpart.github.io/" target="_blank"><nobr>Áron Monszpart<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://dantkz.github.io/about/" target="_blank"><nobr>Daniyar Turmukhambetov<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://www.robots.ox.ac.uk/~victor/" target="_blank"><nobr>Victor Adrian Prisacariu<sup>1,2</sup></nobr></a> &emsp;
+                    </h6>
+                    <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup><nobr>University of Oxford&nbsp;&nbsp;&nbsp;</nobr><br>
+                </div>
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-md-12 mt-3">
+                    <a href="" class="btn btn-secondary btn-sm disabled" target="_blank"><i class="fa-solid fa-file-pdf"></i>&nbsp;&nbsp;arXiv</a>
+                    <a href="https://www.youtube.com/watch?v=nEaQmlzS6iY" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-youtube"></i>&nbsp;&nbsp;Video</a>
+                    <a href="https://github.com/nianticlabs/acezero" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i>&nbsp;&nbsp;Code (soon)</a>
+                    <a href="#citation" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file"></i>&nbsp;&nbsp;BibTeX</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+
+                    <video class="w-100 mt-4" autoplay loop muted>
+                        <source src="assets/header_lo.mp4" type="video/mp4" />
+                    </video>
+
+                    <h3 class="mt-3">Abstract</h3>
+                    <hr/>
+                    <p>
+                        We address the task of estimating camera parameters from a set of images depicting a scene.
+                        Popular feature-based structure-from-motion (SfM) tools solve this task by incremental
+                        reconstruction: they repeat triangulation of sparse 3D points and registration of more camera
+                        views to the sparse point cloud. We re-interpret incremental structure-from-motion as an
+                        iterated application and refinement of a visual relocalizer, that is, of a method that registers
+                        new views to the current state of the reconstruction. This perspective allows us to investigate
+                        alternative visual relocalizers that are not rooted in local feature matching. We show that
+                        scene coordinate regression, a learning-based relocalization approach, allows us to build
+                        implicit, neural scene representations from unposed images. Different from other learning-based
+                        reconstruction methods, we do not require pose priors nor sequential inputs, and we optimize
+                        efficiently over thousands of images. Our method, <b>ACE0 (ACE Zero)</b>, estimates camera poses to an accuracy
+                        comparable to feature-based SfM, as demonstrated by novel view synthesis.
+                    </p>
+
+
+                    <h3 class="mt-5" id="overview"> Watch a 3-minute overview video</h3>
+                    <hr class="hr"/>
+                    <video class="w-100 mb-4" controls preload="none" poster="assets/overview_video_poster.jpg">
+                        <source src="https://storage.googleapis.com/niantic-lon-static/research/acezero/acezero_quick_tour_web.mp4" type="video/mp4" />
+                    </video>
+
+                    <h3 class="mt-5">Watch <b>ACE Zero</b> reconstruct some scenes</h3>
+                    <hr class="hr"/>
+                    <p>
+                        We visualize the reconstruction process of ACE Zero for some of the scenes form
+                        our experiments. During each reconstruction, we show the point cloud extracted from the current
+                        implicit scene model. At the end of each reconstruction, we switch to a point cloud extracted
+                        from a Nerfacto model trained on top of the ACE Zero camera poses.
+                        <b>Use the controls to switch between scenes.</b>
+                    </p>
+
+                    <div id="aceZeroResults" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            <button type="button" data-bs-target="#aceZeroResults" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_mip360_garden_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Mip-NeRF 360 - Garden</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_7scenes_fire_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>7-Scenes - Fire</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_t2_Ignatius_videos.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Tanks and Temples - Ignatius</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_mip360_bonsai_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Mip-NeRF 360 - Bonsai</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_7scenes_pumpkin_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>7-Scenes - Pumpkin</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_t2_Truck_videos.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Tanks and Temples - Truck</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_mip360_counter_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Mip-NeRF 360 - Counter</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_7scenes_chess_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>7-Scenes - Chess</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_t2_Family_videos.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Tanks and Temples - Family</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/carousel/lo_mip360_kitchen_joined.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Mip-NeRF 360 - Kitchen</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aceZeroResults" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aceZeroResults" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+
+                    <h3 class="mt-5">How does <b>ACE Zero</b> work?</h3>
+                    <hr class="hr"/>
+
+                    <img class="w-100 mb-3" src="assets/method.png" alt=""/>
+                    <p>
+                        <b>Top left:</b> We loop between learning a reconstruction from the current set of images and
+                        poses ("neural mapping"), and estimating poses of more images ("relocalization").
+                        <b>Top right</b> During the mapping stage, we train an
+                        <a href="https://nianticlabs.github.io/ace/" target="_blank">ACE</a> scene coordinate regression network as
+                        our scene representation. Camera poses of the last relocalization round and camera calibration
+                        parameters are refined during this process. We visualize scene coordinates by mapping XYZ to the
+                        RGB cube. <b>Bottom:</b> In the relocalization stage, we re-estimate poses of images using the
+                        scene coordinate regression network, including images that were previously not registered to the
+                        reconstruction. If the registration of an image succeeds, it will be used in the next iteration
+                        of the mapping stage; otherwise it will not.
+                    </p>
+
+                    <h3 class="mt-5"><b>ACE Zero</b> poses allow for novel view synthesis</h3>
+                    <hr class="hr"/>
+                    <p>
+                        We showcase the robustness of ACE Zero, and the accuracy of its estimated poses, via novel view
+                        synthesis. In particular, we reconstruct a scene using ACE Zero, and then train a
+                        <a href="https://docs.nerf.studio/" target="_blank">Nerfacto</a> model
+                        on top of the final camera pose estimates. Novel view synthesis is also the foundation of the
+                        quantitative benchmark in our paper.
+                    </p>
+                    <video class="w-100 mb-4" autoplay loop muted>
+                        <source src="assets/lo_nerfacto.mp4" type="video/mp4" />
+                    </video>
+
+                    <h3 class="mt-5"><b>ACE Zero</b> compares favourably to previous SfM approaches</h3>
+                    <hr class="hr"/>
+                    <p>
+                        We compare ACE Zero to previous learning-based SfM approaches via novel
+                        view synthesis. <a href="https://nope-nerf.active.vision/" target="_blank">NoPe-NeRF</a> needs a
+                        long time to converge. We run it on 200 images per scene which
+                        still takes two days per scene. <a href="https://dust3r.europe.naverlabs.com/" target="_blank">DUSt3R</a> quickly runs out of GPU memory. We were able to run it with
+                        50 frames per scene on a A100 GPU (40GB). <b>ACE Zero</b> can process multiple
+                        thousand images per scene efficiently, in terms of time and memory.
+                    </p>
+                    <video class="w-100 mb-5" autoplay loop muted>
+                        <source src="assets/lo_vs_sfm.mp4" type="video/mp4" />
+                    </video>
+                    <p>
+                        ACE Zero estimates poses very similar to <a href="https://colmap.github.io/index.html" target="_blank">COLMAP</a>. We show COLMAP poses (for Tanks & Temples and Mip-NeRF 360) and KinectFusion (for 7-Scenes) in <span style="color: orange">orange</span> and ACE Zero poses in <span style="color: lawngreen;">green</span>.
+                    </p>
+                    <video class="w-100 mb-5" autoplay loop muted>
+                        <source src="assets/lo_vs_colmap_poses.mp4" type="video/mp4" />
+                    </video>
+                    <p>
+                        ACE Zero offers attractive running times while enabling view synthesis quality comparable to COLMAP.
+                    </p>
+                    <video class="w-100" autoplay loop muted>
+                        <source src="assets/lo_vs_colmap.mp4" type="video/mp4" />
+                    </video>
+
+                    <h3 class="mt-5" id="citation">Please consider citing our paper</h3>
+                    <hr class="hr"/>
+                    <pre class="w-100 user-select-all font-monospace border border-secondary bg-dark mb-5 p-2">
+@inproceedings{brachmann2024acezero,
+    title={Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer},
+    author={Brachmann, Eric and Wynn, Jamie and Chen, Shuai and Cavallari, Tommaso and Monszpart, {\'{A}}ron and Turmukhambetov, Daniyar and Prisacariu, Victor Adrian},
+    booktitle={arXiv},
+    year={2024},
+}</pre>
+
+                </div>
+                <div class="col-sm-0 col-md-2"></div>
+
+
+
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script> -->
+
+        <script>
+            window.addEventListener('load', videoScroll);
+            window.addEventListener('scroll', videoScroll);
+
+            function videoScroll() {
+
+                if ( document.querySelectorAll('video[autoplay]').length > 0) {
+
+                    var windowHeight = window.innerHeight,
+                    videoEl = document.querySelectorAll('video[autoplay]');
+
+                    for (var i = 0; i < videoEl.length; i++) {
+
+                        var thisVideoEl = videoEl[i],
+                            videoHeight = thisVideoEl.clientHeight,
+                            videoClientRect = thisVideoEl.getBoundingClientRect().top;
+
+                        if ( (thisVideoEl.parentNode.classList.contains('carousel-item') && thisVideoEl.parentNode.classList.contains('active')) || (thisVideoEl.parentNode.nodeName === 'DIV' && !thisVideoEl.parentNode.classList.contains('carousel-item') )) {
+                            if ( videoClientRect <= ( (windowHeight) - (videoHeight*.8) ) && videoClientRect >= ( 0 - ( videoHeight*.2 ) ) ) {
+                                thisVideoEl.play();
+                            } else {
+                                thisVideoEl.pause();
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
 </html>
