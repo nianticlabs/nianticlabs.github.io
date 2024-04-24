@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Map-free Visual Relocalization: Metric Pose Relative to a Single Image</title>
+  <meta name="description" content="MicKey">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+  <link rel="icon" href="assets/images/NianticLogo.png">
+
+  <!--Facebook preview-->
+  <meta property="og:title" content="Map-free Visual Relocalization: Metric Pose Relative to a Single Image">
+  <meta property="og:description" content="Map-free Visual Relocalization Competition. An ECCV'24 workshop.">
+  <meta property="og:url" content="https://TODO">
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Map-free Visual Relocalization: Metric Pose Relative to a Single Image" />
+  <meta name="twitter:description" content="Map-free Visual Relocalization Competition. An ECCV'24 workshop."/>
+  
+  <!--Style-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+  crossorigin="anonymous">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="js/app.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container" style="text-align:center; padding:2rem 15px">
+      <div class="row" style="text-align:center">
+        <h1 style="margin-bottom:-1.0rem;">Map-free Visual Relocalization:</h1>
+        <h1 style="margin-bottom:1.3rem;">Metric Pose Relative to a Single Image</h1>
+        <h4 style="font-size:1.7em;">ECCV 2024 Workshop</h4>
+      </div>
+  
+      <div class="row" style="text-align:center; margin-top:1rem;">
+        <div class="col-xs-0 col-md-4"></div>
+        <div class="col-xs-12 col-md-16">
+          <h4>
+            <a style="font-size:1.1em; text-decoration: none;" href="https://research.nianticlabs.com/mapfree-reloc-benchmark/leaderboard">
+              <nobr>Leaderboard</nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em; text-decoration: none;" href="https://research.nianticlabs.com/mapfree-reloc-benchmark/dataset">
+              <nobr>Dataset</nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em; text-decoration: none;" href="https://github.com/nianticlabs/map-free-reloc#bar_chart-evaluate-your-method">
+              <nobr>Benchmark</nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em; text-decoration: none;" href="https://research.nianticlabs.com/mapfree-reloc-benchmark/submit">
+              <nobr>Submit</nobr>
+            </a>  &emsp;
+            <a style="font-size:1.1em; text-decoration: none;" href="TODO">
+                <nobr>Call for papers</nobr>
+              </a> 
+          </h4>
+        </div>
+        <div class="col-xs-0 col-md-2"></div>
+      </div>
+    </div>
+  
+
+<div class="container">
+    <img src="assets/images/teaser.png" style="display: block; margin: auto; width: 80%; margin-bottom: 1rem; margin-top: -1rem;"/>
+
+    <p>
+        The Map-free Visual Relocalization workshop investigates topics related to metric visual relocalization relative to a single reference image instead of relative to a map.
+        This problem is of major importance to many higher level applications, such as Augmented/Mixed Reality, SLAM and 3D reconstruction.
+        It is important now, because both industry and academia are debating whether and how to build HD-maps of the world for those tasks. Our community is working to reduce the need for such maps in the first place.
+    </p>
+    <p>    
+        We host the first Map-free Visual Relocalization Challenge 2024 competition with two tracks: map-free metric relative pose from a single image to a single image (proposed by Arnold et al. in ECCV 2022) 
+        and from a query sequence to a single image (new).
+        While the former is a more challenging and thus interesting research topic, 
+        the latter represents a more realistic relocalization scenario, where the system making the queries may fuse information from query images and tracking poses over a short amount of time and baseline.    
+        We invite papers to be submitted to the workshop.
+    </p>
+
+    <h3>About the Challenge</h3>
+    <hr />
+    <p>    
+        TODO
+    </p>
+
+    <h3>Important Dates</h3>
+    <hr />
+    <ul>
+    <li><strong>Challenge submission deadline:</strong> August 15, 2024</li>
+    <li><strong>Challenge submission short description deadline:</strong> August 20, 2024</li>
+    <li><strong>Paper deadline:</strong> August 15, 2024</li>
+    <li><strong>Workshop date (ECCV'24):</strong> TBD</li>
+    </ul>
+
+    <h3>Schedule</h3>
+    <hr />
+    TODO
+
+    <h3>Speakers</h3>
+    <hr />
+
+    <div class="speaker" style="margin-bottom:3rem;">
+        <img src="assets/speakers/torsten.jpg" alt="Speaker Image" class="speaker-image">
+        <div class="speaker-info">
+            <h4 class="speaker-name"><a href="https://tsattler.github.io/" style="text-decoration: none;">Torsten Sattle</a>, CTU Prague</h4>
+            <p class="speaker-bio">Talk title?</p>
+            <p class="speaker-bio">
+                Torsten Sattle is a Senior Researcher at CTU Prague.
+    Before, he was a tenured associate professor at Chalmers University of Technology.
+    He received a PhD in Computer Science from RWTH Aachen University, Germany, in 2014.
+    He was a post-doctoral and senior researcher at ETH Zurich Dec. '13 - Dec. '18.
+    Torsten has worked on feature-based localization methods (PAMI’17), 
+    long-term localization (CVPR’18, '21, ICCV’19, ECCV’20), 
+    localization on mobile devices (ECCV’14, IJRR’20), 
+    and using semantic scene understanding for localization (CVPR’18, ECCV’18, ICCV’19). 
+    Torsten has co-organized tutorials and workshops at CVPR, ECCV, and ICCV, and was / is an area chair for CVPR, ICCV, 3DV, GCPR, ICRA, and ECCV. 
+    He was a general chair for 3DV’22, and a program chair for DAGM GCPR’20 and ECCV’24.
+            </p>
+        </div>
+    </div>
+
+    <div class="speaker" style="margin-bottom:3rem;">
+        <img src="assets/speakers/simon.webp" alt="Speaker Image" class="speaker-image">
+        <div class="speaker-info">
+            <h4 class="speaker-name"><a href="https://research.google/people/simon-lynen/" style="text-decoration: none;">Simon Lynen</a>, Google</h4>
+            <p class="speaker-bio">Talk title?</p>
+            <p class="speaker-bio"> Simon Lynen is a tech lead manager at Google Zurich.
+                His group focuses on providing high precision mobile-phone localization as part of the Visual Positioning Service (VPS). Devices with Google’s augmented reality capabilities can leverage VPS to enable global scale location-aware experiences such as ARCore CloudAnchors and GoogleMaps LiveView. Simon earned a doctorate at the Autonomous Systems Lab at ETH Zurich with a focus on visual navigation and localization algorithms for robotics, mobile devices, and autonomous cars. As visiting researcher, Simon contributed central pieces to core algorithms of Google’s ARCore. In talks at TEDx Zurich, ThinkingDigital, Zurich Minds, and scientific conferences, Simon has provided a behind-the-scenes view of the ARCore technology and its latest capabilities.</p>
+        </div>
+    </div>
+
+    <div class="speaker" style="margin-bottom:3rem;">
+        <img src="assets/speakers/shubham.jpg" alt="Speaker Image" class="speaker-image">
+        <div class="speaker-info">
+            <h4 class="speaker-name"><a href="https://shubhtuls.github.io/" style="text-decoration: none;">Shubham Tulsiani</a>, Carnegie Mellon University</h4>
+            <p class="speaker-bio">Talk title?</p>
+            <p class="speaker-bio">Shubham Tulsiani is an Assistant Professor at Carnegie Mellon University in the Robotics Institute.
+                Prior to this, he was a research scientist at Facebook AI Research (FAIR).
+                He received a PhD. in Computer Science from UC Berkeley in 2018 where his work was supported by the Berkeley Fellowship.
+                He is interested in building perception systems that can infer the spatial and physical structure of the world they observe.
+                He was the recipient of the Best Student Paper Award in CVPR 2015.</p>
+        </div>
+    </div>
+
+    <div class="speaker" style="margin-bottom:3rem;">
+        <img src="assets/speakers/jakob.jpeg" alt="Speaker Image" class="speaker-image">
+        <div class="speaker-info">
+            <h4 class="speaker-name"><a href="https://jakobengel.github.io/" style="text-decoration: none;">Jakob Engel</a>, Meta</h4>
+            <p class="speaker-bio">Talk title?</p>
+            In 2016 Jakob Engel joined the Surreal Vision team at Oculus Research in Redmond, working on the future of 3D-enabled Machine Perception.
+            He did their Bachelor and Master at TU Munich (2009 and 2012), followed up with a PhD at the Computer Vision Group there, headed by Professor Daniel Cremers. He spent 6 months as Intern at Intel Research with Vladlen Koltun, was a google PhD fellow, and worked with SIEMENS within the Software Campus Initiative. His PhD was about direct visual SLAM, 3D reconstruction, sensor fusion and some cool flying quadrocopter stuff - mostly he developed LSD-SLAM and DSO.
+        </div>
+    </div>
+
+
+    <div class="speaker" style="margin-bottom:3rem;">
+        <img src="assets/organizers/victor.jpg" alt="Speaker Image" class="speaker-image">
+        <div class="speaker-info">
+            <h4 class="speaker-name"><a href="https://www.robots.ox.ac.uk/~victor/" style="text-decoration: none;">Victor Adrian Prisacariu</a>, Niantic and Oxford University</h4>
+            <p class="speaker-bio">Talk title?</p>
+            <p class="speaker-bio">
+                He received the Graduate degree (first class hons.) in computer engineering from Gheorghe Asachi Technical University, Iasi, Romania, in 2008, and the D.Phil. degree in engineering science from the University of Oxford in 2012.
+    He continued there as an EPSRC prize Postdoctoral Researcher, a Dyson Senior Research Fellow, and now an Associate Professor since 2017.
+    He also co-founded 6D.ai, whose SDK used standard built-in smartphone cameras to build a cloud-based, crowdsourced 3D semantic real-time world map. 6D.ai was acquired by Niantic in 2020. He is now Chief Scientist with Niantic.
+            </p>
+        </div>
+    </div>
+
+
+    <h3>Organizers</h3>
+    <hr />
+
+    <a href="https://amonszpart.github.io/">
+    <div class="item">
+        <img class="headshot" src="assets/organizers/aron.png"/>
+        <span class="name">Aron Monszpart</span>
+        <span class="affiliation">Niantic</span>
+    </div>
+    </a>
+    <a href="https://ebrach.github.io/">
+    <div class="item">
+        <img class="headshot" src="assets/organizers/eric.jpeg"/>
+        <span class="name">Eric Brachmann</span>
+        <span class="affiliation">Niantic</span>
+    </div>
+    </a>
+    <a href="https://scholar.google.com/citations?user=bSxMRawAAAAJ">
+    <div class="item">
+        <img class="headshot" src="assets/organizers/filipe.jpeg"/>
+        <span class="name">Filipe Gaspar</span>
+        <span class="affiliation">Niantic</span>
+    </div>
+    </a>
+    <a href="https://guiggh.github.io/">
+    <div class="item">
+        <img class="headshot" src="assets/organizers/guillermo.jpeg"/>
+        <span class="name">Guillermo Garcia-Hernando</span>
+        <span class="affiliation">Niantic</span>
+    </div>
+    </a>
+    <a href="https://scholar.google.com/citations?user=m_SPRGUAAAAJ&hl=en">
+    <div class="item">
+        <img class="headshot" src="assets/organizers/axel.jpeg"/>
+        <span class="name">Axel Barroso-Laguna</span>
+        <span class="affiliation">Niantic</span>
+    </div>
+    </a>
+    <a href="http://web4.cs.ucl.ac.uk/staff/g.brostow/">
+    <div class="item">
+        <img class="headshot" src="assets/organizers/gabriel.jpeg"/>
+        <span class="name">Gabriel J. Brostow</span>
+        <span class="affiliation">Niantic, University College London</span>
+    </div>
+    </a>
+    <a href="https://www.robots.ox.ac.uk/~victor/">
+        <div class="item">
+            <img class="headshot" src="assets/organizers/victor.jpg"/>
+            <span class="name">Victor Adrian Prisacariu</span>
+            <span class="affiliation">Niantic, University of Oxford</span>
+        </div>
+        </a>    
+
+
+    <h3>Sponsors</h3>
+    <hr />
+    <img alt="Niantic" src="assets/images/NianticLogo-Large.png" style="height: 100px;" />
+
+</div>
+
+<footer  style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<section>
+<p style="text-align: center;">&copy; 2024 Map-free Challenge organizers</p>
+<p style="text-align: center;">
+    <a href="https://github.com/nianticlabs/map-free-reloc">GitHub</a> <a href="mailto: map-free-eccv24@TODO.com">E-mail</a>
+</p>
+</section>
+</footer>
+
+</body>
+</html>
