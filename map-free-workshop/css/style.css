@@ -1,0 +1,133 @@
+body {
+    padding-top: 1rem; /* Change this to your desired padding */
+}
+  
+a {
+    color: #df471c;
+    text-decoration: none;
+}
+
+hr {
+    margin-top: -1.2rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 0.3rem solid #df471c;
+}
+
+p {
+    text-align: justify;
+    /* font-size: 13px; */
+    font-size: 1.2em;
+}
+
+h3 {
+    /* margin-top: 3rem; */
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    padding-top: 1rem;
+}
+
+.speaker {
+    display: flex;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.speaker-info {
+    flex-grow: 1;
+}
+
+.speaker-name {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.speaker-bio {
+    margin: 0;
+}
+
+.speaker-image {
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5%; /* This will make the image a circle */
+}
+
+
+/* Footer */
+footer {
+    background: #f0f0f0;
+    border-top: thin solid #e0e0e0;
+    margin-top: 2em;
+    padding: 1em 0;
+    box-shadow: 0 100vh 0 100vh #f0f0f0;
+    text-align: center;
+}
+
+footer section p {
+    font-size: 0.8em;
+}
+
+footer a {
+    margin-right: 1em;
+}
+
+footer a:last-child {
+    margin-right: 0;
+}
+
+/* Mugshots */
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 158px;
+}
+
+div.item::after {
+    content: "";
+}
+
+div.item {
+    font-size: 0;
+}
+
+div.item * {
+    font-size: initial;
+}
+
+div.mugshot-item {
+    display: inline-block;
+    text-align: center;
+    max-width: 170px;
+}
+
+.headshot {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: bold;
+    display: block;
+}
+
+.affiliation {
+    display: block;
+}
+
+hr {
+    margin-top: -1.4rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 0.2rem solid #8a2205;
+}
+
+.talk-title {
+    text-decoration: underline;
+}
