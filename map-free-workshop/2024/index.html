@@ -114,27 +114,45 @@
         </div> <!-- col -->
     </div> <!-- row -->
 
+    <!-- --------------------------------------------------------------------------------------- -->
+
     <div class="row">
         <div class="col-12">
             <h3>About the Challenge</h3>
             <hr/>
             <p>
-                Based on feedback from senior community members, we plan to extend the Map-free
-                benchmark for the challenge with a sequence-based scenario.
+                We are extending the Map-free benchmark for the challenge with a sequence-based
+                scenario, based on feedback from senior community members.
                 Therefore, the challenge will consist of two tracks:<br/>
-                &nbsp;&nbsp; 1. The original, single query frame task published with the paper;<br/>
-                &nbsp;&nbsp; 2. A new track with multiple (~8) query frames and their metric
-                tracking poses. <br/>
-                The second track is motivated by the observation that a burst of images, cap turing
+                &nbsp;&nbsp; 1. The original, <strong>single query frame</strong> to single map
+                frame task published
+                with the <a
+                    href="https://storage.googleapis.com/niantic-lon-static/research/map-free-reloc/MapFreeReloc-ECCV22-paper.pdf"
+                    target="_blank">ECCV 2022 paper</a>;<br/>
+                &nbsp;&nbsp; 2. A new task with <strong>multiple query frames</strong> (9) and their
+                mobile device provided, metric tracking poses.
+            </p>
+            <h5> 1. Single query frame to a single "map" frame</h5>
+            <p>
+                To recap, the task in the first track consists of from a single query image predict
+                the
+                metric relative pose to a single map image without any further auxiliary
+                information.
+            </p>
+            <h5> 2. Multiple query frames (9) to a single "map" frame</h5>
+            <p>
+                The second track is motivated by the observation that a burst of images, capturing
                 small motion, can be recorded while staying true to the map-free scenario: No
-                significant data capture or exploration of the environment.
+                significant data capture or exploration of the environment.<br/>
                 At the same time, the burst of images allows the application of multi-frame depth
                 estimation and contains strong hints about the scene scale from the IMU sensor on
-                device.
+                device.<br/>
                 We are creating a second version of the test set and leaderboard for this track.
             </p>
         </div> <!-- col -->
     </div> <!-- row -->
+
+    <!-- --------------------------------------------------------------------------------------- -->
 
     <div class="row">
         <div class="col-12">
@@ -143,25 +161,39 @@
             <ul>
                 <li>
                     <strong>Challenge start:</strong>
-                    TBD (~7<sup>th</sup> May, 2024) <!--August 15, 2024-->
+                    TBD (~16<sup>th</sup> May, 2024)
                 </li>
                 <li>
                     <strong>Challenge submission deadline:</strong>
-                    TBD<!--August 15, 2024-->
+                    TBD (~2<sup>nd</sup> August, 2024)
                 </li>
                 <li>
                     <strong>Challenge submission short description deadline:</strong>
-                    TBD <!--August 20, 2024-->
+                    TBD (~16<sup>th</sup> August, 2024)
                 </li>
                 <li>
-                    <strong>Paper deadline:</strong>
-                    TBD<!--August 15, 2024-->
+                    <strong>Paper camera-ready deadline:</strong>
+                    TBD (~23<sup>rd</sup> August, 2024)
                 </li>
                 <li>
                     <strong>Workshop date (ECCV'24):</strong>
                     29<sup>th</sup> or 30<sup>th</sup> September, 2024 (TBD)
                 </li>
             </ul>
+        </div> <!-- col -->
+    </div> <!-- row -->
+
+    <!-- --------------------------------------------------------------------------------------- -->
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Prizes</h3>
+            <hr/>
+            <p>
+                $3000 in prizes will be awarded to the top submissions in each of the two tracks. <br />
+                Niantic is also seeking partners from the growing community to co-fund and co-judge
+                the prizes.
+            </p>
         </div> <!-- col -->
     </div> <!-- row -->
 
