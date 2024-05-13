@@ -586,6 +586,7 @@
 <script>
 function copyLinkToClipboard(link_name) {
     let parts = window.location.href.split('#');
+    console.log('parts: ' + parts);
     let url = parts[parts.length - 2] + '#' + link_name;
     navigator.clipboard.writeText(url);
 }
