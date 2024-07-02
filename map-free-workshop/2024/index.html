@@ -28,7 +28,8 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous"/>
 
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"
+          onerror="this.onerror=null;this.href='https://storage.cloud.google.com/res-recon-experiments/aron-workshop24/20240702/style.css';"/>
     <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
 
     <!--<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>-->
@@ -128,7 +129,7 @@
               --></a><!--
             --></small><!--
          --></h3>
-            <hr/>
+            <hr />
             <p>
                 We are extending the Map-free benchmark for the challenge with a sequence-based
                 scenario, based on feedback from senior community members.
@@ -163,15 +164,14 @@
 
     <div class="row">
         <div class="col-12">
-            <h4 style="padding-bottom: 0.7rem;"><a id="Contact_form">Stay up to date!</a><!--
+            <h4><a id="Contact_form">Stay up to date!</a><!--
             --><small><!--
-              --><a
-                    onclick="copyLinkToClipboard('Contact_form');"
+              --><a onclick="copyLinkToClipboard('Contact_form');"
                     style="cursor: pointer;"> 🔗<!--
               --></a><!--
             --></small><!--
          --></h4>
-            <hr/>
+            <hr />
             <p>Please register your interest
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScMKpHBn_fPrFRSpVp9BtiH3DbNRM4pj_8kjWVx-M1SQFrt0w/viewform?usp=sf_link">
                     here</a>, so we can keep you notified about news and updates!</p>
@@ -190,12 +190,13 @@
               --></a><!--
             --></small><!--
          --></h3>
-            <hr/>
+            <hr />
             <dl class="row">
                 <dt class="col-5">Challenge start</dt>
-                <dd class="col-7">21<sup>th</sup> May, 2024</dd>
+                <dd class="col-7">21<sup>st</sup> May, 2024</dd>
 
-                <dt class="col-5">Workshop paper and extended abstracts submission deadline</dt>
+                <dt class="col-5"><span class="workshop-paper">Workshop paper</span> and
+                    <span class="extended-abstract">extended abstracts</span> submission deadline</dt>
                 <dd class="col-7">2<sup>nd</sup> August, 2024</dd>
 
                 <dt class="col-5">Workshop paper and extended abstracts camera-ready deadline</dt>
@@ -204,7 +205,7 @@
                 <dt class="col-5">Challenge end</dt>
                 <dd class="col-7">23<sup>rd</sup> August, 2024</dd>
 
-                <dt class="col-5">Challenge submission public description deadline</dt>
+                <dt class="col-5">Challenge submission method description deadline</dt>
                 <dd class="col-7">27<sup>th</sup> August, 2024</dd>
 
                 <dt class="col-5">Challenge winners announcement</dt>
@@ -227,15 +228,14 @@
         <div class="col-12">
             <h3><a id="Prizes">Prizes</a><!--
             --><small><!--
-              --><a
-                    onclick="copyLinkToClipboard('Prizes');"
+              --><a onclick="copyLinkToClipboard('Prizes');"
                     style="cursor: pointer;"> 🔗<!--
               --></a><!--
             --></small><!--
          --></h3>
-            <hr/>
+            <hr />
             <p>
-                $3000 in prizes will be awarded to the top submissions in each of the two tracks. <br />
+                $6000 in prizes will be divided between the top submissions of the two tracks. <br />
                 Niantic is also seeking partners from the growing community to co-fund and co-judge
                 the prizes.
             </p>
@@ -246,64 +246,376 @@
 
     <div class="row">
         <div class="col-12">
-            <h3><a id="Papers_Extended_abstracts">Papers & Extended abstracts</a><!--
+            <h3><a id="Call_for_Papers">Call for Papers: ECCV Map-free Visual Relocalization
+                Workshop & Challenge 2024</a><!--
             --><small><!--
-              --><a
-                    onclick="copyLinkToClipboard('Papers_Extended_abstracts');"
+              --><a onclick="copyLinkToClipboard('Call_for_Papers');"
+                    style="cursor: pointer;"> 🔗<!--
+                    --></a><!--
+                  --></small><!--
+               --></h3>
+            <hr />
+            <p>We invite submissions of <span class="workshop-paper">workshop papers</span> and <span class="extended-abstract">extended abstracts</span> to the ECCV Map-free Visual Relocalization
+                Workshop & Challenge 2024.
+                This workshop aims to advance the field of visual relocalization without relying on pre-built maps.
+                The following topics and related areas are of interest:</p>
+                <div class="row">
+                    <div class="col-6">
+                        <ul>
+                            <li>visual relocalization,</li>
+                            <li>feature-matching,</li>
+                            <li>pose regression (absolute and relative),</li>
+                            <li>depth estimation (monocular and multi-frame),</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>scale estimation,</li>
+                            <li>confidence and uncertainty,</li>
+                            <li>structure-from-motion</li>
+                        </ul>
+                    </div>
+                </div>
+            <p>Paper and extended abstract submission deadline: 2<sup>nd</sup> August, 2024. See also <a href="#Important_Dates">Important Dates</a>.<br/>
+            Sign up through the <a href="#Contact_form">contact form</a> to stay up to date with future announcements.</p>
+        </div> <!-- col -->
+    </div> <!-- row -->
+
+    <div class="row">
+        <div class="col-12">
+            <h4><a id="Submission_Guidelines">Submission Guidelines</a><!--
+            --><small><!--
+              --><a onclick="copyLinkToClipboard('Submission_Guidelines');"
                     style="cursor: pointer;"> 🔗<!--
               --></a><!--
             --></small><!--
-         --></h3>
-            <hr/>
-            <p>
-                We invite the submission of extended abstracts and full papers on the following and
-                related topics:
-            </p>
+         --></h4>
+            <hr />
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-4">
+                    <h5>
+                        1. <span id="Workshop_paper" class="workshop-paper">Workshop paper</span><!--
+                     --><small><!--
+                         --><a onclick="copyLinkToClipboard('Workshop_paper');"
+                               style="cursor: pointer;"> 🔗<!--
+                         --></a><!--
+                     --></small><!--
+                 --></h5>
                     <ul>
-                        <li>visual relocalization,</li>
-                        <li>feature-matching,</li>
-                        <li>pose regression (absolute and relative),</li>
-                        <li>depth estimation (monocular and multi-frame),</li>
+                        <li>Deadline: 2<sup>nd</sup> August, 2024.</li>
+                        <li>Follow the ECCV <a href="https://eccv.ecva.net/Conferences/2024/SubmissionPolicies">paper
+                            submission policies</a>.
+                        </li>
+                        <li>Use the same format as for submissions to the main conference: <a
+                                href="https://www.overleaf.com/read/hdqrbdhdnmrv#d6ad4f">official ECCV 2024 template</a>.
+                        </li>
+                        <li>Accepted <span class="workshop-paper">workshop papers</span> should follow the ECCV paper chairs' guidance. <br/> They will most likely
+                            communicate to use the <a
+                                    href="https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi">official
+                                Springer ECCV 2024 template</a> for the camera-ready version.
+                        </li>
+                        <li>Evaluation on the <a
+                                href="https://research.nianticlabs.com/mapfree-reloc-benchmark/dataset">Niantic Map-free
+                            Relocalization Dataset</a> is encouraged but not required.
+                        </li>
+                        <li>Submission through this workshop's custom CMT portal (details to be announced).</li>
+                        <li> Please submit at the workshop <a
+                                href="https://cmt3.research.microsoft.com/MAPFREEWorkshop2024/Submission/Index">CMT
+                            submission portal</a>.<br />
+                            Use the "Workshop paper track" category under "Subject areas".
+                        </li>
                     </ul>
                 </div>
-                <div class="col-6">
+                <div class="col-md-4">
+                    <h5>2. <span id="Extended_abstract" class="extended-abstract">Extended abstract</span><!--
+                     --><small><!--
+                         --><a onclick="copyLinkToClipboard('Extended_abstract');"
+                               style="cursor: pointer;"> 🔗<!--
+                         --></a><!--
+                     --></small><!--
+                 --></h5>
                     <ul>
-                        <li>scale estimation,</li>
-                        <li>confidence and uncertainty,</li>
-                        <li>structure-from-motion</li>
+                        <li>Deadline: 2<sup>nd</sup> August, 2024.</li>
+                        <li>
+                            <span class="extended-abstract">Extended abstracts</span> are not subject to the ECCV rules, so they can be in any template (<em>e.g.</em>,
+                            <a href="https://www.overleaf.com/read/hdqrbdhdnmrv#d6ad4f">ECCV</a> or
+                            <a href="https://github.com/cvpr-org/author-kit/releases">CVPR</a>).
+                        </li>
+                        <li>The maximum length of <span class="extended-abstract">extended abstracts</span> <b>excluding</b> references is the equivalent
+                            of 4 pages in the official <a href="https://github.com/cvpr-org/author-kit/releases">CVPR</a> 2024 format.<br/>
+                            <!--See "Dual submissions" in the <a
+                                    href="https://eccv.ecva.net/Conferences/2024/SubmissionPolicies">ECCV 2024
+                                Submission Policies</a>.
+                            <blockquote class="blockquote border-start border-secondary ps-3 my-3">
+                                <p class="fs-6"><em>A publication, for the purposes of this policy, is defined to be a
+                                    written work longer than <b>four pages (excluding references)</b> that was submitted
+                                    for review by peers for either acceptance or rejection, and, after review, was
+                                    accepted.</em></p>
+                            </blockquote>-->
+                        </li>
+                        <li><span class="extended-abstract">Extended abstracts</span> can include already published or accepted works, as they are meant to
+                            provide authors with the possibility to showcase their ongoing research in areas relevant to
+                            map-free relocalization.
+                        </li>
+                        <li><span class="extended-abstract">Extended abstracts</span> will not be included in the conference proceedings, do not count as paper
+                            publication.
+                        </li>
+                        <li>However, the authors of accepted <span class="extended-abstract">extended abstracts</span> will get the opportunity to present
+                            their work at the workshop poster session.
+                        </li>
+                        <li>Examples of <span class="extended-abstract">extended abstracts</span>:<a
+                                href="https://sites.google.com/view/hands2022/program?authuser=0#h.pxvdrcd9tn4j">
+                            Accepted Extended Abstracts from HANDS @ ECCV 2022
+                        </a>. <em>E.g.</em>, <br/>
+                            Scalable High-fidelity 3D Hand Shape Reconstruction via Graph Frequency Decomposition.
+                            Tianyu Luan, Jingjing Meng, Junsong Yuan.
+                            [<a href="https://drive.google.com/file/d/1JExKfdkt4NaJ7PHS-5Pg1LbXuYyEJd08/view?usp=sharing">pdf</a>]
+                        </li>
+                        <li>
+                            Please submit at the workshop <a
+                                href="https://cmt3.research.microsoft.com/MAPFREEWorkshop2024/Submission/Index">CMT
+                            submission portal</a>. <br />
+                            Use the "Extended abstract track" category under "Subject areas".
+                        </li>
                     </ul>
                 </div>
-            </div>
-            <p>
-                Details on the submission process to be announced. <br/>
-                Paper submission deadline: 2<sup>nd</sup> August, 2024 <br/>
-                Sign up through the <a href="#Contact_form">contact form</a> to stay up to date.
-            </p>
-
-            <h5 class="h5">Papers</h5>
-            <p>
-                Submitted full papers and extended abstracts should follow the official
-                <a href="https://eccv.ecva.net/Conferences/2024/SubmissionPolicies">ECCV 2024
-                    Submission Policies</a> and use the <a
-                    href="https://www.overleaf.com/read/hdqrbdhdnmrv#d6ad4f">official ECCV 2024
-                template</a> for their submission. <br/> <br />
-                Accepted papers should follow the ECCV paper chairs' guidance. <br/>
-                They will most likely communicate to use the <a
-                    href="https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi">official
-                Springer ECCV 2024 template</a> for the camera-ready version.<br/>
-            </p>
-
-            <h5 class="h5">Extended abstracts</h5>
-            <p>
-                Extended abstracts are not subject to the ECCV rules, so they can be in any template
-                but, as a rule to not be considered a publication in terms of double submission
-                policies, they should be shorter than the equivalent of 4 pages in CVPR template
-                format.
-            </p>
+                <div class="col-md-4">
+                    <h5>3. <span id="Method_description" class="method-description">Method description</span>
+                        (~technical report)<!--
+                     --><small><!--
+                         --><a onclick="copyLinkToClipboard('Method_description');"
+                               style="cursor: pointer;"> 🔗<!--
+                         --></a><!--
+                     --></small><!--
+                 --></h5>
+                    <ul>
+                        <li>
+                            Challenge leaderboard entry deadline: 23<sup>rd</sup> August, 2024.
+                        </li>
+                        <li>
+                            <span class="method-description">Method description</span> publication deadline:
+                            27<sup>th</sup> August, 2024.
+                        </li>
+                        <li>
+                            The minimum required for valid competition entries.
+                        </li>
+                        <li>
+                            Accepted <span class="workshop-paper">workshop papers</span> or accepted
+                            <span class="extended-abstract">extended abstracts</span> also qualify as valid method
+                            descriptions, no need to submit more.
+                        </li>
+                        <li>
+                            Must be publicly available on ArXiv or equivalent. <br/>
+                            If there are delays with an ArXiv publication, please send us proof of pending submission.
+                        </li>
+                        <li>
+                            This can be a non-peer reviewed paper in any format (<em>e.g.</em>,
+                            <a href="https://www.overleaf.com/read/hdqrbdhdnmrv#d6ad4f">ECCV</a> or
+                            <a href="https://github.com/cvpr-org/author-kit/releases">CVPR</a>).
+                            The method description has to contain sufficient detail for replication of the leaderboard
+                            entry's results.
+                        </li>
+                    </ul>
+                </div> <!-- col -->
+            </div> <!-- row submission types -->
         </div> <!-- col -->
-    </div> <!-- row -->
+    </div> <!-- row submission guidelines -->
+
+    <div class="row">
+        <div class="col-12">
+            <h4><a id="Competition_Requirements">Competition Requirements</a><!--
+            --><small><!--
+            --><a onclick="copyLinkToClipboard('Competition_Requirements');"
+                  style="cursor: pointer;"> 🔗<!--
+            --></a><!--
+          --></small><!--
+         --></h4>
+            <hr />
+            <ul>
+                <li>Entries must be submitted within the competition time limits:
+                    21<sup>st</sup> May, 2024 - 23<sup>rd</sup> August, 2024.
+                </li>
+                <li>Entries in the leaderboard that were submitted <b>before</b> the 21<sup>st</sup> May, 2024 will <b>not</b>
+                    be considered as participating in the 2024 Map-free Visual Relocalization challenge.
+                </li>
+                <li>Entries in the leaderboard must point to a valid <span class="method-description">method description</span> (as outlined above under "<b>3.
+                    Method description</b>").
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h4><a id="FAQ">FAQ</a><!--
+            --><small><!--
+            --><a onclick="copyLinkToClipboard('FAQ');"
+                  style="cursor: pointer;"> 🔗<!--
+            --></a><!--
+          --></small><!--
+         --></h4>
+            <hr />
+
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="accordion-button-emoji-container">🏆✅<span class="mx-2"></span>🧾❌</span>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <dl>
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>Q</b>:</dt>
+                                    <dd class="col">
+                                        I would like to participate in the challenge, and I don't have a paper
+                                        yet for my method. What should I do?
+                                    </dd>
+                                </div>
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>A</b>:</dt>
+                                    <dd class="col">
+                                        You should submit a <span class="workshop-paper">workshop paper</span>
+                                        or an <span class="extended-abstract">extended abstract</span> to the workshop,
+                                        or make a <span class="method-description">method description</span> available on ArXiv.<br/>
+                                        Upon acceptance, your leaderboard entry should refer to the accepted submission.
+                                        <br/>
+                                        If rejected, make sure to have a <span class="method-description">method description</span>
+                                        available on ArXiv to keep your leaderboard entry valid. <br/>
+                                        Make sure your leaderboard entry dates between the competition start and end
+                                        dates (21<sup>st</sup> May, 2024 - 23<sup>rd</sup> August, 2024).
+                                    </dd>
+                                </div> <!-- row -->
+                            </dl>
+                        </div>
+                    </div>
+                </div> <!-- accordion-item -->
+
+                <!-- --------------- -->
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <span class="accordion-button-emoji-container">🏆✅<span class="mx-2"></span>🧾✅</span>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            <dl>
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>Q</b>:</dt>
+                                    <dd class="col">I would like to participate in the challenge with a method I have
+                                        already published. What should I do?
+                                    </dd>
+                                </div>
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>A</b>:</dt>
+                                    <dd class="col">
+                                        Make sure your leaderboard entry dates between the competition start and end
+                                        dates (21<sup>st</sup> May, 2024 - 23<sup>rd</sup> August, 2024). <br/>
+                                        Your leaderboard entry should point to a valid method description, <em>e.g.</em>,
+                                        the link to your published paper.
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div> <!-- accordion-item -->
+
+                <!-- --------------- -->
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <span class="accordion-button-emoji-container">🏆✅<span class="mx-2"></span>🧾✅➕🏗️</span>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree">
+                        <!--data-bs-parent="#faqAccordion"-->
+                        <div class="accordion-body">
+                            <dl>
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>Q</b>:</dt>
+                                    <dd class="col">
+                                        I would like to participate in the challenge with a method I have already
+                                        published, but I've made some changes to the method specific to the challenge.
+                                        What should I do?
+                                    </dd>
+                                </div> <!-- row Q -->
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>A</b>:</dt>
+                                    <dd class="col">You probably should submit an
+                                        <span class="extended-abstract">extended abstract</span> to the workshop or
+                                        make a <span class="method-description">method description</span> available on
+                                        ArXiv, citing your original work. <br/>
+                                        Resubmitting your original work without sufficient amount of differences
+                                        compared to the already submitted or published version might violate the ECCV
+                                        <a href="https://eccv.ecva.net/Conferences/2024/SubmissionPolicies">policy</a>
+                                        regarding dual submissions. <br/>
+                                        Make sure your leaderboard entry dates between the competition start and end
+                                        dates (21<sup>st</sup> May, 2024 - 23<sup>rd</sup> August, 2024). <br />
+                                        Your leaderboard entry should refer to a valid method description,
+                                        <em>e.g.</em>, the title of the <span class="extended-abstract">extended abstract</span>
+                                        or the link to your <span class="method-description">method description</span> on ArXiv.
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div> <!-- accordion-body -->
+                    </div> <!-- accordion-collapse -->
+                </div> <!-- accordion-item -->
+
+                <!-- --------------- -->
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            <span class="accordion-button-emoji-container">🏆❌<span class="mx-2"></span>🧾🏗️</span>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour">
+                        <div class="accordion-body">
+                            <dl>
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>Q</b>:</dt>
+                                    <dd class="col">
+                                        I don't want to participate in the challenge, but I have a paper that has not
+                                        been published anywhere else and is not currently under review anywhere. <br />
+                                        Can I submit it to the workshop?
+                                    </dd>
+                                </div> <!-- row Q -->
+                                <div class="row">
+                                    <dt class="col-auto" style="width: 20px;"><b>A</b>:</dt>
+                                    <dd class="col">Yes! Submit it as a <span class="workshop-paper">workshop paper</span>
+                                        on the workshop
+                                        <a href="https://cmt3.research.microsoft.com/MAPFREEWorkshop2024/Submission/Index">
+                                            CMT</a>. <br/>
+                                        We encourage you to update the paper with evaluation on the
+                                        <a href="https://research.nianticlabs.com/mapfree-reloc-benchmark/dataset">
+                                            Niantic Map-free Relocalization Dataset</a>, but it is not required. <br />
+                                        If your method can solve the task in the challenge, you should consider also
+                                        submitting it to the leaderboard.
+                                    </dd>
+                                </div> <!-- row A -->
+                            </dl>
+                        </div> <!-- accordion-body -->
+                    </div> <!-- accordion-collapse -->
+                </div> <!-- accordion-item -->
+            </div> <!-- accordion -->
+        </div> <!-- col -->
+    </div> <!-- row FAQ -->
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <p>We look forward to your contributions advancing the field of map-free visual
+                relocalization.<br /> For any questions or clarifications, please contact the workshop
+                organizers.</p>
+        </div>
+    </div>
 
     <!-- --------------------------------------------------------------------------------------- -->
     <div class="row">
@@ -316,7 +628,7 @@
               --></a><!--
             --></small><!--
          --></h3>
-            <hr/>
+            <hr />
 
             <div class="speaker" style="margin-bottom:3rem;">
                 <img src="assets/speakers/jakob.jpeg" alt="Speaker Image" class="speaker-image"/>
@@ -488,7 +800,7 @@
               --></a><!--
             --></small><!--
          --></h3>
-            <hr/>
+            <hr />
             <table class="table">
                 <thead>
                 <tr>
@@ -558,7 +870,7 @@
               --></a><!--
             --></small><!--
          --></h3>
-            <hr/>
+            <hr />
         </div> <!-- col -->
     </div>
 
@@ -638,7 +950,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <h3><a id="Sponsors">Sponsors</a></h3>
-            <hr/>
+            <hr />
             <div class="row justify-content-center">
                 <div class="col d-flex justify-content-center">
                     <img alt="Niantic" src="assets/images/NianticLogo-Large.png"
@@ -666,7 +978,7 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
-<script>
+<script type="text/javascript">
 function copyLinkToClipboard(link_name) {
     let parts = window.location.href.split('#');
     let url = (1 < parts.length)
@@ -675,6 +987,59 @@ function copyLinkToClipboard(link_name) {
     navigator.clipboard.writeText(url);
     window.location.href = url;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.workshop-paper').forEach(el => {
+        el.classList.add('badge', 'rounded-pill', 'bg-success');
+
+        // Create a new anchor element
+        const link = document.createElement('a');
+
+        // Set the href attribute
+        link.href = '#Workshop_paper';
+
+        // Wrap the original element with the new link
+        el.parentNode.insertBefore(link, el);
+        link.appendChild(el);
+
+        // Add text-decoration-none to the link
+        link.classList.add('text-decoration-none');
+    });
+
+    document.querySelectorAll('.extended-abstract').forEach(el => {
+        el.classList.add('badge', 'rounded-pill', 'bg-warning');
+
+        // Create a new anchor element
+        const link = document.createElement('a');
+
+        // Set the href attribute
+        link.href = '#Extended_abstract';
+
+        // Wrap the original element with the new link
+        el.parentNode.insertBefore(link, el);
+        link.appendChild(el);
+
+        // Add text-decoration-none to the link
+        link.classList.add('text-decoration-none');
+    });
+
+    document.querySelectorAll('.method-description').forEach(el => {
+        el.classList.add('badge', 'rounded-pill', 'bg-info');
+
+        // Create a new anchor element
+        const link = document.createElement('a');
+
+        // Set the href attribute
+        link.href = '#Method_description';
+
+        // Wrap the original element with the new link
+        el.parentNode.insertBefore(link, el);
+        link.appendChild(el);
+
+        // Add text-decoration-none to the link
+        link.classList.add('text-decoration-none');
+    });
+});
 </script>
 
 </body>

@@ -7,28 +7,25 @@ a {
     text-decoration: none;
 }
 
-hr {
-    margin-top: -1.2rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 0.3rem solid #df471c;
-}
-
 p {
     text-align: justify;
     /* font-size: 13px; */
-    font-size: 1.2em;
+    font-size: calc(1.1* var(--bs-body-font-size));
 }
 
-h3 {
-    /* margin-top: 3rem; */
-    padding-top: 3rem;
-    padding-bottom: 1rem;
+li {
+    font-size: calc(1.1* var(--bs-body-font-size));
 }
 
-h1 {
-    padding-top: 1rem;
+h1 h2 h3 h4 h5 h6 {
+    margin-top: 1rem;
 }
+
+/*h3 {*/
+/*    !* margin-top: 3rem; *!*/
+/*    padding-top: 3rem;*/
+/*    padding-bottom: 1rem;*/
+/*}*/
 
 .speaker {
     display: flex;
@@ -122,7 +119,7 @@ div.mugshot-item {
 }
 
 hr {
-    margin-top: -1.4rem;
+    margin-top: -0.5rem;
     margin-bottom: 1rem;
     border: 0;
     border-top: 0.2rem solid #8a2205;
@@ -131,3 +128,14 @@ hr {
 .talk-title {
     text-decoration: underline;
 }
+
+.accordion-button-emoji-container {
+    font-size: 1.5rem;
+    line-height: 1;
+    min-width: 7ch;
+    margin-top: 0.2rem;
+}
+
+.workshop-paper {}
+.extended-abstract {}
+.method-description {}
