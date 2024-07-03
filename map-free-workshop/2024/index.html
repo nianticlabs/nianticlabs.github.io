@@ -192,31 +192,83 @@
          --></h3>
             <hr />
             <dl class="row">
-                <dt class="col-5">Challenge start</dt>
-                <dd class="col-7">21<sup>st</sup> May, 2024</dd>
+                <dt class="col-5">
+                    Challenge start
+                </dt>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">21<sup>st</sup> May, 2024</li>
+                        <li class="list-inline-item"><span id="day-start-countdown" class="mx-4"></span></li>
+                    </ul>
+                </dd>
 
-                <dt class="col-5"><span class="workshop-paper">Workshop paper</span> and
-                    <span class="extended-abstract">extended abstracts</span> submission deadline</dt>
-                <dd class="col-7">2<sup>nd</sup> August, 2024</dd>
+                <dt class="col-5">
+                    <span class="workshop-paper">Workshop paper</span> and
+                    <span class="extended-abstract">extended abstracts</span> submission deadline
+                </dt>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">&nbsp;2<sup>nd</sup> August, 2024</li>
+                        <li class="list-inline-item"><span id="day-paper-submit-countdown"></span></li>
+                    </ul>
+                </dd>
 
-                <dt class="col-5">Workshop paper and extended abstracts camera-ready deadline</dt>
-                <dd class="col-7">15<sup>th</sup> August, 2024</dd>
+                <dt class="col-5">
+                    <span class="workshop-paper">Workshop paper</span> and
+                    <span class="extended-abstract">extended abstracts</span> camera-ready deadline
+                </dt>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">15<sup>th</sup> August, 2024</li>
+                        <li class="list-inline-item"><span id="day-paper-camera-ready-countdown"></span></li>
+                    </ul>
+                </dd>
 
                 <dt class="col-5">Challenge end</dt>
-                <dd class="col-7">23<sup>rd</sup> August, 2024</dd>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">23<sup>rd</sup> August, 2024</li>
+                        <li class="list-inline-item"><span id="day-end-countdown"></span></li>
+                    </ul>
+                </dd>
 
-                <dt class="col-5">Challenge submission method description deadline</dt>
-                <dd class="col-7">27<sup>th</sup> August, 2024</dd>
+                <dt class="col-5">
+                    Challenge submission <span class="method-description">method description</span> deadline
+                </dt>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">27<sup>th</sup> August, 2024</li>
+                        <li class="list-inline-item"><span id="day-describe-countdown"></span></li>
+                    </ul>
+                </dd>
 
                 <dt class="col-5">Challenge winners announcement</dt>
-                <dd class="col-7">30<sup>th</sup> August, 2024</dd>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">30<sup>th</sup> August, 2024</li>
+                        <li class="list-inline-item"><span id="day-winners-countdown"></span></li>
+                    </ul>
+                </dd>
 
                 <dt class="col-5">Workshop date (ECCV'24)</dt>
-                <dd class="col-7">30<sup>th</sup> September, 2024, AM<br/>
-                    <small><a
-                            href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20240930T070000Z/20240930T110000Z&text=Map-free%20Visual%20Relocalization%20Workshop%20at%20ECCV%202024%20&location=Allianz+MiCo+%E2%80%A2+Milano+Convention+Centre&details=Map-free%20Visual%20Relocalization%20Workshop%20at%20ECCV%202024%0Ahttps%3A%2F%2Fnianticlabs.github.io%2Fmap-free-workshop%2F2024%20%0A%0AGoogle%20Maps%3A%20https%3A%2F%2Fmaps.app.goo.gl%2Fif1ooCakSvhiEPmR7"
-                            target="_blank">
-                        [Add to Google Calendar]</a></small>
+                <dd class="col-7">
+                    <ul class="list-inline">
+                        <!-- note: if you change the date, please change it at the bottom <script> as well -->
+                        <li class="list-inline-item">30<sup>th</sup> September, 2024, AM</li>
+                        <li class="list-inline-item"><span id="day-workshop-countdown" class="mb-4"></span></li>
+                    </ul>
+                    <div style="margin-top: -1.1rem;">
+                        <small>
+                            <a href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20240930T070000Z/20240930T110000Z&text=Map-free%20Visual%20Relocalization%20Workshop%20at%20ECCV%202024%20&location=Allianz+MiCo+%E2%80%A2+Milano+Convention+Centre&details=Map-free%20Visual%20Relocalization%20Workshop%20at%20ECCV%202024%0Ahttps%3A%2F%2Fnianticlabs.github.io%2Fmap-free-workshop%2F2024%20%0A%0AGoogle%20Maps%3A%20https%3A%2F%2Fmaps.app.goo.gl%2Fif1ooCakSvhiEPmR7"
+                               target="_blank">[Add to Google Calendar]</a>
+                        </small>
+                    </div>
                 </dd>
             </dl>
         </div> <!-- col -->
@@ -318,11 +370,10 @@
                                 href="https://research.nianticlabs.com/mapfree-reloc-benchmark/dataset">Niantic Map-free
                             Relocalization Dataset</a> is encouraged but not required.
                         </li>
-                        <li>Submission through this workshop's custom CMT portal (details to be announced).</li>
                         <li> Please submit at the workshop <a
                                 href="https://cmt3.research.microsoft.com/MAPFREEWorkshop2024/Submission/Index">CMT
                             submission portal</a>.<br />
-                            Use the "Workshop paper track" category under "Subject areas".
+                            Use the "<span class="fw-light">Workshop paper track</span>" category under "Subject areas".
                         </li>
                     </ul>
                 </div>
@@ -375,7 +426,7 @@
                             Please submit at the workshop <a
                                 href="https://cmt3.research.microsoft.com/MAPFREEWorkshop2024/Submission/Index">CMT
                             submission portal</a>. <br />
-                            Use the "Extended abstract track" category under "Subject areas".
+                            Use the "<span class="fw-light">Extended abstract track</span>" category under "Subject areas".
                         </li>
                     </ul>
                 </div>
@@ -401,8 +452,8 @@
                         </li>
                         <li>
                             Accepted <span class="workshop-paper">workshop papers</span> or accepted
-                            <span class="extended-abstract">extended abstracts</span> also qualify as valid method
-                            descriptions, no need to submit more.
+                            <span class="extended-abstract">extended abstracts</span> also qualify as
+                            valid <span class="method-description">method descriptions</span>, no need to submit more.
                         </li>
                         <li>
                             Must be publicly available on ArXiv or equivalent. <br/>
@@ -412,8 +463,8 @@
                             This can be a non-peer reviewed paper in any format (<em>e.g.</em>,
                             <a href="https://www.overleaf.com/read/hdqrbdhdnmrv#d6ad4f">ECCV</a> or
                             <a href="https://github.com/cvpr-org/author-kit/releases">CVPR</a>).
-                            The method description has to contain sufficient detail for replication of the leaderboard
-                            entry's results.
+                            The <span class="method-description">method description</span> has to contain sufficient
+                            detail for replication of the leaderboard entry's results.
                         </li>
                     </ul>
                 </div> <!-- col -->
@@ -438,8 +489,10 @@
                 <li>Entries in the leaderboard that were submitted <b>before</b> the 21<sup>st</sup> May, 2024 will <b>not</b>
                     be considered as participating in the 2024 Map-free Visual Relocalization challenge.
                 </li>
-                <li>Entries in the leaderboard must point to a valid <span class="method-description">method description</span> (as outlined above under "<b>3.
-                    Method description</b>").
+                <li>
+                    Entries in the leaderboard must point to a valid
+                    <span class="method-description">method description</span>
+                    (as outlined above under "<b>3. <span class="method-description">Method description</span></b>").
                 </li>
             </ul>
         </div>
@@ -978,6 +1031,8 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
 function copyLinkToClipboard(link_name) {
     let parts = window.location.href.split('#');
@@ -988,57 +1043,78 @@ function copyLinkToClipboard(link_name) {
     window.location.href = url;
 }
 
+function setSubmissionTypePill(clsName, pillColor, linkName) {
+    document.querySelectorAll(clsName).forEach(el => {
+        el.classList.add('badge', 'rounded-pill', pillColor);
+
+        // Create a new anchor element
+        const link = document.createElement('a');
+
+        // Set the href attribute
+        link.href = linkName;
+
+        // Wrap the original element with the new link
+        el.parentNode.insertBefore(link, el);
+        link.appendChild(el);
+
+        // Add text-decoration-none to the link
+        link.classList.add('text-decoration-none');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.workshop-paper').forEach(el => {
-        el.classList.add('badge', 'rounded-pill', 'bg-success');
+    setSubmissionTypePill('.workshop-paper', 'bg-success', '#Workshop_paper');
+    setSubmissionTypePill('.extended-abstract', 'bg-warning', '#Extended_abstract');
+    setSubmissionTypePill('.method-description', 'bg-info', '#Method_description');
+});
 
-        // Create a new anchor element
-        const link = document.createElement('a');
+function updateCountdown(elementId, countDownDate) {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
 
-        // Set the href attribute
-        link.href = '#Workshop_paper';
+    const days = Math.floor(distance / (86400000)); // 1000 * 60 * 60 * 24
+    const hours = Math.floor((distance % (86400000)) / (3600000)); // 1000 * 60 * 60
+    const minutes = Math.floor((distance % (3600000)) / (60000)); // 1000 * 60
+    const seconds = Math.floor((distance % (60000)) / 1000);
 
-        // Wrap the original element with the new link
-        el.parentNode.insertBefore(link, el);
-        link.appendChild(el);
+    const element = document.getElementById(elementId);
+    if (element) {
+        if (distance < 0) {
+            element.innerHTML = "";
+            return false; // Indicate that the countdown has finished
+        } else {
+            element.innerHTML = `(${days}d ${hours}h ${minutes}m ${seconds}s)`;
+            return true; // Indicate that the countdown should continue
+        }
+    }
+    return false; // If element not found, stop the countdown
+}
 
-        // Add text-decoration-none to the link
-        link.classList.add('text-decoration-none');
-    });
+function addCountdown(elementId, targetDateString) {
+    const countDownDate = new Date(targetDateString).getTime();
 
-    document.querySelectorAll('.extended-abstract').forEach(el => {
-        el.classList.add('badge', 'rounded-pill', 'bg-warning');
+    // Initial call to set the countdown immediately
+    updateCountdown(elementId, countDownDate);
 
-        // Create a new anchor element
-        const link = document.createElement('a');
+    // Set interval to update every second
+    const intervalId = setInterval(function() {
+        const shouldContinue = updateCountdown(elementId, countDownDate);
+        if (!shouldContinue) {
+            clearInterval(intervalId);
+        }
+    }, 1000);
 
-        // Set the href attribute
-        link.href = '#Extended_abstract';
+    return intervalId;
+}
 
-        // Wrap the original element with the new link
-        el.parentNode.insertBefore(link, el);
-        link.appendChild(el);
-
-        // Add text-decoration-none to the link
-        link.classList.add('text-decoration-none');
-    });
-
-    document.querySelectorAll('.method-description').forEach(el => {
-        el.classList.add('badge', 'rounded-pill', 'bg-info');
-
-        // Create a new anchor element
-        const link = document.createElement('a');
-
-        // Set the href attribute
-        link.href = '#Method_description';
-
-        // Wrap the original element with the new link
-        el.parentNode.insertBefore(link, el);
-        link.appendChild(el);
-
-        // Add text-decoration-none to the link
-        link.classList.add('text-decoration-none');
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    addCountdown("day-start-countdown", "2024/05/21 00:00:00 UTC");
+    addCountdown("day-paper-submit-countdown", "2024/08/02 23:59:59 UTC-12");
+    addCountdown("day-paper-camera-ready-countdown", "2024/08/15 23:59:59 UTC-12");
+    addCountdown("day-end-countdown", "2024/08/23 23:59:59 UTC-12");
+    addCountdown("day-describe-countdown", "2024/08/27 23:59:59 UTC-12");
+    addCountdown("day-winners-countdown", "2024/08/30 23:59:59 UTC-12");
+    addCountdown("day-workshop-countdown", "2024/09/30 08:00:00 UTC+2");
 });
 </script>
 

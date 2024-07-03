@@ -13,7 +13,7 @@ p {
     font-size: calc(1.1* var(--bs-body-font-size));
 }
 
-li {
+li:not(.list-inline-item) {
     font-size: calc(1.1* var(--bs-body-font-size));
 }
 
