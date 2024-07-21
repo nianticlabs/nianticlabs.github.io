@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HandDGP</title>
+    <meta name="description"
+          content="HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning, ECCV 2024">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta charset="utf-8">
+    <link rel="icon" href="resources/NianticLogo.png">
+
+    <!--Facebook preview-->
+    <meta property="og:image" content="https://nianticlabs.github.io/handdgp/resources/social_card.png">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="..."/>
+    <meta property="og:title"
+          content="HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning"/>
+    <meta property="og:description"
+          content="HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning, ECCV 2024"/>
+
+    <!--Twitter preview-->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title"
+          content="HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning"/>
+    <meta name="twitter:description"
+          content="HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning, ECCV 2024"/>
+    <meta name="twitter:image" content="https://nianticlabs.github.io/handdgp/resources/social_card.png">
+
+    <!--Style-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="resources/favi_2.png">
+
+</head>
+
+<body>
+
+<div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+        <h1 style="margin-bottom:0.1rem;">HandDGP:</h1>
+        <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Camera-Space Hand Mesh Prediction with Differentiable Global
+            Positioning</h3>
+        <h4 style="font-size:1.4em;">ECCV 2024</h4>
+    </div>
+    <div class="row" style="text-align:center">
+        <div class="col-xs-0 col-md-2"></div>
+        <div class="col-xs-12 col-md-8">
+            <h4>
+                <a style="font-size:1.1em;" href="https://www.linkedin.com/in/eugene-valassakis-01541172/">
+                    <nobr>Eugene Valassakis</nobr>
+                </a> &emsp;
+                <a style="font-size:1.1em;" href="https://guiggh.github.io/">
+                    <nobr>Guillermo Garcia-Hernando</nobr>
+                </a> &emsp;
+            </h4>
+            Niantic
+        </div>
+
+        <div class="col-xs-0 col-md-2"></div>
+
+    </div>
+
+</div>
+
+
+<div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-2">
+            <a href="resources/handdgp.pdf" style="color:inherit">
+                <a href="resources/handdgp.pdf" style="color:#ff730">
+                    <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+        </div>
+        <div class="col-xs-2">
+            <!-- <a href="https://github.com/nianticlabs/HandDGP" style="color:inherit;">
+              <a href="https://github.com/nianticlabs/HandDGP" style="color:#ff730"> -->
+            <a href="" style="color:inherit;">
+                <a href="" style="color:#ff730">
+                    <i class="fa fa-github fa-4x"></i></a><br>
+                Coming soon!
+        </div>
+
+        <div class="col-xs-2">
+            <a href="#citation">
+                <i class="fa fa-book fa-4x"></i></a>
+        </div>
+
+        <div class="col-xs-3"></div>
+
+    </div>
+</div>
+
+<div class="container">
+    <h3>Abstract</h3>
+    <hr/>
+    <p>
+        Predicting camera-space hand meshes from single RGB images is crucial for enabling realistic hand interactions
+        in 3D virtual and augmented worlds. Previous work typically divided the task into two stages: given a cropped
+        image of the hand, predict meshes in relative coordinates, followed by lifting these predictions into camera
+        space in a separate and independent stage, often resulting in the loss of valuable contextual and scale
+        information. To prevent the loss of these cues, we propose unifying these two stages into an end-to-end solution
+        that addresses the 2D-3D correspondence problem. This solution enables back-propagation from camera space
+        outputs to the rest of the network through a new differentiable global positioning module. We also introduce an
+        image rectification step that harmonizes both the training dataset and the input image as if they were acquired
+        with the same camera, helping to alleviate the inherent scale-depth ambiguity of the problem. We validate the
+        effectiveness of our framework in evaluations against several baselines and state-of-the-art approaches across
+        three public benchmarks.
+    </p>
+</div>
+<br>
+<div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+        <h3 style="margin-bottom:0.1rem;">Details coming soon!</h3>
+    </div>
+</div>
+<div class="container">
+    <h3 id="citation">BibTeX</h3>
+    <hr/>
+    <p>If you find this work useful for your research, please consider citing our paper:</p>
+    <div class="card">
+        <pre class="card-text">
+    @inproceedings{handdgp2024,
+    title={HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning},
+    author={Valassakis, Eugene and Garcia-Hernando, Guillermo},
+    booktitle={ECCV},
+    year={2024}
+}</pre>
+
+    </div>
+</div>
+
+</body>
+
+</html>
