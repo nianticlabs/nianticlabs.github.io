@@ -42,7 +42,7 @@
 
 <div class="container" style="text-align:center; padding:2rem 15px">
     <div class="row" style="text-align:center">
-        <h1 style="margin-bottom:0.1rem;">HandDGP:</h1>
+        <h2 style="margin-bottom:0.1rem;">HandDGP: </h2>
         <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Camera-Space Hand Mesh Prediction with Differentiable Global
             Positioning</h3>
         <h4 style="font-size:1.4em;">ECCV 2024</h4>
@@ -56,9 +56,9 @@
                 </a> &emsp;
                 <a style="font-size:1.1em;" href="https://guiggh.github.io/">
                     <nobr>Guillermo Garcia-Hernando</nobr>
-                </a> &emsp;
+                </a>
             </h4>
-            Niantic
+            <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Niantic</h3>
         </div>
 
         <div class="col-xs-0 col-md-2"></div>
@@ -95,6 +95,11 @@
     </div>
 </div>
 
+<div class="row" style="text-align:center;">
+    <br>
+    <img src="resources/images/teaser.png" alt="teaser.png" class="text-center" style="width: 40%; max-width: 40%">
+</div>
+
 <div class="container">
     <h3>Abstract</h3>
     <hr/>
@@ -112,17 +117,123 @@
         three public benchmarks.
     </p>
 </div>
-<br>
-<div class="container" style="text-align:center; padding:2rem 15px">
-    <div class="row" style="text-align:center">
-        <h3 style="margin-bottom:0.1rem;">Details coming soon!</h3>
+<div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <div class="col-xs-12">
+        <video id="overviewVideo" controls muted style="max-width: 60%; height: auto;">
+            <source src="resources/videos/handdgp_video_online.mp4" type="video/mp4">
+        </video>
     </div>
 </div>
+<br>
 <div class="container">
-    <h3 id="citation">BibTeX</h3>
+
+    <h3>Approach</h3>
     <hr/>
-    <p>If you find this work useful for your research, please consider citing our paper:</p>
-    <div class="card">
+    <br>
+    <div class="row" style="text-align:center;">
+        <br>
+        <img src="resources/images/method.png" alt="method.png" class="text-center" style="width: 60%; max-width: 80%">
+    </div>
+
+    <br>
+    <div class="row" style="text-align: center">
+        <div class="col-xs-12">
+            <div>
+                <p>
+                    We propose an end-to-end approach that simultaneously learns root-relative meshes and the 3D lifting
+                    function using a <b>Differentiable Global Positioning (DGP)</b> module. This method enables direct
+                    backpropagation of gradients from camera space outputs to 2D-3D correspondences, enhancing the
+                    integration with hand mesh prediction
+                    networks that predict 2D keypoints and root-relative 3D hand meshes. Additionally, we introduce a
+                    rectification step to
+                    address 2D-to-3D depth and scale ambiguity, improving camera-space predictions at a slight cost to
+                    relative-space predictions.
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <h3>Results</h3>
+    <hr/>
+    <div class="col-xs-12">
+        <div>
+            <p>
+                Qualitative results on <b><span style="color: rgb(0, 190, 62)">FreiHAND</span></b>, <b><span
+                    style="color: rgb(0, 188, 255)">HO3D-v2</span></b>, <b><span style="color: rgb(236, 124, 83)">Human3.6M</span></b>
+                datasets and <b><span style="color: rgb(237, 218, 116)">online images</span></b>:
+        </div>
+    </div>
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+        <div class="col-xs-12">
+            <img src="resources/images/qualitative.png" alt="qualitative.png" class="text-center" style="width: 60%; max-width: 60%; margin-top:
+      10px">
+        </div>
+    </div>
+    <br>
+
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+        <div>
+            <p>
+                Comparison with <b><span style="color: rgb(255, 182, 193)">MobRecon</span></b>. <b><span
+                    style="color: rgb(0, 71, 171)">HandDGP</span></b> predicts more accurate 3D root values and hand
+                meshes:
+        </div>
+        <div class="col-xs-12">
+            <img src="resources/images/comp_1.png" alt="comp1.png" class="text-center" style="width: 70%; max-width: 70%; margin-top:
+      10px">
+        </div>
+        <br>
+        <div><br>
+
+            <p>Video results on <b>HO3D-v2</b> dataset:</p>
+        </div>
+        <div class="col-xs-12">
+            <video autoplay muted style="max-width: 80%; height: auto;">
+                <source src="resources/videos/video_1.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted style="max-width: 80%; height: auto; ">
+                <source src="resources/videos/video_2.mp4" type="video/mp4">
+            </video>
+            <br>
+            <div>
+                <p>3D positioning visualization:</p>
+            </div>
+            <video autoplay muted style="max-width: 80%; height: auto;">
+                <source src="resources/videos/video_3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <br>
+
+    </div>
+    <div class="container">
+        <h3>Resources</h3>
+        <hr/>
+        <div class="row" style="text-align: center">
+            <div class="col-xs-0 col-lg-0"></div>
+            <div class="col-xs-2 col-lg-2"></div>
+            <div class="col-xs-4 col-lg-4">
+                <h4>Paper</h4>
+                <a href="resources/handdgp.pdf" style="color:#ff730">
+                    <img src="resources/images/paper_thumb.png" alt="Paper" class="text-center" style="max-width:50%; border:0.15em solid;
+        border-radius:0.5em;"></a>
+            </div>
+
+        <div class="col-xs-4 col-lg-4">
+            <h4>Supplemental (coming soon)</h4>
+            <img src="resources/images/paper_thumb.png" alt="Supplemental" class="text-center"
+                 style="max-width:50%; border:0.15em solid;border-radius:0.5em;">
+        </div>
+        <div class="col-xs-2 col-lg-2"></div>
+        <div class="col-xs-0 col-lg-0"></div>
+    </div>
+        </div>
+
+
+    <div class="container">
+        <h3 id="citation">BibTeX</h3>
+        <hr/>
+        <p>If you find this work useful for your research, please consider citing our paper:</p>
+        <div class="card">
         <pre class="card-text">
     @inproceedings{handdgp2024,
     title={HandDGP: Camera-Space Hand Mesh Prediction with Differentiable Global Positioning},
@@ -131,8 +242,8 @@
     year={2024}
 }</pre>
 
+        </div>
     </div>
-</div>
 
 </body>
 
