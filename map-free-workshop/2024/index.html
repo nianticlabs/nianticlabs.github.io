@@ -94,11 +94,17 @@
             <a style="font-size:1.1em; text-decoration: none;" href="#Schedule">
                 <nobr>Preliminary Schedule</nobr>
             </a> &emsp;
+            <a style="font-size:1.1em; text-decoration: none;" href="#Posters">
+                <nobr>Confirmed Posters</nobr>
+            </a> &emsp;
             <a style="font-size:1.1em; text-decoration: none;" href="#About_the_Challenge">
                 <nobr>About the Challenge</nobr>
             </a> &emsp;
             <a style="font-size:1.1em; text-decoration: none;" href="#Important_Dates">
                 <nobr>Important Dates</nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em; text-decoration: none;" href="#Winners">
+                <nobr>Challenge Winners</nobr>
             </a> &emsp;
             <a style="font-size:1.1em; text-decoration: none;" href="#Prizes">
                 <nobr>Prizes</nobr>
@@ -413,7 +419,7 @@
                 </tr>
                 <tr>
                     <td>10:30-11:00</td>
-                    <td>Coffee break</td>
+                    <td>Coffee break and poster session</td>
                 </tr>
                 <tr>
                     <td>11:00-11:20</td>
@@ -433,8 +439,8 @@
                     <td>Invited Talk (Talk 5)</td>
                 </tr>
                 <tr>
-                    <td>12:50-13:00</td>
-                    <td>Closing Remarks</td>
+                    <td>12:55-13:00</td>
+                    <td>Closing Remarks and award photos</td>
                 </tr>
                 </tbody>
             </table>
@@ -443,6 +449,40 @@
 
     <!-- --------------------------------------------------------------------------------------- -->
 
+    <!-- Posters -->
+    <div class="row">
+        <div class="col-12">
+            <h4><a id="Posters">Confirmed posters</a><!--
+            --><small><!--
+              --><a
+                    onclick="copyLinkToClipboard('Posters');"
+                    style="cursor: pointer;"> 🔗<!--
+              --></a><!--
+            --></small><!--
+         --></h4>
+            <hr />
+            <ul>
+                <li>
+                    <a href="https://arxiv.org/abs/2406.09756">Grounding Image Matching in 3D with MASt3R</a><br />
+                    Vincent Leroy, Yohann Cabon and Jérôme Revaud <br />
+                    <a href="https://europe.naverlabs.com/">Naver Labs Europe</a>
+                </li>
+                <li><a href="assets/Map_Free_Challenge_DepthMickey.pdf">Improving Map-Free Localization with Depth Supervision</a><br />
+                    Hitesh Jain and Sagar Verma <br />
+                    <a href="https://www.granular.ai/">Granular AI</a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2404.14409">CrossScore: Towards Multi-View Image Evaluation and Scoring</a><br />
+                    Zirui Wang, Wenjing Bian, Victor Adrian Prisacariu <br />
+                    <a href="https://crossscore.active.vision/">University of Oxford</a>
+                </li>
+            </ul>
+        </div> <!-- col -->
+    </div> <!-- row -->
+
+    <!-- --------------------------------------------------------------------------------------- -->
+
+    <!-- About the Challenge -->
     <div class="row">
         <div class="col-12">
             <h3><a id="About_the_Challenge">About the Challenge</a><!--
@@ -615,20 +655,68 @@
          --></h3>
             <hr />
             <h5>Single Frame <small>(<a href="https://research.nianticlabs.com/mapfree-reloc-benchmark/leaderboard?t=single&f=2024">Leaderboard</a>)</small></h5>
-            <ol>
-                <li>🥇 <em>MASt3R (Ess.Mat + D.Scale)</em>; <a href="https://arxiv.org/abs/2406.09756">https://arxiv.org/abs/2406.09756</a><br />
+            <dl class="row">
+                <dt class="col-4">
+                    🥇 <em>MASt3R (Ess.Mat + D.Scale)</em>
+                </dt>
+                <dd class="col-8">
+                    Vincent Leroy, Yohann Cabon and Jerome Revaud <br />
+                    Naver Labs Europe <br />
+                    <a href="https://arxiv.org/abs/2406.09756">https://arxiv.org/abs/2406.09756</a>
+                </dd>
+                <dt class="col-4">
+                    🥈 <em>interp_metric3d_loftr_3d2d</em>
+                </dt>
+                <dd class="col-8">
+                    Lili Zhao<sup>1</sup>, Zhili Liu<sup>2</sup> <br />
+                    <sup>1</sup>China Mobile Research Institute, <br />
+                    <sup>2</sup>anonymous <br />
+                    <a href="https://github.com/Shepherddot/An-Implementation-For-Two-View-Metric-Pose-Estimation">https://github.com/Shepherddot/An-Implementation-For-Two-View-Metric-Pose-Estimation</a>
+                </dd>
+                <dt class="col-4">
+                    🥉 <em>Map-Free Visual Relocalization Enhanced by Instance Knowledge and Depth Knowledge</em>
+                </dt>
+                <dd class="col-8">
+                    Mingyu Xiao<sup>1</sup>, Runze Chen <sup>1</sup>, Haiyong Luo<sup>2</sup>, Fang Zhao<sup>1</sup>, Juan Wang<sup>3</sup>, Xue Peng Ma<sup>3</sup> <br />
+                    <sup>1</sup>Beijing University of Posts and Telecommunications, <br />
+                    <sup>2</sup>Research Center for Ubiquitous Computing Systems, Institute of Computing Technology, Chinese Academy of Sciences <br />
+                    <sup>3</sup>Shouguang Cheng Zhi Feng Xing Technology Co., Ltd. <br />
+                    <a href="http://arxiv.org/abs/2408.13085">http://arxiv.org/abs/2408.13085</a>
+                </dd>
+                <dt class="col-4">
+                    &nbsp;<img height="18" width="18" src="assets/images/4th-place-medal-low.png" /> <em>Mickey Variant GT_Depth</em>
+                </dt>
+                <dd class="col-8">
+                    Hitesh Jain, Sagar Verma <br />
+                    Granular AI <br />
+                    <a href="assets/Map_Free_Challenge_DepthMickey.pdf">Map_Free_Challenge_DepthMickey.pdf</a>
+                </dd>
+            </dl>
+            <h5>Multi Frame <small>(<a href="https://research.nianticlabs.com/mapfree-reloc-benchmark/leaderboard?t=multi&f=2024">Leaderboard</a>)</small></h5>
+            No accepted entries. <br />
+            <!--<ol>
+                <li>
+                    🥇 <em>MASt3R (Ess.Mat + D.Scale)</em>; <a href="https://arxiv.org/abs/2406.09756">https://arxiv.org/abs/2406.09756</a><br />
                     Vincent Leroy, Yohann Cabon and Jerome Revaud; <br />
-                    Naver Labs Europe</li>
-                <li>🥈 <em>interp_metric3d_loftr_3d2d</em>; <a href="https://github.com/Shepherddot/An-Implementation-For-Two-View-Metric-Pose-Estimation">https://github.com/Shepherddot/An-Implementation-For-Two-View-Metric-Pose-Estimation</a><br />
-                    Lili Zhao, Zhili Liu; <br />
-                    China Mobile Research Institute, anonymous</li>
-                <li>🥉 <em>Map-Free Visual Relocalization Enhanced by Instance Knowledge and Depth Knowledge</em>; <a href="http://arxiv.org/abs/2408.13085">http://arxiv.org/abs/2408.13085</a><br />
-                    Mingyu Xiao, Runze Chen, Haiyong Luo, Fang Zhao, Juan Wang, Xue Peng Ma; <br />
-                    Beijing University of Posts and Telecommunications, Research Center for Ubiquitous Computing Systems, Institute of Computing Technology, Chinese Academy of Sciences, Shouguang Cheng Zhi Feng Xing Technology Co., Ltd.</li>
+                    Naver Labs Europe
+                </li>
+                <li>
+                    🥈 <em>interp_metric3d_loftr_3d2d</em>; <a href="https://github.com/Shepherddot/An-Implementation-For-Two-View-Metric-Pose-Estimation">https://github.com/Shepherddot/An-Implementation-For-Two-View-Metric-Pose-Estimation</a><br />
+                    Lili Zhao<sup>1</sup>, Zhili Liu<sup>2</sup>; <br />
+                    <sup>1</sup>China Mobile Research Institute,
+                    <sup>2</sup>anonymous
+                </li>
+                <li>
+                    🥉 <em>Map-Free Visual Relocalization Enhanced by Instance Knowledge and Depth Knowledge</em>; <a href="http://arxiv.org/abs/2408.13085">http://arxiv.org/abs/2408.13085</a><br />
+                    Mingyu Xiao<sup>1</sup>, Runze Chen <sup>1</sup>, Haiyong Luo<sup>2</sup>, Fang Zhao<sup>1</sup>, Juan Wang<sup>3</sup>, Xue Peng Ma<sup>3</sup>; <br />
+                    <sup>1</sup>Beijing University of Posts and Telecommunications,
+                    <sup>2</sup>Research Center for Ubiquitous Computing Systems, Institute of Computing Technology, Chinese Academy of Sciences
+                    <sup>3</sup>Shouguang Cheng Zhi Feng Xing Technology Co., Ltd.
+                </li>
                 <li><em>Mickey Variant GT_Depth</em>; <a href="assets/Map_Free_Challenge_DepthMickey.pdf">Map_Free_Challenge_DepthMickey.pdf</a><br />
                     Hitesh Jain, Sagar Verma; <br />
                     Granular AI</li>
-            </ol>
+            </ol>-->
         </div> <!-- col -->
     </div> <!-- row -->
 
