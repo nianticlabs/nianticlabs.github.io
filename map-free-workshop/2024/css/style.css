@@ -139,3 +139,54 @@ hr {
 .workshop-paper {}
 .extended-abstract {}
 .method-description {}
+
+.iframe-frame-radial {
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    /*right: 40px;*/
+    /*bottom: 40px;*/
+    background: radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) calc(100% - 49px),
+            rgba(0, 0, 0, 1) calc(100% - 50px),
+            white 100%);
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: calc(100% + 80px);
+    height: calc(100% + 80px);
+}
+
+.iframe-frame-tb {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(to bottom, white, black 20px, rgba(0, 0, 0, 0.0) 21px, rgba(0, 0, 0, 0.0) calc(100% - 21px), black calc(100% - 20px), white);
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+}
+
+.iframe-frame-lr {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    background: linear-gradient(to right, white, black 20px, rgba(0, 0, 0, 0.0) 21px, rgba(0, 0, 0, 0.0) calc(100% - 21px), black calc(100% - 20px), white);
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(100% - 80px);
+    width: calc(100% + 40px);
+}
+.yourClass {
+  display: inline-flex;
+  border: double 10px transparent;
+  border-radius: 20px;
+  background-image: radial-gradient(circle at center, #fff 0%, #fff 90%, #000 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
