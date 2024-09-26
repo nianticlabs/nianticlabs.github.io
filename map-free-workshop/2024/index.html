@@ -59,7 +59,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link a-link" href="#Schedule">Schedule</a>
                     </li>
                     <li class="nav-item">
@@ -1537,6 +1537,26 @@
         addCountdown("day-winners-countdown", "2024/08/30 23:59:59 UTC-12");
         addCountdown("day-workshop-countdown", "2024/09/30 08:00:00 UTC+2");
     });
+
+    // Hide menu on menu item click
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navbar click collapses menu, see https://stackoverflow.com/a/42401686
+        const menuToggle = document.getElementById('navbarSupportedContent')
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle, {toggle: false})
+
+        // Add event listener to all nav items and dropdown-items
+        for (navClass of ['.nav-item', '.dropdown-item']) {
+            const navLinks = document.querySelectorAll(navClass);
+            navLinks.forEach((l) => {
+                if (!l.classList.contains('dropdown')) {
+                    l.addEventListener('click', () => {
+                        bsCollapse.toggle();
+                    }); // addEventListener('click')
+                } // if not dropdown
+            }); // forEach navLinks
+        } // for navClass
+    }); // addEventListener('DOMContentLoaded')
+
 </script>
 
 </body>
