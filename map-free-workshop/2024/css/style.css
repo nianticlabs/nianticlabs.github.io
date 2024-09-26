@@ -7,6 +7,11 @@ a {
     text-decoration: none;
 }
 
+.a-link {
+    color: #df471c;
+    text-decoration: none;
+}
+
 p {
     text-align: justify;
     /* font-size: 13px; */
