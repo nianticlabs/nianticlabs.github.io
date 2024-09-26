@@ -5,6 +5,7 @@ body {
 a {
     color: #df471c;
     text-decoration: none;
+    scroll-margin-top: 60px; /* Adjust menu click vertical location */
 }
 
 .a-link {
