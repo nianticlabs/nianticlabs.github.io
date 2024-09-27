@@ -196,3 +196,14 @@ hr {
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
+
+.emoji-large {
+    font-size: min(8.0vw, 5.0rem);
+    width: 100%;
+    text-align: center;
+}
+
+.div-hanging-indent {
+    padding-left: 1.0rem;
+    text-indent: -1.0rem;
+}
