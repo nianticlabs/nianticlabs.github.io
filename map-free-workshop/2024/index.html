@@ -185,7 +185,7 @@
                         <i>Grounding Image Matching in 3D with MASt3R</i><br/>
                         <small><span class="fw-lighter">
                             The journey from CroCo to MASt3R exemplify a significant paradigm shift in 3D vision technologies. This presentation will delve into the methodologies, innovations, and synergistic integration of these frameworks, demonstrating their impact on the field and potential future directions. The discussion aims to highlight how these advancements unify and streamline the processing of 3D visual data, offering new perspectives and capabilities in map-free visual relocalization, robotic navigation and beyond.</span></small><br/>
-                        <a href="https://nianticlabs.zoom.us/j/99304638416?pwd=6KdPQL9C1YqHCQTTohuN8PdyNW7mjG.1">Zoom link</a>
+                        <!--<a href="https://nianticlabs.zoom.us/j/99304638416?pwd=6KdPQL9C1YqHCQTTohuN8PdyNW7mjG.1">Zoom link</a>-->
                     </td>
                 </tr>
                 <tr>
@@ -661,7 +661,12 @@
             </h5>
             <div class="row">
                 <div class="col-1" style="margin-top: -0.8em;">
-                    <span class="emoji-large">🥇</span>
+                    <figure class="figure">
+                        <span class="emoji-large">🥇</span>
+                        <figcaption class="figure-caption text-center" id="figcaption-first-place">
+                            <!-- $2,000 -->
+                        </figcaption>
+                    </figure>
                 </div>
                 <div class="col-4">
                     <span class="fw-bolder"><em>Grounding Image Matching in 3D with MASt3R</em></span><br/>
@@ -679,7 +684,12 @@
             </div> <!-- row -->
             <div class="row mt-1">
                 <div class="col-1" style="margin-top: -0.8em;">
-                    <span class="emoji-large">🥈</span>
+                    <figure class="figure">
+                        <span class="emoji-large">🥈</span>
+                        <figcaption class="figure-caption text-center" id="figcaption-second-place">
+                            <!-- $1,600 -->
+                        </figcaption>
+                    </figure>
                 </div> <!-- col-1 -->
                 <div class="col-4">
                     <span class="fw-bolder"><em>Metric Pose Estimation Relative to Anchor Frame for Map-free Localization</em></span><br/>
@@ -700,7 +710,12 @@
             </div> <!-- row -->
             <div class="row mt-1">
                 <div class="col-1" style="margin-top: -0.8em;">
-                    <span class="emoji-large">🥉</span>
+                    <figure class="figure">
+                        <span class="emoji-large">🥉</span>
+                        <figcaption class="figure-caption text-center" id="figcaption-third-place">
+                            <!-- $1,400 -->
+                        </figcaption>
+                    </figure>
                 </div> <!-- col-1 -->
                 <div class="col-4">
                     <span class="fw-bolder"><em>Map-Free Visual Relocalization Enhanced by Instance Knowledge and Depth Knowledge</em></span>
@@ -725,7 +740,12 @@
             </div> <!-- row -->
             <div class="row mt-1">
                 <div class="col-1 align-middle" style="margin-top: 0.45em;">
-                    <img style="width: 8.0vw; max-width: 80px;" src="assets/images/4th-place-medal-low.png"/>
+                    <figure class="figure">
+                        <img style="width: 8.0vw; max-width: 80px;" src="assets/images/4th-place-medal-low.png"/>
+                        <figcaption class="figure-caption text-center" id="figcaption-fourth-place">
+                            <!-- $1,000 -->
+                        </figcaption>
+                    </figure>
                 </div> <!-- col-1 -->
                 <div class="col-4">
                     <span class="fw-bolder"><em>Improving Map-Free Localization with Depth Supervision</em></span><br/>
@@ -1512,79 +1532,14 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+<script src="js/scripts_niantic.js" type="text/javascript"></script>
 <script type="text/javascript">
-    function copyLinkToClipboard(link_name) {
-        let parts = window.location.href.split('#');
-        let url = (1 < parts.length)
-                ? parts[parts.length - 2] + '#' + link_name
-                : window.location.href + '#' + link_name;
-        navigator.clipboard.writeText(url);
-        window.location.href = url;
-    }
-
-    function setSubmissionTypePill(clsName, pillColor, linkName) {
-        document.querySelectorAll(clsName).forEach(el => {
-            el.classList.add('badge', 'rounded-pill', pillColor);
-
-            // Create a new anchor element
-            const link = document.createElement('a');
-
-            // Set the href attribute
-            link.href = linkName;
-
-            // Wrap the original element with the new link
-            el.parentNode.insertBefore(link, el);
-            link.appendChild(el);
-
-            // Add text-decoration-none to the link
-            link.classList.add('text-decoration-none');
-        });
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
         setSubmissionTypePill('.workshop-paper', 'bg-success', '#Workshop_paper');
         setSubmissionTypePill('.extended-abstract', 'bg-warning', '#Extended_abstract');
         setSubmissionTypePill('.method-description', 'bg-info', '#Method_description');
     });
 
-    function updateCountdown(elementId, countDownDate) {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
-
-        const days = Math.floor(distance / (86400000)); // 1000 * 60 * 60 * 24
-        const hours = Math.floor((distance % (86400000)) / (3600000)); // 1000 * 60 * 60
-        const minutes = Math.floor((distance % (3600000)) / (60000)); // 1000 * 60
-        const seconds = Math.floor((distance % (60000)) / 1000);
-
-        const element = document.getElementById(elementId);
-        if (element) {
-            if (distance < 0) {
-                element.innerHTML = "";
-                return false; // Indicate that the countdown has finished
-            } else {
-                element.innerHTML = `(${days}d ${hours}h ${minutes}m ${seconds}s)`;
-                return true; // Indicate that the countdown should continue
-            }
-        }
-        return false; // If element not found, stop the countdown
-    }
-
-    function addCountdown(elementId, targetDateString) {
-        const countDownDate = new Date(targetDateString).getTime();
-
-        // Initial call to set the countdown immediately
-        updateCountdown(elementId, countDownDate);
-
-        // Set interval to update every second
-        const intervalId = setInterval(function() {
-            const shouldContinue = updateCountdown(elementId, countDownDate);
-            if (!shouldContinue) {
-                clearInterval(intervalId);
-            }
-        }, 1000);
-
-        return intervalId;
-    }
 
     document.addEventListener('DOMContentLoaded', function() {
         addCountdown("day-start-countdown", "2024/05/21 00:00:00 UTC");
@@ -1613,6 +1568,10 @@
                 } // if not dropdown
             }); // forEach navLinks
         } // for navClass
+    }); // addEventListener('DOMContentLoaded')
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setPrizeLocales();
     }); // addEventListener('DOMContentLoaded')
 
 </script>
