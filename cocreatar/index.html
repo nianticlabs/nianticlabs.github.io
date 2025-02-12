@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CoCreatAR</title>
+  <meta name="description"
+    content="CoCreatAR: Enhancing Authoring of Outdoor Augmented Reality Experiences Through Asymmetric Collaboration">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!--Facebook preview-->
+  <meta property="og:image" content="https://nianticlabs.github.io/cocreatar/resources/social_card.png">
+  <!--   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400"> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title"
+    content="CoCreatAR: Enhancing Authoring of Outdoor Augmented Reality Experiences Through Asymmetric Collaboration" />
+  <meta property="og:description"
+    content="CoCreatAR: Enhancing Authoring of Outdoor Augmented Reality Experiences Through Asymmetric Collaboration, CHI 2025" />
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="CoCreatAR: Enhancing Authoring of Outdoor Augmented Reality Experiences Through Asymmetric Collaboration" />
+  <meta name="twitter:description"
+    content="CoCreatAR: Enhancing Authoring of Outdoor Augmented Reality Experiences Through Asymmetric Collaboration, CHI 2025" />
+  <meta name="twitter:image" content="https://nianticlabs.github.io/cocreatar/resources/social_card.png">
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="resources/favi.png">
+
+</head>
+
+<body>
+
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:0.1rem; font-variant: small-caps;">CoCreatAR</h1>
+      <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Enhancing Authoring of Outdoor Augmented Reality Experiences
+        Through Asymmetric Collaboration</h3>
+      <h4 style="font-size:1.4em;">CHI 2025</h4>
+    </div>
+    <div class="row" style="text-align:center">
+      <div class="col-xs-0 col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <h4>
+          <a style="font-size:1.1em;" href="https://nels.dev/">
+            <nobr>Nels Numan<sup>1*</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www0.cs.ucl.ac.uk/staff/g.brostow/">
+            <nobr>Gabriel Brostow<sup>1,2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="">
+            <nobr>Suhyun Park<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://www.ucl.ac.uk/computer-science/people/dr-simon-julier">
+            <nobr>Simon Julier<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://wp.cs.ucl.ac.uk/anthonysteed/">
+            <nobr>Anthony Steed<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://jessvb.github.io">
+            <nobr>Jessica Van Brummelen<sup>2</sup></nobr>
+          </a> &emsp;
+
+        </h4>
+
+        <sup>1</sup>University College London&nbsp;&nbsp;&nbsp;<sup>2</sup>Niantic&nbsp;&nbsp;&nbsp;<sup> <br>
+
+      </div>
+
+      <div class="col-xs-0 col-md-2"></div>
+
+    </div>
+    <div style="text-align:center;font-size:0.9em"><sup>*</sup>Work done while at Niantic, during Nels' internship.
+    </div>
+
+  </div>
+
+
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-2">
+        <a href="resources/CoCreatAR_CHI_25.pdf" style="color:inherit">
+          <a href="resources/CoCreatAR_CHI_25.pdf">
+            <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+      <!-- <div class="col-xs-2">
+      <a href="https://github.com/nianticlabs/simplerecon" style="color:inherit;">
+        <a href="https://github.com/nianticlabs/simplerecon">
+          <i class="fa fa-github fa-4x"></i></a>
+    </div> -->
+
+      <div class="col-xs-2">
+        <a href="https://youtu.be/aZTPbMtb4bw" style="color:inherit;">
+          <a href="https://youtu.be/aZTPbMtb4bw">
+            <i class="fa-brands fa-youtube fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-4"></div>
+
+    </div>
+  </div>
+
+  <div class="container" style="text-align:center; padding:1rem">
+    <br>
+    <img src="resources/Teaser.png" alt="This figure illustrates our system, CoCreatAR, being used by a user ex-situ on a desktop computer and another user in-situ on a mobile phone. It shows various meshes and visualizations augmented on the real-world location, including RGB-D point clouds, coarse meshes, and a virtual character representing the in-situ user on the ex-situ user's screen. For example, some coarse meshes are shown as rough planes outside of the original location mesh." class="text-center"
+      style="width: 100%; max-width: 1100px">
+  </div>
+
+  <div class="container">
+    <h3>Abstract</h3>
+    <hr />
+    <p>
+      Authoring site-specific outdoor augmented reality (AR) experiences requires a nuanced understanding of real-world
+      contexts to create immersive and relevant content. Existing ex-situ authoring tools typically rely on static 3D
+      models to represent spatial information. However, our formative study (n=25) identifies key limitations of this
+      approach: models are often outdated, incomplete, or insufficient for capturing critical factors such as safety
+      considerations, user flow, and dynamic environmental changes. These issues necessitate frequent on-site visits and
+      additional iterations, making the authoring process more time-consuming and resource-intensive.
+    </p>
+    <p style="text-indent: 30px;">
+      To mitigate these challenges, we introduce <span style="font-variant: small-caps;">CoCreatAR</span>, an asymmetric
+      collaborative authoring system that integrates the flexibility of ex-situ workflows with the immediate contextual
+      awareness of in-situ authoring. We conducted an exploratory study (n=32) comparing <span
+        style="font-variant: small-caps;">CoCreatAR</span> to an asynchronous workflow baseline, finding that it
+      enhances user engagement and confidence in the authored output while also providing preliminary insights into its
+      impact on task load. We conclude by discussing the implications of our findings for integrating real-world context
+      into site-specific AR authoring systems.
+    </p>
+
+    <br>
+
+    <!-- <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <h4 style="font-size:1.6em;"><u>30s Fast Forward</u></h4>
+      <div class="col-xs-12">
+        <video loop controls width="95%">
+          <source src="resources/Dont_Look_Now_30sec_Preview.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div> -->
+
+    <!-- <h3>Approach</h3>
+  <hr/>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <h4 style="font-size:1.6em;"><u>Overview</u></h4>
+    </div>
+  </div>
+
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <img src="resources/overview.jpg" alt="overview.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px"><br/><br/><br/>
+    </div>
+  </div>
+
+  <div class="row" style="text-align: center">
+    <div class="col-xs-12">
+      <div >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nunc dui, vulputate non pulvinar et, accumsan a 
+          eros. Aliquam faucibus eros sit amet molestie tempus. Vestibulum vel sem in neque rutrum scelerisque. Morbi 
+          porttitor neque nec risus condimentum, sodales molestie magna consectetur. Aliquam sagittis felis massa, in 
+          gravida turpis interdum at. Sed auctor nulla tortor, in mattis felis tincidunt ut. Pellentesque sapien dolor, 
+          dapibus nec cursus id, aliquet ac sapien. Aliquam tortor ex, cursus sit amet ex in, faucibus venenatis augue. 
+          Maecenas eget consectetur eros. Nullam vitae gravida sapien. Fusce id lorem justo. Fusce ut ultrices tortor.
+
+      </div>
+    </div>
+  </div> -->
+
+    <h3>Resources</h3>
+    <hr />
+
+    <br>
+
+
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <h4>Long-Form Video</h4>
+      <div class="col-xs-12">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aZTPbMtb4bw" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4 style="font-size:1.6em;"><u>Qualitative Mesh Comparison</u></h4>
+
+    <div class="col-xs-12" >
+      <video loop controls width="95%">
+        <source src="resources/JoinedMeshes.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div> -->
+
+
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4>Example Usage Figure</h4>
+
+    <div class="col-xs-12" >
+      <img src="resources/CoCreatAR_Feature_Usage.png" alt="Four screenshots of the ex-situ participant adjusting virtual objects relative to the location mesh. A: In-situ: “Hmm no [the boombox] is still floating. Let me capture… [in-situ uses 3D Snapshot]”. Ex-situ, highlighted: “Ah now I can see it all. Should I put it on the pavement like this? [ex-situ moves boombox]”. In-situ: “That's good, yeah.” B: In-situ: “Maybe we can put [the map] here! [in-situ uses Surface Draw]”. Ex-situ, highlighted: “Perfect [...] Is this upside down? I can't really tell.” In-situ: “No that's the right way. [ex-situ aligns map with wall] Yeah, great.” C: Ex-situ: “Capture behind you so I can get more of the walls there so I can align [the garlands].” In-situ: “Okay, do you need 3D image or coarse mesh?” Ex-situ, highlighted: “Coarse mesh, for now. I don't need, like, full color, I just need a bit of the geometry [in-situ users Coarse 3D Mesh]”. D: In-situ: “Can you put the wine bottle like, here? [in-situ places 3D Cursor on the table]” Ex-situ, highlighted: “Hmm let me see, it's a little tricky [ex-situ moves wine bottle]” In-situ: “Yeah that's good!”" class="text-center"
+      style="width: 80%; max-width: 1100px; border:0.15em solid;
+        border-radius:0.5em;">
+    </div>
+  </div>
+
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-2 col-lg-2"></div>
+      <div class="col-xs-4 col-lg-4">
+        <h4>Paper</h4>
+        <a href="resources/CoCreatAR_CHI_25.pdf">
+          <img src="resources/paper_thumb.png" alt="Paper" class="text-center" style="max-width:70%; border:0.15em solid;
+        border-radius:0.5em;"></a>
+      </div>
+      <div class="col-xs-4 col-lg-4">
+        <h4>Supplemental</h4>
+        <a href="resources/CoCreatAR_Supplementary_Materials.pdf">
+          <img src="resources/supp_thumb.png" alt="Supplemental" class="text-center"
+            style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
+      </div>
+      <!-- <div class="col-xs-4 col-lg-4">
+      <h4>Code</h4>
+      <a href="https://github.com/nianticlabs/simplerecon" style="color:inherit;">
+        <img src="resources/github_repo.png" alt="github_repo.png" class="text-center"
+             style="max-width:70%; border:0em solid;border-radius:0.5em;"></a>
+    </div> -->
+
+      <div class="col-xs-2 col-lg-2"></div>
+    </div>
+    <!-- <h4 style="padding-top:0.5em">BibTeX</h4>
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+
+        </pre>
+      </div>  
+    </div> -->
+
+
+
+    <h3>Acknowledgements</h3>
+    <hr />
+    Special thanks to Charlie Houseago, KP Papangelis, Filipe
+    Gaspar, Kelly Cho, George Ash, Adam Hegedus, Stanimir Vichev,
+    Thomas Hall, and Victor Adrian Prisacariu for their feedback and
+    support during the development of <span style="font-variant: small-caps;">CoCreatAR</span>. We also thank
+    our study participants for their time and insights, and Isabel Kraus-
+    Liang for assistance with study logistics. Our user study (Sec. 5) was
+    partially supported by the European Union's Horizon 2020 Research
+    and Innovation program under grant agreement No. 739578.
+  </div>
+
+  <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+    <p style="text-align:center">
+      &#169; This webpage was inspired by this
+      <a href="https://nianticlabs.github.io/simplerecon/">template</a>.
+    </p>
+  </div>
+
+</body>
+
+</html>
