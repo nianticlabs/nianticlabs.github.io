@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DoubleTake</title>
+  <meta name="description" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization, 2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!-- Facebook preview -->
+  <meta property="og:image" content="https://nianticlabs.github.io/doubletake/resources/social_card.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization" />
+  <meta property="og:description" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization, arXiv 2025" />
+
+  <!-- Twitter preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization" />
+  <meta name="twitter:description" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization, arXiv 2025" />
+  <meta name="twitter:image" content="https://nianticlabs.github.io/doubletake/resources/social_card.png">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="resources/favi_2.png">
+</head>
+
+<body>
+
+  <!-- Header section -->
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:0.1rem;">Morpheus</h1>
+      <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Text-Driven 3D Gaussian Splat Shape and Color Stylization</h3>
+      <h4 style="font-size:1.4em;">arXiv 2025</h4>
+    </div>
+    <div class="row" style="text-align:center">
+      <div class="col-xs-0 col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <h4>
+          <span style="font-size:1.1em;">Anonymous Authors</span>
+        </h4>
+      </div>
+      <div class="col-xs-0 col-md-2"></div>
+    </div>
+  </div>
+
+  <!-- Social/Resource Links -->
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-2">
+        <a href="resources/DoubleTake.pdf" style="color:#ff730">
+          <i class="fa-solid fa-file-pdf fa-4x"></i>
+        </a>
+      </div>
+      <div class="col-xs-2">
+        <a href="https://github.com/nianticlabs/doubletake" style="color:#ff730">
+          <i class="fa fa-github fa-4x"></i>
+        </a>
+      </div>
+      <div class="col-xs-2">
+        <a href="https://youtu.be/IklQ5AHNdI8" style="color:inherit;">
+          <i class="fa-brands fa-youtube fa-4x"></i>
+        </a>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
+
+  <!-- Video and Scrubber Section (replaces the teaser image) -->
+  <div class="container" style="text-align:center; padding:1rem">
+    <!-- Video element (note: no 'controls' attribute so it won’t play on its own) -->
+        <video controls autoplay loop muted width="95%">
+          <source src="resources/OODResults_2_1.mp4" type="video/mp4">
+        </video>
+    <video id="video" src="resources/ice-varying-d.mp4" style="width: 100%; max-width: 1100px;"></video>
+    <br>
+    <!-- Scrubber bar -->
+    <input type="range" id="scrubber" min="0" max="100" step="0.1" value="0" style="width: 100%; max-width: 1100px;">
+  </div>
+
+  <!-- Abstract Section -->
+  <div class="container">
+    <h3>Abstract</h3>
+    <hr />
+    <p>
+      Exploring real-world spaces using novel-view synthesis is fun, and reimagining those worlds in a different style adds another layer of excitement. Stylized worlds can also be used for downstream tasks where there is limited training data and a need to expand a model's training distribution. Most current novel-view synthesis stylization techniques lack the ability to convincingly change geometry. This is because any geometry change requires increased style strength which is often capped for stylization stability and consistency.
+    </p>
+    <p>
+      In this work, we propose a new autoregressive 3D Gaussian Splatting stylization method. As part of this method, we contribute a new RGBD diffusion model that allows for strength control over appearance and shape stylization. To ensure consistency across stylized frames, we use a combination of novel depth-guided cross attention, feature injection, and a Warp ControlNet conditioned on composite frames for guiding the stylization of new frames.
+    </p>
+    <p>
+      We validate our method via extensive qualitative results, quantitative experiments, and a user study.
+    </p>
+  </div>
+
+  <!-- JavaScript to Sync the Scrubber with the Video -->
+  <script>
+    const video = document.getElementById('video');
+    const scrubber = document.getElementById('scrubber');
+
+    // When the video metadata loads, set the slider's maximum to the video duration.
+    video.addEventListener('loadedmetadata', () => {
+      scrubber.max = video.duration;
+    });
+
+    // When you move the scrubber, update the video's current time.
+    scrubber.addEventListener('input', () => {
+      video.currentTime = scrubber.value;
+    });
+
+    // If the video ever starts playing, immediately pause it.
+    video.addEventListener('play', () => {
+      video.pause();
+    });
+
+    // Optionally, if you want the scrubber to update as the video time changes:
+    video.addEventListener('timeupdate', () => {
+      scrubber.value = video.currentTime;
+    });
+  </script>
+
+</body>
+</html>

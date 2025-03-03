@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Morpheus</title>
+  <meta name="description" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization, 2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!--Facebook preview-->
+  
+  <meta property="og:image" content="https://nianticlabs.github.io/doubletake/resources/social_card.png">
+ 
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization" />
+  <meta property="og:description" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization, arXiv 2025" />
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization" />
+  <meta name="twitter:description" content="Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization, arXiv 2025" />
+  <meta name="twitter:image" content="https://nianticlabs.github.io/doubletake/resources/social_card.png">
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  
+  <link rel="icon" href="resources/favi_2.png">
+  
+
+</head>
+
+<body>
+
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:0.1rem;">Morpheus</h1>
+      <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Text-Driven 3D Gaussian Splat <span style="font-family: 'Sinhala MN', Courier, monospace; font-weight:bold;">Shape</span> and <span style="color:red;">C</span><span style="color:darkorange;">o</span><span style="color:rgb(0, 185, 0);">l</span><span style="color:deepskyblue;">o</span><span style="color:purple;">r</span> Stylization</h3>
+      <h4 style="font-size:1.4em;">CVPR 2025</h4>
+    </div>
+    <div class="row" style="text-align:center">
+      <div class="col-xs-0 col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <h4>
+
+          <h4>
+            <a style="font-size:1.1em;" href="https://www.linkedin.com/in/jamie-wynn-69a392139">
+              <nobr>Jamie Wynn*<sup>1</sup></nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em;" href="https://qureshizawar.github.io/">
+              <nobr>Zawar Qureshi*<sup>1</sup></nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em;" href="https://www.linkedin.com/in/jakub-powierza/">
+              <nobr>Jakub Powierza<sup>1</sup></nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em;" href="https://www.linkedin.com/in/jamie-watson-544825127/">
+              <nobr>Jamie Watson<sup>1, 2</sup></nobr>
+            </a> &emsp;
+            <a style="font-size:1.1em;" href="https://masayed.com/">
+              <nobr>Mohamed Sayed<sup>1</sup></nobr>
+            </a> &emsp;
+          </h4>
+        </h4>
+        </h4>
+        
+        <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup>University College London&nbsp;&nbsp;&nbsp;
+      </div>
+
+      <div class="col-xs-0 col-md-2"></div>
+
+    </div>
+
+  </div>
+
+
+  
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-2">
+        <a href="resources/Morpheus.pdf" style="color:inherit">
+          <a href="resources/Morpheus.pdf" style="color:#ff730">
+            <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+      <div class="col-xs-2">
+        <a href="https://github.com/nianticlabs/morpheus" style="color:inherit;">
+          <a href="index.html" style="color:#ff730">
+            <i class="fa fa-github fa-4x"></i></a><br>
+            coming soon!
+      </div>
+
+      <div class="col-xs-2">
+        <a href="https://youtu.be/EEiBD1vjtl4" style="color:inherit;">
+          <a href="https://youtu.be/EEiBD1vjtl4" style="color:">
+            <i class="fa-brands fa-youtube fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-3"></div>
+
+    </div>
+  </div>
+  <br>
+ 
+  <!-- 
+  <div class="container" style="text-align:center; padding:1rem">
+    <br>
+    <img src="resources/teaser_short.png" alt="teaser.png" class="text-center" style="width: 100%; max-width: 1100px">
+  </div> 
+  -->
+
+
+  <div class="container" style="padding-bottom:2rem;">
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem;">
+      <div class="col-xs-12">
+        <video id="main-video" muted autoplay loop style="width:100%;">
+          <source src="resources/grid_4x2_forward_reverse.mp4" type="video/mp4"> 
+        </video>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Following TLDR and text content -->
+  <div class="container">
+    <p>
+    TLDR: We stylize 3D Gaussian Splats with a text prompt by rendering views, editing them with a diffusion model given a text prompt, and then retraining the splat.
+    To edit the views consistently, we use <b>modified depth-guided cross-attention</b> and a <b>task-specific controlnet</b>, with separate controls for depth and RGB edit strength
+    letting you set strength for shape and color separately.
+    </p>
+    *denotes equal contribution. 
+    <h3>Summary</h3>
+    <hr />
+    <!-- <p>
+      Exploring real-world spaces using novel-view synthesis is fun, and reimagining those worlds in a different style 
+      adds another layer of excitement. Stylized worlds can also be used for downstream tasks where there is limited training 
+      data and a need to expand a model's training distribution. Most current novel-view synthesis stylization techniques lack 
+      the ability to convincingly change geometry. This is because any geometry change requires increased style strength which 
+      is often capped for stylization stability and consistency.
+    </p>
+  
+    <p>
+        In this work, we propose a new autoregressive 3D Gaussian Splatting stylization method. As part of this method, 
+        we contribute a new RGBD diffusion model that allows for strength control over appearance and shape stylization. 
+        To ensure consistency across stylized frames, we use a combination of novel depth-guided cross attention, feature 
+        injection, and a Warp ControlNet conditioned on composite frames for guiding the stylization of new frames.
+    </p>
+  
+    <p>
+        We validate our method via extensive qualitative results, quantitative experiments, and a user study.
+    </p> -->
+
+    <p>
+      Exploring real-world spaces using novel-view synthesis is exciting, and reimagining those worlds in different styles 
+      adds another layer of fun. Stylized worlds can also be used for tasks with limited training data to expand a model's 
+      training distribution. However, current techniques often struggle to convincingly change geometry due to stability and consistency issues.
+    </p>
+
+    <p>
+      We propose a new autoregressive 3D Gaussian Splatting stylization method, introducing an RGBD diffusion model that 
+      allows for independent control over appearance and shape stylization. To ensure consistency across frames, we use 
+      depth-guided cross attention, feature injection, and a Warp ControlNet conditioned on composite frames.
+    </p>
+
+    <p>
+      Our method is validated through extensive qualitative results, quantitative experiments, and a user study.
+    </p>
+
+
+    <!-- 16:9 responsive container -->
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe 
+        src="https://www.youtube.com/embed/EEiBD1vjtl4"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+      ></iframe>
+    </div>
+
+    <h3>Method</h3>
+    <hr />
+    
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <h4 style="font-size:1.6em;"><u>Overview</h4></u></h4>
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          <p>
+            We use RGBD views as an intermediate representation for stylization: we render RGBD views of the input splat, stylize them, 
+            and then train an output splat.
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <h4 style="font-size:1.6em;"><u>RGBD diffusion model</u></h4>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          <p>
+            We add extra input and output channels to Stable Diffusion for depth, and train it to generate RGBD images. We add separate time parameters for depth and RGB,
+            enabling independent control of how much to edit appearance and geometry.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <img src="resources/rgbd_example_3.png" alt="method_detail.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px"> <br /><br /><br />
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <h4 style="font-size:1.6em;"><u>Multiview-consistent Stylization </u></h4>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          <p>
+            We render RGBD views of the input splat and stylize them autogressively, each view conditional on the previously stylized views.
+            We use a <b>task-specific ControlNet</b> and <b>modified cross-attention</b> to condition on previously stylized views.
+            After stylizing, we train another splat on our stylized views.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <img src="resources/method_overview_v3.png" alt="method_detail.png" class="text-center" style="width: 95%; max-width: 900px; margin-top:
+      10px"> <br /><br /><br />
+      </div>
+    </div>
+
+
+    <h3>Interactive results</h3>
+    <hr />
+
+    <p>
+    For a given stylization prompt, we can modify either color strength or shape modification strength. Try it yourself!
+    
+    
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <span style="font-family: 'Courier New', Courier, monospace; font-size: 2em; font-style: italic;">"hobbit village"</span><br>
+      <div class="col-xs-12">
+        <video id="video" autoplay muted width="90%">
+          <source src="resources/hobbit-varying-d.mp4" type="video/mp4">
+        </video>
+      <input type="range" id="scrubber" min="0" max="1" step="0.1" value="0" style="width: 90%; max-width: 1100px; margin: 0 auto">
+      </div>
+        <!-- Display the current value -->
+    <span style="font-size: 1.3em;"  id="strength-display">Depth stylization strength: 0.0</span><br>
+    <span style="font-size: 1.3em;" id="strength-display">RGB stylization strength: 0.7</span> <br>
+    
+    </div> 
+
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <span style="font-family: 'Courier New', Courier, monospace; font-size: 2em; font-style: italic;">"ice castle"</span><br>
+      <div class="col-xs-12">
+      <video id="video-2" autoplay muted width="90%">
+        <source src="resources/ice-varying-rgb.mp4" type="video/mp4">
+      </video>
+      <input type="range" id="scrubber-2" min="0" max="1" step="0.1" value="0" style="width: 90%; max-width: 1100px; margin: 0 auto;">
+      </div>
+    <span style="font-size: 1.3em;" id="strength-display-2-d">Depth stylization strength: 0.0</span>
+    <br>
+    <span style="font-size: 1.3em;" id="strength-display-2">RGB stylization strength: 0.0</span>
+    </div> 
+    <br>
+
+    <h3>More results</h3>
+    <hr />
+
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <div class="col-xs-12">
+        <img src="resources/qual_1.png" alt="quals_1.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+      </div>
+    </div>
+    <br>
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <div class="col-xs-12">
+        <img src="resources/qual_2.png" alt="quals_2.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+      </div>
+    </div>
+    <br>
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <div class="col-xs-12">
+        <img src="resources/qual_3.png" alt="quals_3.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
+      10px">
+      </div>
+    </div>
+    <br>
+
+    
+    <h3>Resources</h3>
+    <hr />
+    <p>
+    Coming soon!
+    </p>
+    <!--
+    <div class="row" style="text-align: center">
+      <div class="col-xs-0 col-lg-0"></div>
+      <div class="col-xs-2 col-lg-2"></div>
+      <div class="col-xs-4 col-lg-4">
+        <h4>Paper</h4>
+        <a href="resources/DoubleTake.pdf" style="color:#ff730">
+          <img src="resources/paper_thumb.png" alt="Paper" class="text-center" style="max-width:70%; border:0.15em solid;
+        border-radius:0.5em;"></a>
+      </div>
+      
+      <div class="col-xs-4 col-lg-4">
+        <h4>Supplemental</h4>
+        <a href="resources/DoubleTakeSupplemental.pdf" style="color:#ff730;">
+          <img src="resources/supp_thumb.png" alt="Supplemental" class="text-center"
+          style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
+      </div>
+
+      <div class="col-xs-2 col-lg-2"></div>
+
+      -->
+      <!-- <div class="col-xs-4 col-lg-4">
+        <h4>Code</h4>
+        <a href="https://github.com/nianticlabs/DoubleTake" style="color:inherit;">
+          <img src="resources/github_repo.png" alt="github_repo.png" class="text-center"
+            style="max-width:70%; border:0em solid;border-radius:0.5em;"></a>
+      </div> -->
+
+      <div class="col-xs-0 col-lg-0"></div>
+    </div>
+    <!-- <h4 style="padding-top:0.5em">BibTeX</h4>
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+    @inproceedings{sayed2024doubletake,
+      title={Morpheus: Text-Driven 3D Gaussian Splat Shape and Color Stylization},
+      author={Mohamed Sayed and Filippo Aleotti and Jamie Watson and Zawar Qureshi and Guillermo Garcia-Hernando and Gabriel Brostow and Sara Vicente and Michael Firman},
+      booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+      year={2024},
+    }</pre>
+      </div>
+    </div>
+    -->
+
+<!-- 
+
+    <h3>Acknowledgements</h3>
+    <hr />
+    <p>We thank Aljaž Božič of <a href="https://aljazbozic.github.io/transformerfusion/">TransformerFusion</a>, Jiaming
+      Sun of <a href="https://zju3dv.github.io/neuralrecon/">Neural Recon</a>,
+      and Arda Düzçeker of <a href="https://github.com/ardaduz/deep-video-mvs">DeepVideoMVS</a> for quickly providing
+      useful information to help with baselines and for making their codebases readily available, especially on short
+      notice.</p>
+
+    <p>The tuple generation scripts make heavy use of a modified version of DeepVideoMVS's Keyframe buffer (thanks again
+      Arda and co!).</p>
+
+    <p>The PyTorch point cloud fusion module is borrowed from <a
+        href="https://github.com/alexrich021/3dvnet">3DVNet's</a> repo. Thanks Alexander Rich!</p>
+
+    <p>We'd also like to thank Niantic's infrastructure team for quick actions when we needed them. Thanks folks!</p>
+
+    <p>Mohamed is funded by a Microsoft Research PhD Scholarship (MRL 2018-085).</p> -->
+  </div>
+
+  <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+    <p style="text-align:center">
+      &#169; This webpage was in part inspired from this
+      <a href="https://github.com/monniert/project-webpage">template</a>.
+    </p>
+  </div>
+  <!-- JavaScript to Sync the Scrubber with the Video -->
+  <script>
+    const video = document.getElementById('video');
+    const video2 = document.getElementById('video-2');
+    const scrubber = document.getElementById('scrubber');
+    const scrubber2 = document.getElementById('scrubber-2');
+    const strengthDisplay = document.getElementById('strength-display');
+    const strengthDisplay2 = document.getElementById('strength-display-2');
+
+    // When the video metadata loads, set the slider's maximum to the video duration.
+    video.addEventListener('loadedmetadata', () => {
+      scrubber.max = video.duration;
+    });
+
+    video2.addEventListener('loadedmetadata', () => {
+      scrubber2.max = video2.duration;
+    });
+
+    // When you move the scrubber, update the video's current time.
+    scrubber.addEventListener('input', () => {
+      video.currentTime = scrubber.value;
+      let normalizedValue = video.currentTime / video.duration
+      strengthDisplay.innerText = "Depth stylization strength: " + normalizedValue.toFixed(2);
+    });
+
+    scrubber2.addEventListener('input', () => {
+      video2.currentTime = scrubber2.value;
+      let normalizedValue2 = video2.currentTime / video2.duration
+      strengthDisplay2.innerText = "RGB stylization strength: " + normalizedValue2.toFixed(2);
+    });
+
+    // If the video ever starts playing, immediately pause it.
+    video.addEventListener('play', () => {
+      video.pause();
+    });
+
+    // If the video ever starts playing, immediately pause it.
+    video2.addEventListener('play', () => {
+      video2.pause();
+    });
+
+    //// Optionally, if you want the scrubber to update as the video time changes:
+    //video.addEventListener('timeupdate', () => {
+    //  scrubber.value = video.currentTime;
+    //});
+
+  </script>
+
+</body>
+
+</html>
