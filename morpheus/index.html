@@ -273,8 +273,8 @@
       <input type="range" id="scrubber" min="0" max="1" step="0.1" value="0" style="width: 90%; max-width: 1100px; margin: 0 auto">
       </div>
         <!-- Display the current value -->
-    <span style="font-size: 1.3em;"  id="strength-display">Depth stylization strength: 0.0</span><br>
-    <span style="font-size: 1.3em;" id="strength-display">RGB stylization strength: 0.7</span> <br>
+    <b><span style="font-size: 1.3em;" id="strength-display">Variable Depth stylization strength: 0.00</span></b><br>
+    <span style="font-size: 1.3em;" id="strength-display">Fixed RGB stylization strength: 0.70</span> <br>
     
     </div> 
 
@@ -286,9 +286,9 @@
       </video>
       <input type="range" id="scrubber-2" min="0" max="1" step="0.1" value="0" style="width: 90%; max-width: 1100px; margin: 0 auto;">
       </div>
-    <span style="font-size: 1.3em;" id="strength-display-2-d">Depth stylization strength: 0.0</span>
+      <span style="font-size: 1.3em;" id="strength-display-2-d">Depth stylization strength: 0.00</span>
     <br>
-    <span style="font-size: 1.3em;" id="strength-display-2">RGB stylization strength: 0.0</span>
+    <b><span style="font-size: 1.3em;" id="strength-display-2">Variable RGB stylization strength: 0.00</span></b>
     </div> 
     <br>
 
@@ -417,13 +417,13 @@
     scrubber.addEventListener('input', () => {
       video.currentTime = scrubber.value;
       let normalizedValue = video.currentTime / video.duration
-      strengthDisplay.innerText = "Depth stylization strength: " + normalizedValue.toFixed(2);
+      strengthDisplay.innerText = "Variable Depth stylization strength: " + normalizedValue.toFixed(2);
     });
 
     scrubber2.addEventListener('input', () => {
       video2.currentTime = scrubber2.value;
       let normalizedValue2 = video2.currentTime / video2.duration
-      strengthDisplay2.innerText = "RGB stylization strength: " + normalizedValue2.toFixed(2);
+      strengthDisplay2.innerText = "Variable RGB stylization strength: " + normalizedValue2.toFixed(2);
     });
 
     // If the video ever starts playing, immediately pause it.
