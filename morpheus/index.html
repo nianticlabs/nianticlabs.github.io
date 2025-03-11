@@ -165,7 +165,9 @@
 
     <div class="row" style="text-align: center">
       <div class="col-xs-12">
-        <h4 style="font-size:1.6em;"><u>RGBD diffusion model</u></h4>
+        <h4 style="font-size:1.6em;"><u>
+          <span style="color:red;">R</span><span style="color:green;">G</span><span style="color:blue;">B</span><span style="color:orange;">D</span> diffusion model
+        </u></h4>
       </div>
     </div>
 
@@ -186,6 +188,39 @@
       10px"> <br /><br /><br />
       </div>
     </div>
+    <!-- New video insertion and reverse playback simulation -->
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <video id="beatles-video" autoplay muted style="width:90%; max-width:900px;">
+          <source src="resources/BeatlesAlone_2_1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <!-- Updated script to simulate reverse playback -->
+    <script>
+      const beatlesVideo = document.getElementById('beatles-video');
+      let reverseInterval = null;
+
+      beatlesVideo.addEventListener('ended', () => {
+        // When forward playback ends, start simulating reverse playback.
+        simulateReversePlayback();
+      });
+
+      function simulateReversePlayback() {
+        clearInterval(reverseInterval);
+        beatlesVideo.pause();
+        reverseInterval = setInterval(() => {
+          if (beatlesVideo.currentTime <= 0) {
+            clearInterval(reverseInterval);
+            beatlesVideo.currentTime = 0;
+            beatlesVideo.play(); // switch to forward playback
+          } else {
+            // Adjust the decrement (0.04 sec per step approximates 25 fps)
+            beatlesVideo.currentTime = Math.max(0, beatlesVideo.currentTime - 0.04);
+          }
+        }, 40);
+      }
+    </script>
 
     <div class="row" style="text-align: center">
       <div class="col-xs-12">
