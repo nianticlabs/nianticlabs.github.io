@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MVSAnywhere</title>
+  <meta name="description" content="MVSAnywhere: Zero-Shot Multi-View Stereo, 2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!--Facebook preview-->
+  <meta property="og:image" content="https://nianticlabs.github.io/mvsanywhere/resources/social_card.jpg">
+  <!--   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400"> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title" content="MVSAnywhere: Zero-Shot Multi-View Stereo" />
+  <meta property="og:description" content="MVSAnywhere: Zero-Shot Multi-View Stereo, CVPR 2025" />
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MVSAnywhere: Zero-Shot Multi-View Stereo" />
+  <meta name="twitter:description" content="MVSAnywhere: Zero-Shot Multi-View Stereo, CVPR 2025" />
+  <meta name="twitter:image" content="https://nianticlabs.github.io/mvsanywhere/resources/social_card.jpg">
+
+  <!--Style-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="resources/favi_1.png">
+
+
+</head>
+
+<body>
+
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:0.1rem;">MVSAnywhere</h1>
+      <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">Zero-Shot Multi-View Stereo</h3>
+      <h4 style="font-size:1.4em;">CVPR 2025</h4>
+    </div>
+    <div class="row" style="text-align:center">
+      <div class="col-xs-0 col-md-2"></div>
+      <div class="col-xs-12 col-md-8">
+        <h4>
+          <a style="font-size:1.1em;" href="https://serizba.github.io/">
+            <nobr>Sergio Izquierdo<sup>3</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://masayed.com/">
+            <nobr>Mohamed Sayed<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www.michaelfirman.co.uk/">
+            <nobr>Michael Firman<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://guiggh.github.io/">
+            <nobr>Guillermo Garcia-Hernando<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://dantkz.github.io/about/">
+            <nobr>Daniyar Turmukhambetov<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://webdiis.unizar.es/~jcivera/">
+            <nobr>Javier Civera</nobr><sup>3</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://www.homepages.inf.ed.ac.uk/omacaod">
+            <nobr>Oisin Mac Aodha<sup>2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="http://www0.cs.ucl.ac.uk/staff/g.brostow/">
+            <nobr>Gabriel Brostow<sup>1,4</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.1em;" href="https://www.linkedin.com/in/jamie-watson-544825127/">
+            <nobr>Jamie Watson<sup>1, 4</sup></nobr>
+          </a> &emsp;
+        </h4>
+
+        <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup>University of Edinburgh&nbsp;&nbsp;&nbsp;<sup>3</sup>Universidad de Zaragoza&nbsp;&nbsp;&nbsp;<sup>4</sup>University College London&nbsp;&nbsp;&nbsp;
+
+      </div>
+
+      <div class="col-xs-0 col-md-2"></div>
+
+    </div>
+
+  </div>
+
+
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-2">
+        <a href="resources/MVSAnywhere.pdf" style="color:inherit">
+          <a href="resources/MVSAnywhere.pdf" style="color:#ff730">
+            <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+      <div class="col-xs-2">
+        <a href="https://github.com/nianticlabs/MVSAnywhere" style="color:inherit;">
+          <a href="https://github.com/nianticlabs/MVSAnywhere" style="color:#ff730">
+            <i class="fa fa-github fa-4x"></i></a><br>
+            Coming soon!
+      </div>
+      <div class="col-xs-4"></div>
+
+    </div>
+  </div>
+
+  <div class="container" style="text-align:center; padding:1rem">
+    <br>
+    <img src="resources/teaser.jpg" alt="teaser.jpg" class="text-center" style="width: 100%; max-width: 1100px">
+  </div>
+
+  <div class="container">
+    <h3>Abstract</h3>
+    <hr />
+    <p>
+      Computing accurate depth from multiple views is a fundamental and longstanding challenge in computer vision.
+      However, most existing approaches do not generalize well
+      across different domains and scene types (e.g. indoor vs.
+      outdoor). Training a general-purpose multi-view stereo
+      model is challenging and raises several questions, e.g. how
+      to best make use of transformer-based architectures, how
+      to incorporate additional metadata when there is a variable number of input views, and how to estimate the range
+      of valid depths which can vary considerably across different scenes and is typically not known a priori? To address
+      these issues, we introduce MVSA, a novel and versatile
+      Multi-View Stereo architecture that aims to work Anywhere
+      by generalizing across diverse domains and depth ranges.
+      MVSA combines monocular and multi-view cues with an
+      adaptive cost volume to deal with scale-related issues. We
+      demonstrate state-of-the-art zero-shot depth estimation on
+      the Robust Multi-View Depth Benchmark, surpassing existing multi-view stereo and monocular baselines.
+    </p>
+
+    <br>
+
+    <br>
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <div class="col-xs-12">
+        <video controls autoplay loop muted width="95%">
+          <source src="resources/videos/dron_mtb_both.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div> 
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          Our model produces depth maps in the input camera pose scale. Here we show it estimating view consistent depths for a drone video. 
+      </div>
+    </div>
+
+
+
+    <h3>Approach</h3>
+    <hr />
+
+    <br>
+    <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <div class="col-xs-12">
+        <img src="resources/images/method.jpg" alt="method" style="width: 80%;">
+      </div>
+    </div> 
+    
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          <p>
+            We construct a general-purpose multi-view depth estimation
+            model. We start with a cost-volume based architecture, which
+            matches deep features between views at different hypothesized
+            depths. Key for performance are our Cost Volume Patchifier and
+            Mono/Multi Cue Combiner. These also fuse single-view information coming from the Reference Image Encoder and source views.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <h4 style="font-size:1.6em;"><u>Cost Volume Patchifier</u></h4>
+      </div>
+    </div>
+
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <img src="resources/images/patchifier.jpg" alt="patchifier.jpg" class="text-center" style="width: 70%; margin-top:
+      10px"> <br /><br /><br />
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <div>
+          <p> 
+
+            Our cost volume patchifier enables high-quality infor-
+            mation to be extracted from a |D| × H/4 × W/4 cost volume, ready for
+            input to the Mono/Multi Cue Combiner ViT. (a) Shows the naive
+            approach to patchification. (b) Our approach makes better use of
+            the reference image features.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <h3>Results</h3>
+    <hr />
+
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <h4 style="font-size:1.6em;">Tanks and Temples - "Barn"</h4>
+      <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+        <div class="col-xs-12">
+          <video controls autoplay loop muted width="95%">
+            <source src="resources/videos/merged_barn.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div> 
+  
+    </div>
+
+    <br>
+
+    <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+      <h4 style="font-size:1.6em;">Mesh Reconstruction via Depth TSDF Fusion</h4>
+      <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+        <div class="col-xs-12">
+          <video controls autoplay loop muted width="95%">
+            <source src="resources/videos/mesh_compare.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div> 
+  
+    </div>
+
+    <br>
+<!-- 
+    <div class="row" style="text-align: center; padding-left:0.1rem; padding-right:0.1rem; padding-bottom:1rem;">
+      <h4 style="font-size:1.6em;">3D Gaussian Splatting Regularization</h4>
+      <div class="row" style="text-align:center; padding-bottom:1rem;">
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <div class="row" style="text-align:center; padding-bottom:1rem;">
+            <h4 style="font-size:1.6em;">3DGS</h4>
+          </div>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/none_rgb_sergio_traj.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/none_normal_sergio_traj.mp4" type="video/mp4">
+          </video>
+          <img src="resources/images/tree_tree3_None.png" alt="tree_tree2_None" style="width: 100%;">
+          <img src="resources/images/tree_tree2_None.png" alt="tree_tree2_None" style="width: 100%;">
+
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <div class="row" style="text-align:center; padding-bottom:1rem;">
+            <h4 style="font-size:1.6em;"><b>3DGS w/ MVSAnywhere</b></h4>
+          </div>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/mvsanywhere_rgb_sergio_traj.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/mvsanywhere_normal_sergio_traj.mp4" type="video/mp4">
+          </video>
+          <img src="resources/images/tree_tree3_MVSAnywhere.png" alt="tree_tree2_None" style="width: 100%;">
+          <img src="resources/images/tree_tree2_MVSAnywhere.png" alt="tree_tree2_None" style="width: 100%;">
+
+        </div>
+
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <div class="row" style="text-align:center; padding-bottom:1rem;">
+            <h4 style="font-size:1.6em;">3DGS w/ Metric3D</h4>
+          </div>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/metric3d_depth_rgb_sergio_traj.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/metric3d_depth_normal_sergio_traj.mp4" type="video/mp4">
+          </video>
+          <img src="resources/images/tree_tree3_Metric3D.png" alt="tree_tree2_None" style="width: 100%;">
+          <img src="resources/images/tree_tree2_Metric3D.png" alt="tree_tree2_None" style="width: 100%;">
+        </div>
+      </div> 
+  
+    </div> -->
+
+
+    <div class="row" style="text-align: center; padding-left:0.1rem; padding-right:0.1rem; padding-bottom:1rem;">
+      <h4 style="font-size:1.6em;">3D Gaussian Splatting Depth Regularization</h4>
+      <div class="row" style="text-align:center; padding-bottom:1rem;">
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <h4 style="font-size:1.6em;">3DGS</h4>
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <h4 style="font-size:1.6em;"><b>3DGS w/ MVSAnywhere</b></h4>
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <h4 style="font-size:1.6em;">3DGS w/ Metric3D</h4>
+        </div>
+      </div>
+
+      <div class="row" style="text-align:center; padding-bottom:1rem;">
+        <div class="col-xs-12" style="padding-left:0.1rem; padding-right:0.1rem;"></div>
+          <video controls autoplay loop muted width="100%">
+            <source src="resources/videos/splats_reg.mp4" type="video/mp4">
+          </video>
+      </div>
+      <h4 style="font-size:1.3em;">Mesh from above 3DGS.</h4>
+
+      <div class="row" style="text-align:center; padding-bottom:1rem;">
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <img src="resources/images/tree_tree3_None.png" alt="tree_tree2_None" style="width: 100%;">
+          <img src="resources/images/tree_tree2_None.png" alt="tree_tree2_None" style="width: 100%;">
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <img src="resources/images/tree_tree3_MVSAnywhere.png" alt="tree_tree2_None" style="width: 100%;">
+          <img src="resources/images/tree_tree2_MVSAnywhere.png" alt="tree_tree2_None" style="width: 100%;">
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <img src="resources/images/tree_tree3_Metric3D.png" alt="tree_tree2_None" style="width: 100%;">
+          <img src="resources/images/tree_tree2_Metric3D.png" alt="tree_tree2_None" style="width: 100%;">
+        </div>
+
+      </div>
+
+      <div class="col-xs-12">
+        <div class="sketchfab-embed-wrapper"> 
+          <iframe width="80%" height="500em" src="https://sketchfab.com/models/5a8c100a7f90480d8daddb5ae6a06d3e/embed"
+          title="MVSAnywhere Regularized 3DGS Mesh"
+          frameborder="0"
+          allowfullscreen
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          xr-spatial-tracking
+          execution-while-out-of-viewport
+          execution-while-not-rendered
+          web-share></iframe>
+        </div>
+      </div>
+ 
+    </div>
+
+    <br>
+
+
+    <div class="row" style="text-align: center; padding-left:0.1rem; padding-right:0.1rem; padding-bottom:1rem;">
+      <h4 style="font-size:1.6em;">3D Gaussian Splatting Depth Regularization - Mesh</h4>
+      
+      <div class="row" style="text-align:center; padding-bottom:1rem;">
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <h4 style="font-size:1.6em;">3DGS</h4>
+          <div class="sketchfab-embed-wrapper"> 
+            <iframe width="95%" height="500em" src="https://sketchfab.com/models/5c6137a7d5d54c09918278a3722e53f1/embed"
+            title="MVSAnywhere Regularized 3DGS Mesh"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share></iframe>
+          </div>
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <h4 style="font-size:1.6em;"><b>3DGS w/ MVSAnywhere</b></h4>
+          <div class="sketchfab-embed-wrapper"> 
+            <iframe width="95%" height="500em" src="https://sketchfab.com/models/7c818e2b6a114a828bb52ea0d58ad614/embed"
+            title="MVSAnywhere Regularized 3DGS Mesh"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share></iframe>
+          </div>
+        </div>
+        <div class="col-xs-4" style="padding-left:0.1rem; padding-right:0.1rem;">
+          <h4 style="font-size:1.6em;">3DGS w/ Metric3D</h4>
+          <div class="sketchfab-embed-wrapper"> 
+            <iframe width="95%" height="500em" src="https://sketchfab.com/models/83702776dda04ff4bdb55b823a70a462/embed"
+            title="MVSAnywhere Regularized 3DGS Mesh"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <h3>Resources</h3>
+    <hr />
+    <div class="row" style="text-align: center">
+      <div class="col-xs-4 col-lg-4"></div>
+
+      <div class="col-xs-4 col-lg-4">
+        <h4>Paper and Supplemental</h4>
+        <a href="resources/MVSAnywhere.pdf" style="color:#ff730">
+          <img src="resources/paper_thumb.jpg" alt="Paper" class="text-center" style="max-width:70%; border:0.15em solid;
+        border-radius:0.5em;"></a>
+      </div>
+      
+      <!-- <div class="col-xs-4 col-lg-4">
+        <h4>Supplemental</h4>
+        <a href="resources/MVSAnywhereSupplemental.pdf" style="color:#ff730;">
+          <img src="resources/supp_thumb.png" alt="Supplemental" class="text-center"
+          style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
+      </div> -->
+
+      <!-- <div class="col-xs-2 col-lg-2"></div> -->
+      <!-- <div class="col-xs-4 col-lg-4">
+        <h4>Code</h4>
+        <a href="https://github.com/nianticlabs/MVSAnywhere" style="color:inherit;">
+          <img src="resources/github_repo.png" alt="github_repo.png" class="text-center"
+            style="max-width:70%; border:0em solid;border-radius:0.5em;"></a>
+      </div> -->
+
+      <div class="col-xs-4 col-lg-4"></div>
+    </div>
+    
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect" style="text-align:left">
+@inproceedings&#123;izquierdo2025mvsanywhere,
+  title=&#123;&#123;MVSAnywhere&#125;: Zero Shot Multi-View Stereo&#125;,
+  author=&#123;Izquierdo, Sergio and Sayed, Mohamed and Firman, Michael and Garcia-Hernando, Guillermo and Turmukhambetov, Daniyar and Civera, Javier and Mac Aodha, Oisin and Brostow, Gabriel J. and Watson, Jamie&#125;,
+  booktitle=&#123;CVPR&#125;,
+  year=&#123;2025&#125;
+&#125;
+        </pre>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+    <p style="text-align:center">
+      &#169; This webpage was in part inspired from this
+      <a href="https://github.com/monniert/project-webpage">template</a>.
+    </p>
+  </div>
+
+</body>
+
+</html>
